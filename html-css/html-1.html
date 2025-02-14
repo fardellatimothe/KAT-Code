@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction au HTML - CodeCamp</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+            --code-bg: #1e293b;
+            --sidebar-width: 300px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            background: white;
+            padding: 2rem;
+            border-right: 1px solid #e2e8f0;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .nav-item {
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background: #f1f5f9;
+        }
+
+        .nav-item.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 2rem;
+            flex: 1;
+            max-width: calc(100% - var(--sidebar-width));
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .section h1 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .section h2 {
+            color: var(--text);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: var(--code-bg);
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .example {
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            background: #f8fafc;
+        }
+
+        .interactive-demo {
+            margin: 2rem 0;
+            padding: 1rem;
+            border: 2px dashed #e2e8f0;
+            border-radius: 0.5rem;
+        }
+
+        .next-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .next-btn:hover {
+            transform: translateX(5px);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .exercise {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted var(--primary);
+            cursor: help;
+        }
+
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--text);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">CodeCamp</div>
+        <div class="nav-item active">1. Introduction au HTML</div>
+        <div class="nav-item">2. Structure de base</div>
+        <div class="nav-item">3. Balises fondamentales</div>
+        <div class="nav-item">4. Première page web</div>
+        <div class="nav-item">5. Introduction au CSS</div>
+        <div class="nav-item">6. Sélecteurs CSS</div>
+        <div class="nav-item">7. Mise en forme</div>
+        <div class="nav-item">8. Flexbox & Grid</div>
+    </nav>
+
+    <main class="main-content">
+        <section class="section">
+            <h1>Introduction au HTML</h1>
+            <p>Le HTML (HyperText Markup Language) est le langage de balisage standard pour créer des pages web. C'est la structure fondamentale de tout site web.</p>
+            
+            <h2>Qu'est-ce que le HTML ?</h2>
+            <p>Le HTML n'est pas un langage de programmation, mais un langage de balisage qui définit la structure de votre contenu. Il utilise des balises pour organiser et présenter le contenu web.</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;Ma première page&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Bonjour monde !&lt;/h1&gt;
+                    &lt;p&gt;Ceci est un paragraphe.&lt;/p&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+            </div>
+
+            <div class="example">
+                <h3>Résultat :</h3>
+                <h1>Bonjour monde !</h1>
+                <p>Ceci est un paragraphe.</p>
+            </div>
+
+            <h2>Les balises HTML</h2>
+            <p>Les balises HTML sont les blocs de construction de toute page web. Voici quelques points importants :</p>
+            <ul style="margin-left: 2rem;">
+                <li>Les balises sont généralement utilisées par paires : une balise ouvrante et une balise fermante</li>
+                <li>La balise fermante contient un slash (/) avant le nom de la balise</li>
+                <li>Certaines balises sont auto-fermantes (comme &lt;img&gt;)</li>
+            </ul>
+
+            <div class="exercise">
+                <h3>Exercice pratique</h3>
+                <p>Créez une structure HTML basique contenant :</p>
+                <ul style="margin-left: 2rem;">
+                    <li>Un titre principal</li>
+                    <li>Deux paragraphes</li>
+                    <li>Une liste à puces</li>
+                </ul>
+                <div class="interactive-demo" contenteditable="true">
+                    <!-- Zone d'édition pour l'exercice -->
+                    &lt;!-- Écrivez votre code ici --&gt;
+                </div>
+            </div>
+
+            <button class="next-btn" onclick="nextLesson()">Leçon suivante →</button>
+        </section>
+    </main>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.parentElement;
+            const code = codeBlock.textContent.trim();
+            navigator.clipboard.writeText(code);
+            
+            button.textContent = "Copié !";
+            setTimeout(() => {
+                button.textContent = "Copier";
+            }, 2000);
+        }
+
+        function nextLesson() {
+            // Animation de transition
+            const currentSection = document.querySelector('.section');
+            currentSection.style.opacity = '0';
+            currentSection.style.transform = 'translateX(-20px)';
+            
+            setTimeout(() => {
+                alert('Navigation vers la prochaine leçon...');
+                // Ici, vous pourriez ajouter la logique pour charger la prochaine leçon
+            }, 500);
+        }
+
+        // Ajouter une classe active au menu de navigation
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

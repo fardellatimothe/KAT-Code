@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCamp - Apprenez à Coder</title>
+    <style>
+        :root {
+            --primary: #4a90e2;
+            --secondary: #f39c12;
+            --background: #f5f6fa;
+            --text: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), #2980b9);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+
+        .courses-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .progress-bar {
+            background: #eee;
+            height: 10px;
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            background: var(--secondary);
+            height: 100%;
+            width: 0;
+            transition: width 1s ease;
+        }
+
+        .start-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .start-btn:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(400px, -400px);
+            }
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            transform: translateX(200%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="floating-shapes"></div>
+        <h1>CodeCamp</h1>
+        <p>Commencez votre voyage dans le monde de la programmation</p>
+    </header>
+
+    <main class="courses-container">
+        <div class="course-card">
+            <h3>HTML & CSS Fondamentaux</h3>
+            <p>Apprenez les bases du développement web avec HTML et CSS.</p>
+            <div class="progress-bar">
+                <div class="progress" data-progress="0"></div>
+            </div>
+            <button class="start-btn" onclick="startCourse(this)">Commencer</button>
+        </div>
+
+        <div class="course-card">
+            <h3>JavaScript pour Débutants</h3>
+            <p>Découvrez la programmation interactive avec JavaScript.</p>
+            <div class="progress-bar">
+                <div class="progress" data-progress="0"></div>
+            </div>
+            <button class="start-btn" onclick="startCourse(this)">Commencer</button>
+        </div>
+
+        <div class="course-card">
+            <h3>Projets Pratiques</h3>
+            <p>Mettez en pratique vos connaissances avec des projets guidés.</p>
+            <div class="progress-bar">
+                <div class="progress" data-progress="0"></div>
+            </div>
+            <button class="start-btn" onclick="startCourse(this)">Commencer</button>
+        </div>
+    </main>
+
+    <div class="notification">
+        Cours commencé ! Bon apprentissage ! 🚀
+    </div>
+
+    <script>
+        // Création des formes flottantes
+        function createShapes() {
+            const container = document.querySelector('.floating-shapes');
+            const shapes = 15;
+
+            for (let i = 0; i < shapes; i++) {
+                const shape = document.createElement('div');
+                shape.classList.add('shape');
+                
+                // Position et taille aléatoires
+                const size = Math.random() * 50 + 20;
+                shape.style.width = `${size}px`;
+                shape.style.height = `${size}px`;
+                shape.style.left = `${Math.random() * 100}%`;
+                shape.style.top = `${Math.random() * 100}%`;
+                
+                // Animation aléatoire
+                shape.style.animationDelay = `${Math.random() * 20}s`;
+                container.appendChild(shape);
+            }
+        }
+
+        // Gestion des cours
+        function startCourse(button) {
+            const card = button.closest('.course-card');
+            const progress = card.querySelector('.progress');
+            const notification = document.querySelector('.notification');
+
+            // Animation de la barre de progression
+            let currentProgress = 0;
+            const interval = setInterval(() => {
+                currentProgress += 1;
+                progress.style.width = `${currentProgress}%`;
+                
+                if (currentProgress >= 100) {
+                    clearInterval(interval);
+                }
+            }, 50);
+
+            // Afficher la notification
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+
+            // Désactiver le bouton pendant l'animation
+            button.disabled = true;
+            button.style.opacity = '0.7';
+            setTimeout(() => {
+                button.disabled = false;
+                button.style.opacity = '1';
+            }, 5000);
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            createShapes();
+        });
+    </script>
+</body>
+</html>
