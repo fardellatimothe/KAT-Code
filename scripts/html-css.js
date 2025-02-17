@@ -1,10 +1,5 @@
 function copyCode(button) {
-    const codeBlock = button.parentElement;
-    const codeText = Array.from(codeBlock.childNodes)
-        .filter(node => node.nodeType === Node.TEXT_NODE || node.tagName !== 'BUTTON')
-        .map(node => node.textContent)
-        .join('');
-
+    const codeText = button.nextElementSibling.innerText;
     navigator.clipboard.writeText(codeText)
     
     button.textContent = "Copié !";
