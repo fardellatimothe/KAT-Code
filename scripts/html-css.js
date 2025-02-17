@@ -18,7 +18,6 @@ function changeChapter(chapterId) {
     document.querySelector(`.nav-item[onclick="changeChapter('${chapterId}')"]`).classList.add('active');
 }
 
-// Fonction pour visualiser le code saisi dans l'iframe
 function visualizeCode() {
     const editorContent = document.getElementById('code-editor').innerText;
     const decodedContent = editorContent
@@ -31,7 +30,6 @@ function visualizeCode() {
         return;
     }
 
-    // Construire un squelette HTML valide
     const fullHTML = `
         <!DOCTYPE html>
         <html lang="fr">
@@ -41,7 +39,7 @@ function visualizeCode() {
             <title>Prévisualisation</title>
             <style>
                 * {
-                    margin: 0;
+                    margin: 10px;
                     padding: 0;
                     box-sizing: border-box;
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -54,9 +52,49 @@ function visualizeCode() {
         </html>
     `;
 
-    // Ouvrir un nouvel onglet et injecter le contenu HTML
     const newWindow = window.open();
     newWindow.document.open();
     newWindow.document.write(fullHTML);
     newWindow.document.close();
+}
+
+function correction1() {
+    const fullHTML = `
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Prévisualisation</title>
+            <style>
+                * {
+                    margin: 10px;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Titre Principal</h1>
+            <p>Mon premier paragraphe</p>
+            <p>Mon deuxième paragraphe</p>
+            <a href="cesi.fr">Visitez ce site</a>
+            <ul>
+                <li>Élément n°1</li>
+                <li>Élément n°2</li>
+                <li>Élément n°3</li>
+            </ul>
+        </body>
+        </html>
+    `;
+
+    const newWindow = window.open();
+    newWindow.document.open();
+    newWindow.document.write(fullHTML);
+    newWindow.document.close();
+}
+
+function divExercice() {
+    document.getElementById('code-editor').textContent = ""
 }
