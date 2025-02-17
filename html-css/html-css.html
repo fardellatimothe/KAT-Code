@@ -10,7 +10,7 @@
     <nav class="sidebar">
         <div class="logo">CodeCamp</div>
         <div class="nav-item active" onclick="changeChapter('chapitre1')">1. Introduction au HTML</div>
-        <div class="nav-item" onclick="changeChapter('chapitre2')">2. Structure de base</div>
+        <div class="nav-item" onclick="changeChapter('chapitre2')">2. Organisation du contenu</div>
         <div class="nav-item" onclick="changeChapter('chapitre3')">3. Balises fondamentales</div>
         <div class="nav-item" onclick="changeChapter('chapitre4')">4. Première page web</div>
         <div class="nav-item" onclick="changeChapter('chapitre5')">5. Introduction au CSS</div>
@@ -78,12 +78,13 @@
                 <li><strong>&lt;a&gt;</strong> : Créer un lien permettant de naviguer vers une autre page. La balise ouvrante contient le lien vers l'autre page web dans un de ses attributs</li>
                 <li><strong>&lt;img&gt;</strong> : Insére une image dans la page. La balise contient directement les informations comme la source de l'image, à l'intérieur</li>
                 <li><strong>&lt;ul&gt;</strong> et <strong>&lt;li&gt;</strong> : Utilisés ensemble pour créer des listes à puces.</li>
+                <li><strong>&lt;br&gt;</strong> : Permet un retour à la ligne après un élément</li>
             </ul>
 
             <div class="code-block no-copy">
                 &lt;h1&gt;Bienvenue sur ma page&lt;/h1&gt;<br>
                 &lt;p&gt;Ceci est un paragraphe d'exemple.&lt;/p&gt;<br>
-                &lt;a href="https://google.com"&gt;Visitez ce lien&lt;/a&gt;<br>
+                &lt;a href="https://google.com"&gt;Visitez ce lien&lt;/a&gt;&lt;br&gt;<br>
                 &lt;img src="image.jpg" alt="Exemple d'image"&gt;<br>
                 &lt;ul&gt;<br>
                 &nbsp;&nbsp;&lt;li&gt;Élément de liste 1&lt;/li&gt;<br>
@@ -96,7 +97,7 @@
                 <h3>Résultat :</h3>
                 <h1>Bienvenue sur ma page</h1>
                 <p>Ceci est un paragraphe d'exemple.</p>
-                <a href="https://google.com">Visitez ce lien</a>
+                <a href="https://google.com">Visitez ce lien</a><br>
                 <img src="../images/img-exemple.jpg">
                 <ul>
                     <li>Élément de liste 1</li>
@@ -114,15 +115,16 @@
                     <li>Un lien vers cesi.fr</li>
                     <li>Une liste à puces</li>
                 </ul>
-                <p>Ensuite, cliquez sur "Visualiser" pour voir le résultat.</p>
+                <p>Ensuite, cliquez sur "Visualiser" pour voir le résultat de votre code.</p>
+                <p>Appuyez sur "Correction" pour voir le résultat attendu.</p>
 
-                <div class="interactive-demo" contenteditable="true" id="code-editor">
+                <div class="interactive-demo" contenteditable="true" id="code-editor" onclick="divExercice()">
                     <!-- Zone d'édition pour l'exercice -->
-                    &lt;!-- Écrivez votre code ici --&gt;
+                    Écrivez votre code ici
                 </div>
 
                 <button class="visualizer-btn" onclick="visualizeCode()">Visualiser</button>
-                <button class="visualizer-btn" onclick="visualizeCode()">Correction</button>
+                <button class="correction-btn" onclick="correction1()">Correction</button>
             </div>
 
             <button class="next-btn" onclick="changeChapter('chapitre2')">Leçon suivante →</button>
