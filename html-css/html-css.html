@@ -10,19 +10,16 @@
     <nav class="sidebar">
         <div class="logo">CodeCamp</div>
         <div class="nav-item active" onclick="changeChapter('chapitre1')">1. Introduction au HTML</div>
-        <div class="nav-item" onclick="changeChapter('chapitre2')">2. Organisation du contenu</div>
-        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Balises fondamentales</div>
-        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Première page web</div>
-        <div class="nav-item" onclick="changeChapter('chapitre5')">5. Introduction au CSS</div>
-        <div class="nav-item" onclick="changeChapter('chapitre6')">6. Sélecteurs CSS</div>
-        <div class="nav-item" onclick="changeChapter('chapitre7')">7. Mise en forme</div>
-        <div class="nav-item" onclick="changeChapter('chapitre8')">8. Flexbox & Grid</div>
+        <div class="nav-item" onclick="changeChapter('chapitre2')">2. Structure de base</div>
+        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Introduction au CSS</div>
+        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Mise en page avec CSS</div>
+        <div class="nav-item" onclick="changeChapter('chapitre5')">5. Animations & Intéractions</div>
         <div class="nav-item" onclick="changeChapter('chapitre9')">Projet Final</div>
     </nav>
 
     <div class="main-content">
         <section id="chapitre1" class="section active">
-            <h1>Introduction à HTML</h1>
+            <h1>Introduction au HTML</h1>
             <p>Bienvenue dans votre première leçon ! Aujourd'hui, vous allez apprendre les bases du HTML.</p>
 
             <h2>Qu'est-ce que le HTML ?</h2>
@@ -64,19 +61,19 @@
             <h2>Les balises HTML</h2>
             <p>Les balises HTML sont les blocs de construction d'une page web. Voici quelques points importants :</p>
             <ul style="margin-left: 2rem;">
-                <li>Les balises sont généralement utilisées par paires : une balise ouvrante et une balise fermante</li>
-                <li>La balise fermante contient un slash (/) avant le nom de la balise (par exemple &lt;/title&gt;)</li>
-                <li>Certaines balises sont auto-fermantes car elle ne nécessite pas de balise de fermeture (comme &lt;img&gt;)</li>
+                <li>Les balises sont généralement utilisées par paires : une balise ouvrante et une balise fermante.</li>
+                <li>La balise fermante contient un slash (/) avant le nom de la balise (par exemple &lt;/title&gt;).</li>
+                <li>Certaines balises sont auto-fermantes car elle ne nécessite pas de balise de fermeture (comme &lt;img&gt;).</li>
             </ul>
 
             <h2>Balises fondamentales</h2>
             <p>Voici quelques balises importantes :</p>
             <ul>
                 <li><strong>&lt;h1&gt;</strong> : Affiche un titre principal. Chaque page devrait en contenir qu'un seul.</li>
-                <li><strong>&lt;h2&gt;</strong> : Affiche un titre secondaire. Une page peut en contenir plusieurs. (Il existe d'autres balises de titre en fonction de son importance : &lt;h3&gt;, &lt;h4&gt;, ...)</li>
+                <li><strong>&lt;h2&gt;</strong> : Affiche un titre secondaire. Une page peut en contenir plusieurs. (Il existe d'autres balises de titre en fonction de son importance : &lt;h3&gt;, &lt;h4&gt;, ...).</li>
                 <li><strong>&lt;p&gt;</strong> : Permet d'afficher un paragraphe de texte.</li>
-                <li><strong>&lt;a&gt;</strong> : Créer un lien permettant de naviguer vers une autre page. La balise ouvrante contient le lien vers l'autre page web dans un de ses attributs</li>
-                <li><strong>&lt;img&gt;</strong> : Insére une image dans la page. La balise contient directement les informations comme la source de l'image, à l'intérieur</li>
+                <li><strong>&lt;a&gt;</strong> : Créer un lien permettant de naviguer vers une autre page. La balise ouvrante contient le lien vers l'autre page web dans un de ses attributs.</li>
+                <li><strong>&lt;img&gt;</strong> : Insére une image dans la page. La balise contient directement les informations comme la source de l'image, à l'intérieur.</li>
                 <li><strong>&lt;ul&gt;</strong> et <strong>&lt;li&gt;</strong> : Utilisés ensemble pour créer des listes à puces.</li>
                 <li><strong>&lt;br&gt;</strong> : Permet un retour à la ligne après un élément</li>
             </ul>
@@ -131,45 +128,430 @@
         </section>
 
         <section id="chapitre2" class="section">
-            <h1>Chapitre 2 : Structure d'une page HTML</h1>
-            <p>Une page HTML est composée de plusieurs balises essentielles :</p>
-            <button class="next-btn" onclick="changeChapter('chapitre3')">Leçon suivante →</button>
+            <h1>Organisation du contenu avec HTML</h1>
+            <p>Dans cette leçon, vous allez apprendre comment structurer efficacement une page web en utilisant les conteneurs et les balises sémantiques.</p>
+            
+            <h2>Les conteneurs : &lt;div&gt; et &lt;span&gt;</h2>
+            <p>Les conteneurs sont utilisés pour regrouper des éléments HTML et organiser leur affichage.</p>
+            <ul>
+                <li><strong>&lt;div&gt;</strong> : Bloc de conteneur utilisé pour regrouper plusieurs éléments.</li>
+                <li><strong>&lt;span&gt;</strong> : Conteneur en ligne utilisé pour styliser une partie de texte.</li>
+            </ul>
+            
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;div class="box"&gt; Ceci est un bloc div &lt;/div&gt;<br>
+                &lt;p&gt;Un texte avec un &lt;span style="color: red;"&gt;mot en rouge&lt;/span&gt;&lt;/p&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <div class="box">Ceci est un bloc div</div>
+                <p>Un texte avec un <span style="color: red;">mot en rouge</span></p>
+            </div>
+            
+            <h2>Créer une barre de navigation</h2>
+            <p>La balise &lt;nav&gt; est utilisée pour créer un menu de navigation.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;nav&gt;<br>
+                &nbsp;&nbsp;&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;À propos&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;/ul&gt;<br>
+                &lt;/nav&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <nav>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <h2>Structurer une page web</h2>
+            <p>Voici comment organiser une page avec les balises sémantiques :</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;header&gt;En-tête&lt;/header&gt;<br>
+                &lt;main&gt;<br>
+                &nbsp;&nbsp;&lt;section&gt;Section principale&lt;/section&gt;<br>
+                &nbsp;&nbsp;&lt;article&gt;Article&lt;/article&gt;<br>
+                &nbsp;&nbsp;&lt;aside&gt;Sidebar&lt;/aside&gt;<br>
+                &lt;/main&gt;<br>
+                &lt;footer&gt;Pied de page&lt;/footer&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <header>En-tête</header>
+                <main>
+                    <section>Section principale</section>
+                    <article>Article</article>
+                    <aside>Sidebar</aside>
+                </main>
+                <footer>Pied de page</footer>
+            </div>
+            
+            <h2>Créer un formulaire simple</h2>
+            <p>Les formulaires permettent d'interagir avec les utilisateurs.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;form&gt;<br>
+                &nbsp;&nbsp;&lt;label for="name"&gt;Nom :&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="text" id="name" name="name"&gt;<br>
+                &nbsp;&nbsp;&lt;button type="submit"&gt;Envoyer&lt;/button&gt;<br>
+                &lt;/form&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <form>
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name">
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+            
+            <div class="exercise">
+                <h3>Projet pratique</h3>
+                <p>Créez une page avec une navigation, une section principale et un formulaire.</p>
+                <button class="next-btn" onclick="changeChapter('chapitre3')">Leçon suivante →</button>
+            </div>
         </section>
+        
 
         <section id="chapitre3" class="section">
-            <h1>Chapitre 2 : Structure d'une page HTML</h1>
-            <p>Une page HTML est composée de plusieurs balises essentielles :</p>
-            <button class="next-btn" onclick="changeChapter('chapitre4')">Leçon suivante →</button>
+            <h1>Introduction au CSS</h1>
+            <p>Dans ce chapitre, vous allez apprendre les bases du CSS et comment styliser vos pages web.</p>
+        
+            <h2>Qu'est-ce que le CSS ?</h2>
+            <p>Le CSS (Cascading Style Sheets) est un langage utilisé pour décrire l'apparence des pages web. Il permet de définir les couleurs, les polices, les marges, et bien plus encore.</p>
+        
+            <h2>Comment lier une page HTML à une feuille CSS ?</h2>
+            <p>Il existe trois manières d'ajouter du CSS :</p>
+            <ul>
+                <li><strong>CSS en ligne</strong> : ajouté directement dans l'attribut <code>style</code> d'une balise.</li>
+                <li><strong>CSS interne</strong> : ajouté dans une balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code>.</li>
+                <li><strong>CSS externe</strong> : stocké dans un fichier séparé et lié avec <code>&lt;link&gt;</code>.</li>
+            </ul>
+        
+            <div class="code-block">
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css"&gt;<br>
+                &lt;/head&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <p>Le fichier "styles.css" est maintenant appliqué à votre page.</p>
+            </div>
+        
+            <h2>Sélecteurs CSS</h2>
+            <p>Les sélecteurs permettent de cibler des éléments HTML pour les styliser.</p>
+            
+            <h3>Sélection par balise</h3>
+            <p>Applique un style à toutes les balises du même type :</p>
+            <div class="code-block">
+                p {
+                    color: blue;
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <p style="color: blue;">Ce texte est en bleu.</p>
+            </div>
+            
+            <h3>Sélection par classe</h3>
+            <p>Utilise un point (.) pour sélectionner des éléments avec une classe spécifique :</p>
+            <div class="code-block">
+                .important {
+                    font-weight: bold;
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <p class="important" style="font-weight: bold;">Ce texte est en gras.</p>
+            </div>
+            
+            <h3>Sélection par ID</h3>
+            <p>Utilise un dièse (#) pour cibler un élément unique :</p>
+            <div class="code-block">
+                #titre {
+                    font-size: 24px;
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <h2 id="titre" style="font-size: 24px;">Ce titre est plus grand.</h2>
+            </div>
+        
+            <h2>Modifier l’apparence du texte</h2>
+            
+            <h3>Changer la couleur</h3>
+            <p>Utilisez la propriété <code>color</code> pour modifier la couleur du texte :</p>
+            <div class="code-block">
+                p {
+                    color: red;
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <p style="color: red;">Ce texte est rouge.</p>
+            </div>
+            
+            <h3>Modifier la taille</h3>
+            <p>Utilisez <code>font-size</code> pour changer la taille du texte :</p>
+            <div class="code-block">
+                h1 {
+                    font-size: 32px;
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <h1 style="font-size: 32px;">Titre agrandi</h1>
+            </div>
+            
+            <h3>Modifier la police</h3>
+            <p>Utilisez <code>font-family</code> pour changer la police d’écriture :</p>
+            <div class="code-block">
+                body {
+                    font-family: Arial, sans-serif;
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <p style="font-family: Arial, sans-serif;">Ce texte est en Arial.</p>
+            </div>
+        
+            <h2>Couleurs et arrière-plans</h2>
+            <h3>Arrière-plan uni</h3>
+            <p>Utilisez <code>background-color</code> pour modifier l’arrière-plan :</p>
+            <div class="code-block">
+                body {
+                    background-color: lightgray;
+                }
+            </div>
+            <div class="example" style="background-color: lightgray; padding: 10px;">
+                <h3>Résultat :</h3>
+                <p>Fond gris appliqué.</p>
+            </div>
+            
+            <h3>Image en arrière-plan</h3>
+            <p>Utilisez <code>background-image</code> pour ajouter une image en fond :</p>
+            <div class="code-block">
+                div {
+                    background-image: url('image.jpg');
+                }
+            </div>
+            <div class="example" style="background-image: url('../images/img-exemple.jpg'); height: 100px;">
+                <h3>Résultat :</h3>
+                <p>Image de fond appliquée.</p>
+            </div>
+        
+            <h2>Marges, espaces intérieurs et bordures</h2>
+            
+            <h3>Marges</h3>
+            <div class="code-block">
+                div {
+                    margin: 20px;
+                }
+            </div>
+            <h3>Espaces intérieurs</h3>
+            <div class="code-block">
+                div {
+                    padding: 10px;
+                }
+            </div>
+            <h3>Bordures</h3>
+            <div class="code-block">
+                div {
+                    border: 2px solid black;
+                }
+            </div>
         </section>
+                
 
         <section id="chapitre4" class="section">
-            <h1>Chapitre 2 : Structure d'une page HTML</h1>
-            <p>Une page HTML est composée de plusieurs balises essentielles :</p>
+            <h1>Mise en page avec CSS</h1>
+            <p>Dans cette leçon, nous allons explorer différentes techniques de mise en page en CSS.</p>
+        
+            <h2>Display : block vs inline</h2>
+            <p>En CSS, les éléments peuvent être affichés de différentes manières :</p>
+            <ul>
+                <li><strong>display: block;</strong> : Les éléments prennent toute la largeur disponible.</li>
+                <li><strong>display: inline;</strong> : Les éléments s'affichent à la suite des autres sans retour à la ligne.</li>
+            </ul>
+            <div class="code-block">
+                <pre>&lt;div style="display: block; background-color: lightblue;"&gt;Bloc 1&lt;/div&gt;
+        &lt;span style="display: inline; background-color: lightgreen;"&gt;Texte en ligne&lt;/span&gt;</pre>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <div style="display: block; background-color: lightblue; padding: 5px;">Bloc 1</div>
+                <span style="display: inline; background-color: lightgreen; padding: 5px;">Texte en ligne</span>
+            </div>
+            
+            <h2>Utilisation de Flexbox</h2>
+            <p>Flexbox permet d'organiser les éléments horizontalement ou verticalement.</p>
+            <div class="code-block">
+                <pre>&lt;div style="display: flex; gap: 10px;"&gt;
+            &lt;div style="background-color: lightcoral; padding: 10px;"&gt;Élément 1&lt;/div&gt;
+            &lt;div style="background-color: lightseagreen; padding: 10px;"&gt;Élément 2&lt;/div&gt;
+        &lt;/div&gt;</pre>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <div style="display: flex; gap: 10px;">
+                    <div style="background-color: lightcoral; padding: 10px;">Élément 1</div>
+                    <div style="background-color: lightseagreen; padding: 10px;">Élément 2</div>
+                </div>
+            </div>
+            
+            <h2>Utilisation de CSS Grid</h2>
+            <p>Grid permet une mise en page plus avancée.</p>
+            <div class="code-block">
+                <pre>&lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"&gt;
+            &lt;div style="background-color: lightpink; padding: 10px;"&gt;Colonne 1&lt;/div&gt;
+            &lt;div style="background-color: lightgoldenrodyellow; padding: 10px;"&gt;Colonne 2&lt;/div&gt;
+        &lt;/div&gt;</pre>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div style="background-color: lightpink; padding: 10px;">Colonne 1</div>
+                    <div style="background-color: lightgoldenrodyellow; padding: 10px;">Colonne 2</div>
+                </div>
+            </div>
+            
+            <h2>Positionnement avec CSS</h2>
+            <p>Les éléments peuvent être positionnés de différentes façons :</p>
+            <ul>
+                <li><strong>relative</strong> : Position par rapport à sa position normale.</li>
+                <li><strong>absolute</strong> : Position par rapport à son premier ancêtre positionné.</li>
+                <li><strong>fixed</strong> : Position fixe par rapport à la fenêtre.</li>
+            </ul>
+            
+            <h2>Création d'une barre de navigation</h2>
+            <p>Voici un exemple de barre de navigation stylisée avec du CSS :</p>
+            <div class="code-block">
+                <pre>&lt;nav style="background-color: navy; padding: 10px;"&gt;
+            &lt;a href="#" style="color: white; margin-right: 10px;"&gt;Accueil&lt;/a&gt;
+            &lt;a href="#" style="color: white;"&gt;Contact&lt;/a&gt;
+        &lt;/nav&gt;</pre>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <nav style="background-color: navy; padding: 10px;">
+                    <a href="#" style="color: white; margin-right: 10px;">Accueil</a>
+                    <a href="#" style="color: white;">Contact</a>
+                </nav>
+            </div>
+        
+            <h2>Responsive Design</h2>
+            <p>Le CSS permet d'adapter les pages aux écrans :</p>
+            <div class="code-block">
+                <pre>@media (max-width: 600px) {
+            body {
+                background-color: lightgray;
+            }
+        }</pre>
+            </div>
+        
+            <h2>Projet : Créer une page bien structurée</h2>
+            <p>Utilisez les concepts abordés pour créer une page de présentation.</p>
             <button class="next-btn" onclick="changeChapter('chapitre5')">Leçon suivante →</button>
         </section>
 
         <section id="chapitre5" class="section">
-            <h1>Chapitre 2 : Structure d'une page HTML</h1>
-            <p>Une page HTML est composée de plusieurs balises essentielles :</p>
-            <button class="next-btn" onclick="changeChapter('chapitre6')">Leçon suivante →</button>
-        </section>
-
-        <section id="chapitre6" class="section">
-            <h1>Chapitre 2 : Structure d'une page HTML</h1>
-            <p>Une page HTML est composée de plusieurs balises essentielles :</p>
-            <button class="next-btn" onclick="changeChapter('chapitre7')">Leçon suivante →</button>
-        </section>
-
-        <section id="chapitre7" class="section">
-            <h1>Chapitre 2 : Structure d'une page HTML</h1>
-            <p>Une page HTML est composée de plusieurs balises essentielles :</p>
-            <button class="next-btn" onclick="changeChapter('chapitre8')">Leçon suivante →</button>
-        </section>
-
-        <section id="chapitre8" class="section">
-            <h1>Chapitre 2 : Structure d'une page HTML</h1>
-            <p>Une page HTML est composée de plusieurs balises essentielles :</p>
-            <button class="next-btn" onclick="changeChapter('chapitre9')">Leçon suivante →</button>
+            <h1>Chapitre 5 : Animation et interactions en CSS</h1>
+            <p>Dans cette leçon, nous allons explorer comment animer et rendre nos éléments interactifs en CSS.</p>
+    
+            <h2>1. Introduction aux animations</h2>
+            <p>Les animations en CSS permettent de donner vie aux éléments en appliquant des changements progressifs.</p>
+            
+            <h3>Les transitions</h3>
+            <p>Les transitions permettent de créer des effets de changement progressifs entre deux états CSS.</p>
+            <div class="code-block">
+                <pre>
+    .button {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        transition: background-color 0.5s ease;
+    }
+    .button:hover {
+        background-color: red;
+    }
+                </pre>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <button class="button">Survolez-moi</button>
+            </div>
+    
+            <h3>Les animations avec @keyframes</h3>
+            <p>Avec <code>@keyframes</code>, on peut créer des animations plus complexes.</p>
+            <div class="code-block">
+                <pre>
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+    .animated-box {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        animation: bounce 1s infinite;
+    }
+                </pre>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <div class="animated-box"></div>
+            </div>
+    
+            <h2>2. Effets interactifs</h2>
+            <h3>Changement de couleur au survol</h3>
+            <p>Avec <code>:hover</code>, on peut modifier l’apparence d’un élément lorsqu'on passe la souris dessus.</p>
+            <div class="code-block">
+                <pre>
+    p:hover {
+        color: orange;
+        font-weight: bold;
+    }
+                </pre>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <p class="hover-text">Survolez ce texte !</p>
+            </div>
+    
+            <h3>Effets de boutons animés</h3>
+            <p>On peut rendre un bouton interactif en ajoutant une animation au clic.</p>
+            <div class="code-block">
+                <pre>
+    .button-click {
+        background-color: purple;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    .button-click:active {
+        transform: scale(0.9);
+    }
+                </pre>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <button class="button-click">Cliquez-moi</button>
+            </div>
         </section>
 
         <section id="chapitre9" class="section">
