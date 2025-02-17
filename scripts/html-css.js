@@ -95,6 +95,11 @@ function correction1() {
     newWindow.document.close();
 }
 
+let cpt = 0;
+
 function divExercice() {
-    document.getElementById('code-editor').textContent = ""
+    if (cpt < 1) {
+        document.getElementById('code-editor').textContent = "";
+        cpt = 1;
+    }  
 }
