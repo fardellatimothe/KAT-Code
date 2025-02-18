@@ -91,6 +91,12 @@ body {
     font-size: 1.5rem;
 }
 
+.section h3 {
+    color: var(--text);
+    margin: 2rem 0 1rem;
+    font-size: 1.3rem;
+}
+
 ul {
     margin-left: 2rem;
 }
@@ -133,6 +139,13 @@ ul {
     -ms-user-select: none;
 }
 
+code {
+    background-color: #f4f4f4; 
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: "Courier New", monospace;
+}
+
 .example {
     border: 1px solid #e2e8f0;
     padding: 1rem;
@@ -148,10 +161,20 @@ ul {
 
 .example h3 {
     color: var(--primary);
+    margin: 0;
 }
 
 .example h1 {
     color: var(--text)
+}
+
+.example .div1-course {
+    margin: 1rem 0;
+    background: lightgreen;
+}
+
+.example .div2-course {
+    background: lightblue;
 }
 
 .interactive-demo {

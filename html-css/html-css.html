@@ -29,6 +29,14 @@
             </p>
             <h2>Structure de base d'une page HTML</h2>
             <p>Chaque page commence toujours par les mêmes balises. Voici à quoi ressemble une structure de code HTML basique :</p>
+            <ul>
+                <li><strong>&lt;!DOCTYPE html&gt;</strong> : Cette ligne est toujours la première d'un fichier HTML. Elle indique au navigateur internet (Chrome, Safari, Firefox, ...) que vous utilisez la dernière version du HTML (HTML5).</li>
+                <li><strong>&lt;html&gt;</strong> : Cette balise est la racine de votre document HTML. Tout son contenu doit se trouver à l'intérieur de cette balise.</li>
+                <li><strong>&lt;head&gt;</strong> : Cette section contient des informations sur la page, comme son titre, ses styles ou des scripts.</li>
+                <li><strong>&lt;title&gt;</strong> : Définit le titre de la page qui s'affiche dans l'onglet de votre navigateur.</li>
+                <li><strong>&lt;body&gt;</strong> : Contient tout le contenu visible de votre page, comme des titres, paragraphes, images, etc.</li>
+            </ul>
+            
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                 &lt;!DOCTYPE html&gt;<br>
@@ -42,15 +50,6 @@
                 &nbsp;&nbsp;&lt;/body&gt;<br>
                 &lt;/html&gt;
             </div>
-
-            <p><strong>Explication des balises :</strong></p>
-            <ul>
-                <li><strong>&lt;!DOCTYPE html&gt;</strong> : Cette ligne est toujours la première d'un fichier HTML. Elle indique au navigateur internet (Chrome, Safari, Firefox, ...) que vous utilisez la dernière version du HTML (HTML5).</li>
-                <li><strong>&lt;html&gt;</strong> : Cette balise est la racine de votre document HTML. Tout son contenu doit se trouver à l'intérieur de cette balise.</li>
-                <li><strong>&lt;head&gt;</strong> : Cette section contient des informations sur la page, comme son titre, ses styles ou des scripts.</li>
-                <li><strong>&lt;title&gt;</strong> : Définit le titre de la page qui s'affiche dans l'onglet de votre navigateur.</li>
-                <li><strong>&lt;body&gt;</strong> : Contient tout le contenu visible de votre page, comme des titres, paragraphes, images, etc.</li>
-            </ul>
 
             <div class="example">
                 <h3>Résultat :</h3>
@@ -115,12 +114,12 @@
                 <p>Ensuite, cliquez sur "Visualiser" pour voir le résultat de votre code.</p>
                 <p>Appuyez sur "Correction" pour voir le résultat attendu.</p>
 
-                <div class="interactive-demo" contenteditable="true" id="code-editor" onclick="divExercice()">
+                <div class="interactive-demo" contenteditable="true" id="code-editor1" onclick="divExercice(this)">
                     <!-- Zone d'édition pour l'exercice -->
                     Écrivez votre code ici
                 </div>
 
-                <button class="visualizer-btn" onclick="visualizeCode()">Visualiser</button>
+                <button class="visualizer-btn" onclick="visualizeCode1()">Visualiser</button>
                 <button class="correction-btn" onclick="correction1()">Correction</button>
             </div>
 
@@ -131,26 +130,50 @@
             <h1>Organisation du contenu avec HTML</h1>
             <p>Dans cette leçon, vous allez apprendre comment structurer efficacement une page web en utilisant les conteneurs et les balises sémantiques.</p>
             
-            <h2>Les conteneurs : &lt;div&gt; et &lt;span&gt;</h2>
-            <p>Les conteneurs sont utilisés pour regrouper des éléments HTML et organiser leur affichage.</p>
+            <h2>Le conteneur &lt;div&gt; </h2>
+            <p>Un conteneur est un élément qui sert à structurer et organiser le contenu d'un page web. Il permet de regrouper des éléments afin de les manipuler plus facilement.</p>
             <ul>
-                <li><strong>&lt;div&gt;</strong> : Bloc de conteneur utilisé pour regrouper plusieurs éléments.</li>
-                <li><strong>&lt;span&gt;</strong> : Conteneur en ligne utilisé pour styliser une partie de texte.</li>
+                <li><strong>&lt;div&gt;</strong> : Conteneur de type bloc utilisé pour regrouper plusieurs éléments.</li>
             </ul>
             
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
-                &lt;div class="box"&gt; Ceci est un bloc div &lt;/div&gt;<br>
-                &lt;p&gt;Un texte avec un &lt;span style="color: red;"&gt;mot en rouge&lt;/span&gt;&lt;/p&gt;
+                &lt;div&gt; 
+                    Ceci est un bloc div 
+                &lt;/div&gt;
+
+                &lt;div&gt; 
+                    &lt;h4&gt;Ceci est un autre bloc div&lt;/h4&gt;
+                    &lt;p&gt;Il regroupe plusieurs éléments&lt;/p&gt;
+                    &lt;a href="google.fr"&gt;Faites une recherche Google&lt;/a&gt;
+                &lt;/div&gt;
             </div>
             <div class="example">
                 <h3>Résultat :</h3>
-                <div class="box">Ceci est un bloc div</div>
-                <p>Un texte avec un <span style="color: red;">mot en rouge</span></p>
+
+                <div class="div1-course">
+                    Ceci est un bloc div
+                </div>
+
+                <div class="div2-course">
+                    <h4>Ceci est un autre bloc div</h4>
+                    <p>Il regroupe plusieurs éléments</p>
+                    <a href="https://blog.hubspot.fr/website/div-html">Pour en savoir +</a>
+                </div>
             </div>
             
-            <h2>Créer une barre de navigation</h2>
-            <p>La balise &lt;nav&gt; est utilisée pour créer un menu de navigation.</p>
+            <h2>Les conteneurs sémantiques</h2>
+            <p>Contrairement au div, les conteneurs sémantiques donnent un sens au contenu qu'ils englobent, facilitant le référencement.</p>
+            
+            <ul>
+                <li><strong>&lt;nav&gt;</strong> : Spécifique aux menus de navigation.</li>
+                <li><strong>&lt;article&gt;</strong> : Contient un article indépendant.</li>
+                <li><strong>&lt;header&gt; & &lt;footer&gt;</strong> : Respectivement l'en-tête et le pied de page d'une page.</li>
+                <li><strong>&lt;main&gt;</strong> : Enveloppe le contenu principal de la page, généralement entre le header et le footer.</li>
+                <li><strong>&lt;section&gt;</strong> : Regroupe un ensemble de contenus, souvent par thème.</li>
+            </ul>
+
+            <h3>Nav</h3>
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                 &lt;nav&gt;<br>
@@ -171,9 +194,38 @@
                     </ul>
                 </nav>
             </div>
+
+            <h3>Article</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;article&gt;<br>
+                &nbsp;&nbsp;&lt;h2&gt;Article du jour&lt;/h2&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Ceci est un article indépendant sur un sujet particulier.&lt;/p&gt;<br>
+                &lt;/article&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <article>
+                    <h2>Article du jour</h2>
+                    <p>Ceci est un article indépendant sur un sujet particulier.</p>
+                </article>
+            </div>
+
+            <h3>Header & Footer</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;header&gt;En-tête&lt;/header&gt;<br>
+                &lt;p&gt;Contenu de la page&lt;p&gt;<br>
+                &lt;footer&gt;Pied de page&lt;/footer&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <header>En-tête</header>-----
+                <p>Contenu de la page</p>-----
+                <footer>Pied de page</footer>
+            </div>
             
-            <h2>Structurer une page web</h2>
-            <p>Voici comment organiser une page avec les balises sémantiques :</p>
+            <h3>Main</h3>
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                 &lt;header&gt;En-tête&lt;/header&gt;<br>
@@ -186,39 +238,111 @@
             </div>
             <div class="example">
                 <h3>Résultat :</h3>
-                <header>En-tête</header>
+                <header>En-tête</header>-----
                 <main>
                     <section>Section principale</section>
                     <article>Article</article>
                     <aside>Sidebar</aside>
                 </main>
-                <footer>Pied de page</footer>
+                -----<footer>Pied de page</footer>
             </div>
-            
-            <h2>Créer un formulaire simple</h2>
-            <p>Les formulaires permettent d'interagir avec les utilisateurs.</p>
+
+            <h3>Section</h3>
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
-                &lt;form&gt;<br>
-                &nbsp;&nbsp;&lt;label for="name"&gt;Nom :&lt;/label&gt;<br>
-                &nbsp;&nbsp;&lt;input type="text" id="name" name="name"&gt;<br>
-                &nbsp;&nbsp;&lt;button type="submit"&gt;Envoyer&lt;/button&gt;<br>
-                &lt;/form&gt;
+                &lt;header&gt;En-tête&lt;/header&gt;<br>
+                &lt;main&gt;<br>
+                &nbsp;&nbsp;&lt;section&gt;Les Animaux&lt;/section&gt;<br>
+                &nbsp;&nbsp;&lt;section&gt;Les Fleures&lt;/section&gt;<br>
+                &nbsp;&nbsp;&lt;section&gt;L'espace&lt;/section&gt;<br>
+                &lt;/main&gt;<br>
+                &lt;footer&gt;Pied de page&lt;/footer&gt;
             </div>
             <div class="example">
                 <h3>Résultat :</h3>
-                <form>
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name">
-                    <button type="submit">Envoyer</button>
-                </form>
+                <header>En-tête</header>-----
+                <main>
+                    <section>Les Animaux</section><br>
+                    <section>Les Fleures</section><br>
+                    <section>L'espace</section><br>
+                </main>
+                -----<footer>Pied de page</footer>
+            </div>
+
+            <h2>Le conteneur en ligne &lt;span&gt; </h2>
+            <p>Un conteneur en ligne ne créent pas de saut de ligne et sont utilisés pour styliser ou manipuler des parties précises de textes.</p>
+            <ul>
+                <li><strong>&lt;strong&gt;</strong> : Met un texte en gras</li>
+                <li><strong>&lt;em&gt;</strong> : Met un texte en italique</li>
+                <li><strong>&lt;mark&gt;</strong> : Met un texte en surbrillance</li>
+                <li><strong>&lt;code&gt;</strong> : Utile pour afficher du code source</li>
+                <li><strong>&lt;code&gt;</strong> : Définit une abréviation avec une info-bulle au survol</li>
+            </ul>
+
+            <h3>Strong</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;strong&gt;gras&lt;/strong&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <strong>gras</strong></p>
+            </div>
+
+            <h3>Em</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;em&gt;italique&lt;/em&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <em>italique</em></p>
+            </div>
+
+            <h3>Mark</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;mark&gt;surbrillance&lt;/mark&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <mark>surbrillance</mark></p>
+            </div>
+
+            <h3>Code</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;code&gt;console.log("code source")&lt;/code&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <code>code</code></p>
+            </div>
+
+            <h3>Abbr</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <abbr title="HyperText Markup Language">HTML</abbr></p>
             </div>
             
             <div class="exercise">
-                <h3>Projet pratique</h3>
-                <p>Créez une page avec une navigation, une section principale et un formulaire.</p>
-                <button class="next-btn" onclick="changeChapter('chapitre3')">Leçon suivante →</button>
+                <h3>Instructions</h3>
+                <p>Créez une structure HTML en utilisant les conteneurs suivants :</p>
+                <ul>
+                    <li>Un `&lt;header&gt;` contenant un titre et un menu de navigation (`&lt;nav&gt;`).</li>
+                    <li>Une `&lt;section&gt;` avec un titre et un paragraphe.</li>
+                    <li>Un `&lt;article&gt;` avec un titre et une description.</li>
+                    <li>Un &lt;footer&gt;` avec un texte de copyright.</li>
+                    <li>Un `&lt;strong&gt;` et un `&lt;em&gt;` pour mettre du texte en valeur.</li>
+                </ul>
+                <p>Écrivez votre code dans la zone ci-dessous :</p>
+                <div class="interactive-demo" contenteditable="true" id="code-editor2" onclick="divExercice(this)">
+                    Écrivez votre code ici
+                </div>
+
+                <button class="visualizer-btn" onclick="visualizeCode2()">Visualiser</button>
+                <button class="correction-btn" onclick="correction2()">Correction</button>
             </div>
+            <button class="next-btn" onclick="changeChapter('chapitre2')">Leçon suivante →</button>
         </section>
         
 
