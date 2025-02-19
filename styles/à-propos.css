@@ -1,0 +1,114 @@
+/* 🎨 Styles de base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: #f4f4f4;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 🔵 Header */
+header {
+    background: linear-gradient(to right, #2D82B7, #29A19C);
+    color: white;
+    padding: 40px 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* 👥 Section Équipe */
+.team {
+    padding: 50px 20px;
+    background: white;
+}
+
+h2 {
+    font-size: 2em;
+    color: #2D82B7;
+}
+
+/* 📦 Cartes Équipe */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    perspective: 1000px;
+    position: relative;
+    width: 280px;
+    height: 320px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* 🎭 Faces de la carte */
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.card .back {
+    background: #007BFF;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* 🖼️ Image de la carte */
+.card img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.card h3 {
+    color: #2D82B7;
+}
+
+/* 🌀 Animation d'apparition */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🔽 Footer */
+footer {
+    background: #2D82B7;
+    color: white;
+    padding: 20px;
+}
