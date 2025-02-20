@@ -97,6 +97,13 @@ body {
     font-size: 1.3rem;
 }
 
+.image-balises {
+    margin:1rem;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 ul {
     margin-left: 2rem;
 }
@@ -175,6 +182,75 @@ code {
 
 .example .div2-course {
     background: lightblue;
+}
+
+.conteneur-course {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+}
+
+.conteneur-course header,
+.conteneur-course nav,
+.conteneur-course footer {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.conteneur-course header {
+    background: gray;
+}
+
+.conteneur-course nav {
+    background: hotpink;
+}
+
+.conteneur-course footer {
+    background: orangered;
+    color: white;
+}
+
+.conteneur-course main {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background: lightgreen;
+    width: 100%;
+}
+
+.conteneur-course aside {
+    background: teal;
+    text-align: center;
+    justify-content: center;
+    width: 30%;
+    padding: 20px;
+    color: white;
+}
+
+.conteneur-course .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 70%;
+}
+
+.conteneur-course article {
+    background: darkblue;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    width: 100%;
+}
+
+.conteneur-course section {
+    background: blueviolet;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    width: 100%;
 }
 
 .interactive-demo {

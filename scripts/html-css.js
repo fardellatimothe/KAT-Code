@@ -16,6 +16,7 @@ function changeChapter(chapterId) {
     
     document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
     document.querySelector(`.nav-item[onclick="changeChapter('${chapterId}')"]`).classList.add('active');
+    window.scrollTo({top: 0});
 }
 
 function visualizeCode1() {
