@@ -99,6 +99,63 @@ function visualizeCode2() {
     newWindow.document.close();
 }
 
+function visualizeCode3() {
+    const editorContent = document.getElementById('code-editor3').innerText;
+    const decodedContent = editorContent
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&nbsp;/g, ' ');
+
+    if (decodedContent.trim().length === 0) {
+        alert("Le champ de code est vide. Veuillez écrire du HTML avant de visualiser.");
+        return;
+    }
+
+    const fullHTML = `
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Prévisualisation</title>
+            <style>
+                * {
+                    margin: 10px;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 300px;
+                }
+
+                label {
+                    margin-bottom: 5px;
+                }
+                    
+                input, textarea, button {
+                    padding: 8px;
+                    margin-bottom: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+            </style>
+        </head>
+        <body>
+            ${decodedContent}
+        </body>
+        </html>
+    `;
+
+    const newWindow = window.open();
+    newWindow.document.open();
+    newWindow.document.write(fullHTML);
+    newWindow.document.close();
+}
+
 function correction1() {
     const fullHTML = `
         <!DOCTYPE html>
@@ -154,25 +211,32 @@ function correction2() {
             </style>
         </head>
         <body>
+            <p style="margin: 10px 0;">Voici un exemple de correction :</p>
             <header>
                 <h1>Bienvenue sur mon site</h1>
                 <nav>
                     <ul>
-                        <li><a href='#'>Accueil</a></li>
-                        <li><a href='#'>À propos</a></li>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Nous contacter</a></li>
                     </ul>
                 </nav>
             </header>
-            <section>
-                <h2>Présentation</h2>
-                <p>Ce site explique les bases du HTML et CSS.</p>
-            </section>
-            <article>
-                <h2>Article</h2>
-                <p>Ceci est un exemple d'article.</p>
-            </article>
+            
+            <div>
+                <section>
+                    <h2>Présentation</h2>
+                    <p>Cette leçon explique les bases du<strong>HTML</strong>et<mark>CSS</mark>.</p>
+                </section>
+                
+                <article>
+                    <h2>Article</h2>
+                    <p>Ceci est un exemple d'article sur le HTML.</p>
+                </article>
+            </div>
+
             <footer>
-                <p>&copy; 2025 <em>Mon Site Web</em> - <strong>Tous droits réservés.</strong></p>
+                <p>&copy; 2025 Mon Site Web - Tous droits réservés.</p>
             </footer>
         </body>
         </html>
@@ -183,6 +247,70 @@ function correction2() {
     newWindow.document.write(fullHTML);
     newWindow.document.close();
 }
+
+function correction3() {
+    const fullHTML = `
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Prévisualisation</title>
+            <style>
+                * {
+                    margin: 10px;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 300px;
+                }
+
+                label {
+                    margin-bottom: 5px;
+                }
+
+                input, textarea, button {
+                    padding: 8px;
+                    margin-bottom: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+            </style>
+        </head>
+        <body>
+            <form action="#" method="POST">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" placeholder="Votre message" rows="4"></textarea>
+
+                <label for="date-naissance">Date de naissance :</label>
+                <input type="date" id="date-naissance" name="date-naissance">
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </body>
+        </html>
+    `;
+
+    const newWindow = window.open();
+    newWindow.document.open();
+    newWindow.document.write(fullHTML);
+    newWindow.document.close();
+}
+
 
 function divExercice(element) {
     if (element.textContent.trim() === "Écrivez votre code ici") {

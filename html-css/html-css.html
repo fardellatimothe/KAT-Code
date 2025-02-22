@@ -11,8 +11,8 @@
         <div class="logo">CodeCamp</div>
         <div class="nav-item active" onclick="changeChapter('chapitre1')">1. Introduction au HTML</div>
         <div class="nav-item" onclick="changeChapter('chapitre2')">2. Structure de base</div>
-        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Introduction au CSS</div>
         <div class="nav-item" onclick="changeChapter('chapitre3')">3. Formulaire en HTML</div>
+        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Introduction au CSS</div>
         <div class="nav-item" onclick="changeChapter('chapitre4')">4. Mise en page avec CSS</div>
         <div class="nav-item" onclick="changeChapter('chapitre5')">5. Animations & Intéractions</div>
         <div class="nav-item" onclick="changeChapter('chapitre9')">Projet Final</div>
@@ -25,8 +25,10 @@
 
             <h2>Qu'est-ce que le HTML ?</h2>
             <p>
-                Le HTML (HyperText Markup Language) est le <strong>langage de balisage</strong> utilisé pour créer des pages web.
-                Il sert à définir la structure et le contenu des sites internet.
+                Le HTML (HyperText Markup Language) est le <strong>langage de balisage</strong>, c'est à dire un langage qui utilise des balises pour définir les éléments d'un document, utilisé pour créer des pages web.
+                Il sert à définir la structure et le contenu des sites internet.<br><br>
+
+                Si vous voulez en savoir plus sur l'origine du language HTML, <a href="https://kinsta.com/fr/base-de-connaissances/qu-est-ce-que-le-html/" target="_blank">cliquez ici.</a>
             </p>
             <h2>Structure de base d'une page HTML</h2>
             <p>Chaque page commence toujours par les mêmes balises. Voici à quoi ressemble une structure de code HTML basique :</p>
@@ -94,7 +96,7 @@
                 <h3>Résultat :</h3>
                 <h1>Bienvenue sur ma page</h1>
                 <p>Ceci est un paragraphe d'exemple.</p>
-                <a href="https://google.com">Visitez ce lien</a><br>
+                <a href="https://google.com" target="_blank">Visitez ce lien</a><br>
                 <img src="../images/img-exemple.jpg">
                 <ul>
                     <li>Élément de liste 1</li>
@@ -116,7 +118,6 @@
                 <p>Appuyez sur "Correction" pour voir le résultat attendu.</p>
 
                 <div class="interactive-demo" contenteditable="true" id="code-editor1" onclick="divExercice(this)">
-                    <!-- Zone d'édition pour l'exercice -->
                     Écrivez votre code ici
                 </div>
 
@@ -129,10 +130,13 @@
 
         <section id="chapitre2" class="section">
             <h1>Organisation du contenu avec HTML</h1>
-            <p>Dans cette leçon, vous allez apprendre comment structurer efficacement une page web en utilisant les conteneurs et les balises sémantiques.</p>
+            <p>Dans cette leçon, vous allez apprendre à comment structurer efficacement une page web en utilisant des balises adaptées, en améliorant sa lisibilité et son accessibilité.</p>
             
-            <h2>Le conteneur &lt;div&gt; </h2>
-            <p>Un conteneur est un élément qui sert à structurer et organiser le contenu d'un page web. Il permet de regrouper des éléments afin de les manipuler plus facilement.</p>
+            <h2>Les conteneurs</h2>
+            <p>Les conteneur sont des éléments qui servent à structurer et organiser le contenu d'un page web. Ils permettent de regrouper des éléments afin de les manipuler plus facilement.</p>
+
+            <h2>Le conteneur générique &lt;div&gt; </h2>
+            <p>La balise &lt;div&gt; est un conteneur <abbr class="abbr" data-title="Balise qui sert uniquement à organiser le contenu d'une page sans ajouter de signification sémantique.">générique</abbr> de type <abbr class="abbr" data-title="Balise qui occupe toute la largeur disponible et force un retour à la ligne avant et après son contenu.">bloc</abbr> utilisé pour structurer une page web. Elle permet la plupart du temps de regrouper plusieurs éléments sans leur attribuer de signification particulière.</p>
             <ul>
                 <li><strong>&lt;div&gt;</strong> : Conteneur de type bloc utilisé pour regrouper plusieurs éléments.</li>
             </ul>
@@ -158,21 +162,21 @@
 
                 <div class="div2-course">
                     <h4>Ceci est un autre bloc div</h4>
-                    <p>Il regroupe plusieurs éléments</p>
-                    <a href="https://blog.hubspot.fr/website/div-html">Pour en savoir +</a>
+                    <p>Il regroupe plusieurs éléments</p> 
+                    <strong><a href="https://blog.hubspot.fr/website/div-html" target="_blank">Pour en savoir plus sur le conteneur &lt;div&gt;</a></strong>
                 </div>
             </div>
             
             <h2>Les conteneurs sémantiques</h2>
-            <p>Contrairement au div, les conteneurs sémantiques donnent un sens au contenu qu'ils englobent, facilitant le référencement.</p>
+            <p>Contrairement au div, les conteneurs <abbr class="abbr" data-title="Signifie donner du sens à quelque chose">sémantiques</abbr> donnent un sens au contenu qu'ils englobent, facilitant le référencement.</p>
             
             <ul>
-                <li><strong>&lt;nav&gt;</strong> : Spécifique aux menus de navigation.</li>
-                <li><strong>&lt;article&gt;</strong> : Contient un article indépendant.</li>
                 <li><strong>&lt;header&gt; & &lt;footer&gt;</strong> : Respectivement l'en-tête et le pied de page d'une page.</li>
                 <li><strong>&lt;main&gt;</strong> : Enveloppe le contenu principal de la page, généralement entre le header et le footer.</li>
-                <li><strong>&lt;section&gt;</strong> : Regroupe un ensemble de contenus, souvent par thème.</li>
+                <li><strong>&lt;nav&gt;</strong> : Spécifique aux menus de navigation.</li>
                 <li><strong>&lt;aside&gt;</strong> : Contient des informations complémentaires, comme des liens ou un encart publicitaire.</li>
+                <li><strong>&lt;article&gt;</strong> : Contient un article indépendant.</li>
+                <li><strong>&lt;section&gt;</strong> : Regroupe un ensemble de contenus, souvent par thème.</li>
             </ul>
 
             <img class="image-balises" src="../images/balises-html-course.png">
@@ -209,14 +213,82 @@
                 <footer>FOOTER</footer>
             </div>
 
+            <h3>Exemple d'utilisation des balises :</h3>
+
+            <h4>Barre de navigation : &lt;Nav&gt;</h4>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;nav&gt;<br>
+                &nbsp;&nbsp;&lt;ul&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Accueil&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;À propos&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/li&gt;<br>
+                &nbsp;&nbsp;&lt;/ul&gt;<br>
+                &lt;/nav&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+
+                <nav>
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <h4>Section de texte : &lt;section&gt;</h4>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;section&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Les animaux&lt;/p&gt;
+                &lt;/section&gt;<br>
+                &lt;section&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Les Fleures&lt;/p&gt;
+                &lt;/section&gt;<br>
+                &lt;section&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;L'espace&lt;/p&gt;
+                &lt;/section&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                
+                <section>
+                    <p>Les animaux</p>
+                </section>
+                <section>
+                    <p>Les Fleures</p>
+                </section>
+                <section>
+                    <p>L'espace</p>
+                </section>
+            </div>
+
+            <h3>Article : &lt;article&gt;</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;article&gt;<br>
+                &nbsp;&nbsp;&lt;h2&gt;Article du jour&lt;/h2&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Ceci est un article indépendant sur un sujet particulier.&lt;/p&gt;<br>
+                &lt;/article&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3>
+                <article>
+                    <h2>Article du jour</h2>
+                    <p>Ceci est un article indépendant sur un sujet particulier.</p>
+                </article>
+            </div>
+
             <h2>Le conteneur en ligne</h2>
-            <p>Un conteneur en ligne ne créent pas de saut de ligne et sont utilisés pour styliser ou manipuler des parties précises de textes.</p>
+            <p>Un conteneur en ligne ne créent pas de saut de ligne et sont utilisés pour <abbr class="abbr" data-title="Modifier l'apparence d'un élément HTML (vous pourrez le faire aussi 😉)">styliser</abbr> ou manipuler des parties précises de textes.</p>
             <ul>
                 <li><strong>&lt;strong&gt;</strong> : Met un texte en gras</li>
                 <li><strong>&lt;em&gt;</strong> : Met un texte en italique</li>
                 <li><strong>&lt;mark&gt;</strong> : Met un texte en surbrillance</li>
                 <li><strong>&lt;code&gt;</strong> : Utile pour afficher du code source</li>
-                <li><strong>&lt;addr&gt;</strong> : Définit une abréviation avec une info-bulle au survol</li>
+                <li><strong>&lt;abbr&gt;</strong> : Définit une abréviation avec une info-bulle au survol de la souris</li>
             </ul>
 
             <h3>Strong</h3>
@@ -263,16 +335,21 @@
             <div class="example">
                 <p>Ce texte est en <abbr title="HyperText Markup Language">HTML</abbr></p>
             </div>
+
+            <div>
+                <p><strong>Pour en apprendre plus sur les balises, ou pour en découvrir des nouvelles, <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element" target="_blank">appuyez ici.</a></strong></p>
+            </div>
+
             
             <div class="exercise">
-                <h3>Instructions</h3>
+                <h3>Exercice pratique</h3>
                 <p>Créez une structure HTML en utilisant les conteneurs suivants :</p>
                 <ul>
                     <li>Une en-tête de page contenant un titre et un menu de navigation simple.</li>
                     <li>UN conteneur générique contenant la section et l'article suivant.</li>
                     <li>Une section avec un titre et un paragraphe.</li>
                     <li>Un article avec un titre et un paragraphe de description.</li>
-                    <li>Un pied de page avec un texte de <abbr data-title="Droit légal qui protège une création contre la copie et l'utilisation sans autorisation">copyright</abbr>.</li>
+                    <li>Un pied de page avec un texte de <abbr class="abbr" data-title="Droit légal qui protège une création contre la copie et l'utilisation sans autorisation">copyright</abbr>.</li>
                     <li>Un mot en gras et une phrase en surbrillance pour mettre du texte en valeur.</li>
                 </ul>
                 <p>Écrivez votre code dans la zone ci-dessous :</p>
@@ -285,9 +362,150 @@
             </div>
             <button class="next-btn" onclick="changeChapter('chapitre2')">Leçon suivante →</button>
         </section>
-        
 
         <section id="chapitre3" class="section">
+            <h1>Les formulaires en HTML</h1>
+            <p>Les formulaires sont un élément clé des sites web : ils permettent d’interagir avec les visiteurs, que ce soit pour recueillir des informations, envoyer un message ou s’inscrire à un service. Dans ce chapitre, vous découvrirez comment créer des formulaires simples et efficaces pour rendre votre site plus interactif.</p>
+            
+            <h2>La balise &lt;form&gt;</h2>
+            <p>La balise <code>&lt;form&gt;</code> est un conteneur sémantique utilisée pour créer un formulaire permettant aux utilisateurs de saisir des informations.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;form&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Contenu du formulaire ici --&gt;<br>
+                &lt;/form&gt;
+            </div>
+            
+            <h2>Les champs de saisie &lt;input&gt;</h2>
+            <p>
+                La balise <code>&lt;input&gt;</code> permet de créer des champs de saisie de texte.<br>
+                La façon dont l'élément <code>&lt;input&gt;</code> fonctionne dépend de son type <code>&lt;input type="..."&gt;</code>. Voici les types les plus courants :<br>
+            </p>
+            <ul>
+                <li><code>type="text"</code> : champ de texte.</li>
+                <li><code>type="email"</code> : champ pour les emails.</li>
+                <li><code>type="date"</code> : champ pour les dates.</li>
+                <li><code>type="password"</code> : champ pour les mots de passe.</li>
+                <li><code>type="checkbox"</code> : champ pour les cases à cocher.</li>
+            </ul><br>
+
+            <p style>
+                Il est possible d'ajouter un <code>placeholder</code> à la balise qui est un texte d'exemple à l'intérieur du champ, visible tant qu'aucune donnée n'a été saisie.<br>
+                Nous pouvons aussi rendre ce champ obligatoire pour l'envoie du formulaire grâce à l'attribut <code>required</code>.<br>
+            </p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;input type="text" required&gt;<br>
+                &lt;input type="email" placeholder="Votre email"&gt;<br>
+                &lt;input type="date"&gt;<br>
+                &lt;input type="password" placeholder="Votre mot de passe"&gt;<br>
+                &lt;input type="checkbox"&gt;<br>
+            </div>
+            
+            <div class="example input-course">
+                <h3>Résultat :</h3>
+
+                <input type="text">
+                <input type="email" placeholder="Votre email">
+                <input type="date">
+                <input type="password" placeholder="Votre mot de passe">
+                <input type="checkbox">
+            </div>
+
+            <p>Pour découvrir les autres types de la balise <code>input</code>, <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/input" target="_blank">appuyez ici.</a></p>
+            
+            <h2>Les labels &lt;label&gt;</h2>
+            <p>La balise <code>&lt;label&gt;</code> est utilisée pour associer un texte descriptif à un champ de formulaire.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;label>Email :&lt;/label&gt;<br>
+                &lt;input type="email" placeholder="Entrez votre email"&gt;<br>
+            </div>
+
+            <div class="example">
+                <h3>Résultat :</h3>
+
+                <label for="email">Email :</label>
+                <input type="email" placeholder="Entrez votre email">
+            </div>
+            
+            <h2>Les zones de texte &lt;textarea&gt;</h2>
+            <p>La balise <code>&lt;textarea&gt;</code> permet de saisir du texte sur plusieurs lignes. Vous pouvez choisir sa taille avec les attributs <code>rows</code> et <code>cols</code>.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;textarea rows="4" cols="50" placeholder="Votre message"&gt;&lt;/textarea&gt;
+            </div>
+
+            <div class="example">
+                <h3>Résultat :</h3>
+
+                <textarea rows="4" cols="50" placeholder="Votre message" style="resize: none;"></textarea>
+            </div>
+            
+            <h2>Les boutons &lt;button&gt;</h2>
+            <p>La balise <code>&lt;button&gt;</code> permet de créer des boutons. Ils peuvent être utiles dans les formulaires pour réaliser des actions (déposer un fichier, envoyer ou réinistialiser un formulaire).</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;button&gt;Envoyer&lt;/button&gt;
+            </div>
+
+            <div class="example">
+                <h3>Résultat :</h3>
+
+                <button>Envoyer</button>
+            </div>
+            
+            <h2>Exemple de formulaire complet</h2>
+            <div class="code-block no-copy">
+                &lt;form&gt;<br>
+                &nbsp;&nbsp;&lt;label>Nom :&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="text" placeholder="Entrez votre nom" required&gt;<br>
+                &nbsp;&nbsp;&lt;label>Email :&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="email" placeholder="Entrez votre email" required&gt;<br>
+                &nbsp;&nbsp;&lt;p>Message :&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;textarea" rows="4" cols="50" placeholder="Entrez votre message" required&gt;&lt;/textarea&gt;<br>
+                &nbsp;&nbsp;&lt;button type="submit">Envoyer&lt;/button&gt;<br>
+                &lt;/form&gt;
+            </div>
+            
+            <div class="example form-course">
+                <h3>Résultat :</h3>
+                <form >
+                    <label>Nom :</label>
+                    <input type="text" placeholder="Entrez votre nom" required><br>
+                    <label>Email :</label>
+                    <input type="email" placeholder="Entrez votre email" required><br>
+                    <p>Message :</p>
+                    <textarea rows="4" cols="50" placeholder="Entrez votre message" style="resize: none;"></textarea><br>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+
+            <p><strong>Si vous voulez en apprendre plus sur la création de formulaire, vous pouvez regarder cette vidéo : <a href="https://www.youtube.com/watch?v=WTXGb5tqM10&ab_channel=Faizdev" target="_blank">Formulaire HTML CSS pour débutant</a><br></strong></p>
+            
+            <div class="exercise">
+                <h3>Exercice pratique</h3>
+                <p>Créez un formulaire (nous avons amélioré le style), en incluant :</p>
+                <ul>
+                    <li>Un champ texte pour le nom et pour le prénom requis pour envoyer le formulaire.</li>
+                    <li>Un champ email requis avec une pré-inscription "Votre email".</li>
+                    <li>Un champ message (textarea) avec une pré-inscription "Votre message".</li>
+                    <li>Un champ pour la date de naissance.</li>
+                    <li>Un bouton pour envoyer.</li>
+                </ul>
+                <p>Écrivez votre code dans la zone ci-dessous :</p>
+                <div class="interactive-demo" contenteditable="true" id="code-editor3" onclick="divExercice(this)">
+                    Écrivez votre code ici
+                </div>
+                <button class="visualizer-btn" onclick="visualizeCode3()">Visualiser</button>
+                <button class="correction-btn" onclick="correction3()">Correction</button>
+            </div>
+            <button class="next-btn" onclick="changeChapter('chapitre4')">Leçon suivante →</button>
+        </section>
+        
+
+        <section id="chapitre5" class="section">
             <h1>Introduction au CSS</h1>
             <p>Dans ce chapitre, vous allez apprendre les bases du CSS et comment styliser vos pages web.</p>
         

@@ -184,6 +184,14 @@ code {
     background: lightblue;
 }
 
+.form-course p {
+    margin: 5px 0 5px 0;
+}
+
+.form-course textarea {
+    margin-bottom: 5px;
+}
+
 .conteneur-course {
     display: flex;
     flex-direction: column;
@@ -260,6 +268,11 @@ code {
     width: 100%;
 }
 
+.input-course input {
+    display: block;
+    margin: 0.5rem 0;
+}
+
 .interactive-demo {
     margin: 2rem 0;
     padding: 1rem;
@@ -274,6 +287,48 @@ code {
     border-radius: 0.5rem;
     margin-top: 1rem;
     background: white;
+}
+
+.abbr {
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+.abbr::before {
+    content: "🔍";
+    margin-right: 5px;
+}
+
+.abbr::after {
+    content: attr(data-title);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: normal;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    width: 200px;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+.abbr:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
+.abbr:hover {
+    color: #005bb5;
 }
 
 .visualizer-btn {
