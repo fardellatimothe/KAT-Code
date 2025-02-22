@@ -193,16 +193,19 @@
             </div>
             <div class="example conteneur-course">
                 <h3>Résultat :</h3>
+
                 <header>HEADER</header>
                 <nav>NAVIGATION</nav>
-                <main>
+                <div class="layout">
                     <aside>SIDEBAR</aside>
-                    <div class="content">
-                        <div>MAIN CONTENT</div>
-                        <article>ARTICLE</article>
-                        <section>SECTION</section>
-                    </div>
-                </main>
+                    <main>
+                        <div class="content">
+                            <div>MAIN CONTENT</div>
+                            <article>ARTICLE</article>
+                            <article>ARTICLE</article>
+                        </div>
+                    </main>
+                </div>
                 <footer>FOOTER</footer>
             </div>
 
@@ -265,11 +268,12 @@
                 <h3>Instructions</h3>
                 <p>Créez une structure HTML en utilisant les conteneurs suivants :</p>
                 <ul>
-                    <li>Un `&lt;header&gt;` contenant un titre et un menu de navigation (`&lt;nav&gt;`).</li>
-                    <li>Une `&lt;section&gt;` avec un titre et un paragraphe.</li>
-                    <li>Un `&lt;article&gt;` avec un titre et une description.</li>
-                    <li>Un &lt;footer&gt;` avec un texte de copyright.</li>
-                    <li>Un `&lt;strong&gt;` et un `&lt;em&gt;` pour mettre du texte en valeur.</li>
+                    <li>Une en-tête de page contenant un titre et un menu de navigation simple.</li>
+                    <li>UN conteneur générique contenant la section et l'article suivant.</li>
+                    <li>Une section avec un titre et un paragraphe.</li>
+                    <li>Un article avec un titre et un paragraphe de description.</li>
+                    <li>Un pied de page avec un texte de <abbr data-title="Droit légal qui protège une création contre la copie et l'utilisation sans autorisation">copyright</abbr>.</li>
+                    <li>Un mot en gras et une phrase en surbrillance pour mettre du texte en valeur.</li>
                 </ul>
                 <p>Écrivez votre code dans la zone ci-dessous :</p>
                 <div class="interactive-demo" contenteditable="true" id="code-editor2" onclick="divExercice(this)">
