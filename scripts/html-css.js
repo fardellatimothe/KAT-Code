@@ -53,7 +53,7 @@ function visualizeCode1() {
         </html>
     `;
 
-    const newWindow = window.open();
+    const newWindow = window.open("","_blank");
     newWindow.document.open();
     newWindow.document.write(fullHTML);
     newWindow.document.close();
@@ -93,7 +93,7 @@ function visualizeCode2() {
         </html>
     `;
 
-    const newWindow = window.open();
+    const newWindow = window.open("","_blank");
     newWindow.document.open();
     newWindow.document.write(fullHTML);
     newWindow.document.close();
@@ -150,7 +150,92 @@ function visualizeCode3() {
         </html>
     `;
 
-    const newWindow = window.open();
+    const newWindow = window.open("","_blank");
+    newWindow.document.open();
+    newWindow.document.write(fullHTML);
+    newWindow.document.close();
+}
+
+function visualizeCode4() {
+    let editorContent = document.getElementById('code-editor4').innerText.trim();
+
+    if (editorContent.length === 0) {
+        alert("Le champ de code est vide. Veuillez écrire du HTML avant de visualiser.");
+        return;
+    }
+
+    console.log("je suis la");
+
+    editorContent = editorContent
+        .replace(/\s*{\s*/g, " { ")   // Ajoute un seul espace après les accolades
+        .replace(/\s*}\s*/g, " } ")   // Ajoute un seul espace avant les accolades fermantes
+        .replace(/\s*;\s*/g, "; ")    // Ajoute un seul espace après les points-virgules
+        .replace(/\s*:\s*/g, ": ")    // Ajoute un seul espace après les deux-points
+        .replace(/\n+/g, " ")         // Supprime les retours à la ligne
+        .replace(/\s{2,}/g, " ");     // Supprime les espaces multiples
+
+    const fullHTML = `
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Prévisualisation</title>
+            <style>
+                * {
+                    margin: 10px;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 300px;
+                }
+
+                label {
+                    margin-bottom: 5px;
+                }
+
+                input, textarea, button {
+                    padding: 8px;
+                    margin-bottom: 10px;
+                }
+
+                textarea {
+                    resize: none;
+                }
+
+                ${editorContent}
+
+            </style>
+        </head>
+        <body>
+            <form>
+                <label class="grand">Prénom :</label>
+                <input type="text" id="prenom" placeholder="Votre prénom" required>
+        
+                <label class="grand">Nom :</label>
+                <input type="text" id="nom" placeholder="Votre nom" required>
+        
+                <label>Email :</label>
+                <input type="email" id="email" placeholder="Votre email" required>
+        
+                <label>Message :</label>
+                <textarea id="message" placeholder="Votre message" rows="4"></textarea>
+        
+                <label>Date de naissance :</label>
+                <input type="date" id="date-naissance">
+        
+                <button type="submit">Envoyer</button>
+            </form>
+        </body>
+        </html>
+    `;
+
+    const newWindow = window.open("","_blank");
     newWindow.document.open();
     newWindow.document.write(fullHTML);
     newWindow.document.close();
@@ -187,7 +272,7 @@ function correction1() {
         </html>
     `;
 
-    const newWindow = window.open();
+    const newWindow = window.open("","_blank");
     newWindow.document.open();
     newWindow.document.write(fullHTML);
     newWindow.document.close();
@@ -242,7 +327,7 @@ function correction2() {
         </html>
     `;
 
-    const newWindow = window.open();
+    const newWindow = window.open("","_blank");
     newWindow.document.open();
     newWindow.document.write(fullHTML);
     newWindow.document.close();
@@ -305,7 +390,105 @@ function correction3() {
         </html>
     `;
 
-    const newWindow = window.open();
+    const newWindow = window.open("","_blank");
+    newWindow.document.open();
+    newWindow.document.write(fullHTML);
+    newWindow.document.close();
+}
+
+
+function correction4() {
+    const fullHTML = `
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Prévisualisation</title>
+            <style>
+                * {
+                    margin: 10px;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 300px;
+                    background-color: #aaa;
+                }
+
+                input, button {
+                    border-radius: 10px;
+                }
+
+                label {
+                    margin-bottom: 5px;
+                    color: lightblue;
+                }
+
+                input, textarea, button {
+                    padding: 8px;
+                    margin-bottom: 10px;
+                    border: 1px solid #ccc;
+                }
+
+                textarea {
+                    resize: none;
+                }
+
+                .grand {
+                    font-size: 20px;
+                }
+
+                #prenom {
+                    background: red;
+                }
+
+                #nom {
+                    background: purple;
+                }
+
+                #email {
+                    background: blue;
+                }
+
+                #message {
+                    background: yellow;
+                }
+
+                #date-naissance {
+                    background: green;
+                }
+            </style>
+        </head>
+        <body>
+            <p style="margin: 10px 0;">Voici un exemple de correction (police utilisé : Segoe UI):</p>
+            <form>
+                <label class="grand">Prénom :</label>
+                <input type="text" id="prenom" placeholder="Votre prénom" required>
+        
+                <label class="grand">Nom :</label>
+                <input type="text" id="nom" placeholder="Votre nom" required>
+        
+                <label>Email :</label>
+                <input type="email" id="email" placeholder="Votre email" required>
+        
+                <label>Message :</label>
+                <textarea id="message" placeholder="Votre message" rows="4"></textarea>
+        
+                <label>Date de naissance :</label>
+                <input type="date" id="date-naissance">
+        
+                <button type="submit">Envoyer</button>
+            </form>
+        </body>
+        </html>
+    `;
+
+    const newWindow = window.open("","_blank");
     newWindow.document.open();
     newWindow.document.write(fullHTML);
     newWindow.document.close();
@@ -313,7 +496,16 @@ function correction3() {
 
 
 function divExercice(element) {
-    if (element.textContent.trim() === "Écrivez votre code ici") {
+    if (element.textContent.trim() === "Écrivez votre code ici" | element.textContent.trim() === "Écrivez votre CSS ici") {
         element.innerHTML = "";
     }
 }
+
+document.querySelectorAll(".interactive-demo").forEach(editor => {
+    editor.addEventListener("keydown", function(e) {
+        if (e.key === "Tab") {
+            e.preventDefault();
+            document.execCommand("insertText", false, "    ");
+        }
+    });
+});

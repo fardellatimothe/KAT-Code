@@ -184,6 +184,22 @@ code {
     background: lightblue;
 }
 
+.space-container {
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 20px; /* Marge extérieure */
+    padding: 10px; /* Espacement intérieur */
+    border: 2px solid black; /* Bordure */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.space-explanation {
+    max-width: 400px;
+}
+
 .form-course p {
     margin: 5px 0 5px 0;
 }

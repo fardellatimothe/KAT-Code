@@ -8,13 +8,14 @@
 </head>
 <body>
     <nav class="sidebar">
-        <div class="logo">CodeCamp</div>
+        <div class="logo">KAT & Code</div>
         <div class="nav-item active" onclick="changeChapter('chapitre1')">1. Introduction au HTML</div>
         <div class="nav-item" onclick="changeChapter('chapitre2')">2. Structure de base</div>
         <div class="nav-item" onclick="changeChapter('chapitre3')">3. Formulaire en HTML</div>
-        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Introduction au CSS</div>
-        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Mise en page avec CSS</div>
-        <div class="nav-item" onclick="changeChapter('chapitre5')">5. Animations & Intéractions</div>
+        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Introduction au CSS</div>
+        <div class="nav-item" onclick="changeChapter('chapitre4.5')">4,5. Organisation des éléments avec CSS</div>
+        <div class="nav-item" onclick="changeChapter('chapitre5')">5. Mise en page avec CSS</div>
+        <div class="nav-item" onclick="changeChapter('chapitre6')">6. Animations & Intéractions</div>
         <div class="nav-item" onclick="changeChapter('chapitre9')">Projet Final</div>
     </nav>
 
@@ -55,7 +56,7 @@
             </div>
 
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <h1>Bonjour tout le monde !</h1>
                 <p>Ceci est un paragraphe.</p>
             </div>
@@ -93,7 +94,7 @@
             </div>
 
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <h1>Bienvenue sur ma page</h1>
                 <p>Ceci est un paragraphe d'exemple.</p>
                 <a href="https://google.com" target="_blank">Visitez ce lien</a><br>
@@ -154,7 +155,7 @@
                 &lt;/div&gt;<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
 
                 <div class="div1-course">
                     Ceci est un bloc div
@@ -196,7 +197,7 @@
                 &lt;footer&gt;FOOTER&lt;/footer&gt;<br>
             </div>
             <div class="example conteneur-course">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
 
                 <header>HEADER</header>
                 <nav>NAVIGATION</nav>
@@ -227,7 +228,7 @@
                 &lt;/nav&gt;
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
 
                 <nav>
                     <ul>
@@ -252,7 +253,7 @@
                 &lt;/section&gt;<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 
                 <section>
                     <p>Les animaux</p>
@@ -274,7 +275,7 @@
                 &lt;/article&gt;
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <article>
                     <h2>Article du jour</h2>
                     <p>Ceci est un article indépendant sur un sujet particulier.</p>
@@ -346,7 +347,7 @@
                 <p>Créez une structure HTML en utilisant les conteneurs suivants :</p>
                 <ul>
                     <li>Une en-tête de page contenant un titre et un menu de navigation simple.</li>
-                    <li>UN conteneur générique contenant la section et l'article suivant.</li>
+                    <li>Un conteneur générique contenant la section et l'article suivant.</li>
                     <li>Une section avec un titre et un paragraphe.</li>
                     <li>Un article avec un titre et un paragraphe de description.</li>
                     <li>Un pied de page avec un texte de <abbr class="abbr" data-title="Droit légal qui protège une création contre la copie et l'utilisation sans autorisation">copyright</abbr>.</li>
@@ -404,7 +405,7 @@
             </div>
             
             <div class="example input-course">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
 
                 <input type="text">
                 <input type="email" placeholder="Votre email">
@@ -424,7 +425,7 @@
             </div>
 
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
 
                 <label for="email">Email :</label>
                 <input type="email" placeholder="Entrez votre email">
@@ -438,7 +439,7 @@
             </div>
 
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
 
                 <textarea rows="4" cols="50" placeholder="Votre message" style="resize: none;"></textarea>
             </div>
@@ -451,7 +452,7 @@
             </div>
 
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
 
                 <button>Envoyer</button>
             </div>
@@ -470,7 +471,7 @@
             </div>
             
             <div class="example form-course">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <form >
                     <label>Nom :</label>
                     <input type="text" placeholder="Entrez votre nom" required><br>
@@ -505,157 +506,368 @@
         </section>
         
 
-        <section id="chapitre5" class="section">
+        <section id="chapitre4" class="section">
             <h1>Introduction au CSS</h1>
-            <p>Dans ce chapitre, vous allez apprendre les bases du CSS et comment styliser vos pages web.</p>
+            <p>Jusqu'ici, vous avez créé et structuré une page web avec HTML, mais sans style. Avec le CSS, vous pourrez personnaliser les couleurs, tailles et mises en page. Ce chapitre vous apprendra les bases pour styliser votre site.</p>
         
             <h2>Qu'est-ce que le CSS ?</h2>
-            <p>Le CSS (Cascading Style Sheets) est un langage utilisé pour décrire l'apparence des pages web. Il permet de définir les couleurs, les polices, les marges, et bien plus encore.</p>
+            <p>Le CSS (Cascading Style Sheets) est un langage utilisé pour décrire l'apparence des pages web. Il permet de définir les couleurs, les polices d'écritures, les positions des éléments et bien plus encore.</p>
         
-            <h2>Comment lier une page HTML à une feuille CSS ?</h2>
+            <h2>Comment lier un fichier CSS à une page HTML ?</h2>
             <p>Il existe trois manières d'ajouter du CSS :</p>
             <ul>
-                <li><strong>CSS en ligne</strong> : ajouté directement dans l'attribut <code>style</code> d'une balise.</li>
-                <li><strong>CSS interne</strong> : ajouté dans une balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code>.</li>
-                <li><strong>CSS externe</strong> : stocké dans un fichier séparé et lié avec <code>&lt;link&gt;</code>.</li>
+                <li><strong>CSS en ligne</strong> : ajouté directement dans l'attribut <code>style</code> d'une balise. Nous l'utiliserons au début.</li>
+                <li><strong>CSS interne</strong> : ajouté dans une balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code>de la page.</li>
+                <li><strong>CSS externe</strong> : stocké dans un fichier séparé et lié avec la balise <code>&lt;link&gt;</code>. C'est la méthode la plus recommandée pour les sites web. </li>
             </ul>
-        
+
+            <h3>CSS en ligne</h3>
+            <div class="code-block">
+                &lt;p style="color:red;"&gt;Ceci est du CSS en ligne&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+
+                <p style="color:red">Ceci est du CSS en ligne</p>
+            </div>
+
+            <h3>CSS interne</h3>
+            <div class="code-block">
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&lt;style&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;body { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: lightblue; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Le fond de la page est maintenant bleu clair.&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
+            </div>
+            <div style="background-color: lightblue;" class="example">
+                <h3>Résultat :</h3><br>
+
+                <p>Le fond de la page est maintenant bleu clair.</p>
+            </div>
+
+            <h3>CSS externe</h3>
             <div class="code-block">
                 &lt;head&gt;<br>
                 &nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css"&gt;<br>
                 &lt;/head&gt;
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <p>Le fichier "styles.css" est maintenant appliqué à votre page.</p>
             </div>
         
             <h2>Sélecteurs CSS</h2>
-            <p>Les sélecteurs permettent de cibler des éléments HTML pour les styliser.</p>
+            <p>Les sélecteurs permettent de cibler des éléments HTML pour les styliser. Cela permet d'appliquer des styles précis à différents éléments</p>
             
-            <h3>Sélection par balise</h3>
+            <h4>Sélection par balise</h4>
             <p>Applique un style à toutes les balises du même type :</p>
             <div class="code-block">
-                p {
-                    color: blue;
-                }
+                p {<br>
+                &nbsp;&nbsp;color: green;<br>
+                }<br>
+            </div>
+            <div class="example"><br>
+                <h3>Résultat :</h3><br>
+                <p style="color: green;">Ce texte est en vert.</p>
+
+                <p style="color: green;">Celui-ci aussi est en vert.</p>
+            </div>
+            <p>
+                👉 Cela rend tous les paragraphes <code>&lt;p&gt;</code> de la page en vert.<br>
+            </p>
+            
+            <h4>Sélection par classe</h4>
+            <p>Une classe permet de styliser plusieurs éléments en même temps. Pour ajouter une classe à un élément, on utilise l’attribut class dans la balise HTML :</p>
+            <div class="code-block">
+                &lt;p class="exemple"&gt;Ce texte a une classe !&lt;/p&gt;
+            </div>
+
+            <p>Puis en CSS, Utilisez un point (.) pour cibler la classe.</p>
+            <div class="code-block">
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&lt;style&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;.exemple { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 20px;  <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&lt;p class="exemple"&gt;Ce texte est grand.&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Ce texte n'a pas la classe exemple, sa taille n'est donc pas modifiée.&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;p class="exemple"&gt;La taille de la police d'écriture de ce texte aussi plus grand, grâce à la classe exemple.&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <p style="color: blue;">Ce texte est en bleu.</p>
+                <h3>Résultat :</h3><br>
+                <p style="font-size: 20px;">Ce texte est grand.</p>
+                <p>Ce texte n'a pas la classe <code>exemple</code>, sa taille n'est donc pas modifié.</p>
+                <p style="font-size: 20px;">La taille de la police d'écriture de ce texte aussi plus grand, grâce à la classe <code>exemple</code>.</p>
             </div>
             
-            <h3>Sélection par classe</h3>
-            <p>Utilise un point (.) pour sélectionner des éléments avec une classe spécifique :</p>
+            <h4>Sélection par ID</h4>
+            <p>Un ID permet de styliser un seul élément unique. Pour ajouter un ID à un élément, on utilise l’attribut <code>id</code> dans la balise HTML :</p>
+
             <div class="code-block">
-                .important {
-                    font-weight: bold;
-                }
+                &lt;p id="unique"&gt;Ce texte a un ID !&lt;/p&gt;
+            </div>
+
+            <p>Puis en CSS, utilisez un dièse (#) pour cibler l’ID.</p>
+            <div class="code-block">
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&lt;style&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;#unique { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: red;  <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&lt;p id="unique"&gt;Ce texte est en rouge.&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Ce texte n'a pas l'ID unique, il reste en couleur par défaut.&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <p class="important" style="font-weight: bold;">Ce texte est en gras.</p>
+                <h3>Résultat :</h3><br>
+                <p style="color: red;">Ce texte est en rouge.</p>
+                <p>Ce texte n'a pas l'ID <code>unique</code>, il reste avec couleur par défaut.</p>
             </div>
-            
-            <h3>Sélection par ID</h3>
-            <p>Utilise un dièse (#) pour cibler un élément unique :</p>
-            <div class="code-block">
-                #titre {
-                    font-size: 24px;
-                }
-            </div>
-            <div class="example">
-                <h3>Résultat :</h3>
-                <h2 id="titre" style="font-size: 24px;">Ce titre est plus grand.</h2>
-            </div>
+
+            <p><strong>⚠️ Bien sûr, vous pouvez appliqué à plusieurs style sur un seul élément, mais n'oubliez pas le <code>;</code> après chaque déclaration de style. ⚠️</strong></p>
         
-            <h2>Modifier l’apparence du texte</h2>
+            <h2>Modifier l'apparence d'un texte :</h2>
             
-            <h3>Changer la couleur</h3>
+            <h4>Changer la couleur</h4>
             <p>Utilisez la propriété <code>color</code> pour modifier la couleur du texte :</p>
             <div class="code-block">
-                p {
-                    color: red;
-                }
+                p {<br>
+                &nbsp;&nbsp;color: red;<br>
+                }<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <p style="color: red;">Ce texte est rouge.</p>
             </div>
             
-            <h3>Modifier la taille</h3>
+            <h4>Modifier la taille</h4>
             <p>Utilisez <code>font-size</code> pour changer la taille du texte :</p>
             <div class="code-block">
-                h1 {
-                    font-size: 32px;
-                }
+                h1 {<br>
+                &nbsp;&nbsp;font-size: 32px;<br>
+                }<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <h1 style="font-size: 32px;">Titre agrandi</h1>
             </div>
             
-            <h3>Modifier la police</h3>
+            <h4>Modifier la police</h4>
             <p>Utilisez <code>font-family</code> pour changer la police d’écriture :</p>
             <div class="code-block">
-                body {
-                    font-family: Arial, sans-serif;
-                }
+                body {<br>
+                &nbsp;&nbsp;font-family: Fantasy, sans-serif;<br>
+                }<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <p style="font-family: Arial, sans-serif;">Ce texte est en Arial.</p>
+                <h3>Résultat :</h3><br>
+                <p style="font-family: Fantasy, sans-serif;">Ce texte est en Fantasy.</p>
             </div>
-        
+
+            <ul>
+                <li><code>Fantasy</code>→ Police d'écriture appliquée</li>
+                <li><code>sans-sherif</code>→ Police d'écriture par defaut si le navigateur web ne supporte pas la première police d'écriture.</li>
+            </ul><br>
+
             <h2>Couleurs et arrière-plans</h2>
-            <h3>Arrière-plan uni</h3>
+            <h4>Arrière-plan uni</h4>
             <p>Utilisez <code>background-color</code> pour modifier l’arrière-plan :</p>
             <div class="code-block">
-                body {
-                    background-color: lightgray;
-                }
+                body {<br>
+                &nbsp;&nbsp;background-color: lightgray;<br>
+                }<br>
             </div>
             <div class="example" style="background-color: lightgray; padding: 10px;">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <p>Fond gris appliqué.</p>
             </div>
             
-            <h3>Image en arrière-plan</h3>
+            <h4>Image en arrière-plan</h4>
             <p>Utilisez <code>background-image</code> pour ajouter une image en fond :</p>
             <div class="code-block">
-                div {
-                    background-image: url('image.jpg');
-                }
+                div {<br>
+                &nbsp;&nbsp;background-image: url('image.jpg');<br>
+                }<br>
             </div>
             <div class="example" style="background-image: url('../images/img-exemple.jpg'); height: 100px;">
-                <h3>Résultat :</h3>
-                <p>Image de fond appliquée.</p>
+                <h3>Résultat :</h3><br>
+                <p>Une image de fond a été appliquée.</p>
             </div>
+
+            <h2>Bordures</h2>
+            <p>Les bordures permettent d'entourer un élément avec une ligne. Elles sont très utiles pour mettre en valeur certaines parties d’une page.</p>
+
+            <h4>Ajouter une bordure simple</h4>
+            <p>Utilisez la propriété border pour ajouter une bordure autour d'un élément :</p>
+            <div class="code-block">
+                .bordure {<br>
+                &nbsp;&nbsp;border: 2px solid black;<br>
+                }<br><br>
+
+                .pas-bordure{<br>
+                &nbsp;&nbsp;border-style: none;<br>
+                }<br>
+            </div>
+            <div class="code-block">
+                &lt;p class="bordure" &gt;Une bordure a été appliquée au texte.&lt;/p&gt;<br>
+                &lt;button class="pas-bordure"&gt;Pas de Bordure&lt;/button&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <p style="border: 2px solid black;">Une bordure a été appliqué au texte.</p>
+                <button style="border:none;">Pas de Bordure</button>
+            </div>
+            <ul>
+                <li><code>2px</code>→ Épaisseur de la bordure</li>
+                <li><code>solid</code>→ Type de bordure (ici → pleine)</li>
+                <li><code>black</code>→ Couleur de la bordure</li>
+            </ul><br>
+
+            <h4>Changer le style de la bordure</h4>
+            <p>Il existe plusieurs styles de bordures :</p>
+            <div class="code-block">
+                .dashed {<br>
+                &nbsp;&nbsp;border: 2px dashed red;<br>
+                }<br><br>
+
+                .dotted {<br>
+                    &nbsp;&nbsp;border: 2px dotted blue;<br>
+                }<br><br>
+
+                .double {<br>
+                    &nbsp;&nbsp;border: 2px double green;<br>
+                }<br><br>
+            </div>
+            <div class="code-block">
+                &lt;p class="dashed" &gt;Une bordure en pointillés rouge a été appliqué au texte.&lt;/p&gt;<br>
+                &lt;p class="dotted" &gt;Une bordure avec des petits points bleus a été appliqué au texte.&lt;/p&gt;<br>
+                &lt;p class="double" &gt;Une double bordure verte a été appliquée au texte.&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <p style="border: 2px dashed red;">Une bordure en pointillés rouge a été appliqué au texte.</p><br>
+                <p style="border: 2px dotted blue;">Une bordure avec des petits points bleus a été appliqué au texte.</p><br>
+                <p style="border: 2px double green;">Une double bordure verte a été appliqué au texte.</p><br>
+            </div>
+
+            <h4>Changer les bordures d'un seul côté</h4>
+            <p>Vous pouvez appliquer une bordure uniquement sur un des côtés :</p>
+            <div class="code-block">
+                .haut {<br>
+                &nbsp;&nbsp;border-top: 3px solid orange;<br>
+                }<br><br>
+
+                .droite {<br>
+                    &nbsp;&nbsp;border-right: 3px solid purple;<br>
+                }<br><br>
+
+                .gauche {<br>
+                    &nbsp;&nbsp;border-left: 3px solid pink;<br>
+                }<br><br>
+
+                .bas {<br>
+                    &nbsp;&nbsp;border-bottom: 3px solid brown;<br>
+                }<br><br>
+            </div>
+            <div class="code-block">
+                &lt;p class="haut" &gt;Une seule bordure en haut.&lt;/p&gt;<br>
+                &lt;p class="droite" &gt;Une seule bordure à droite.&lt;/p&gt;<br>
+                &lt;p class="gauche" &gt;Une seule bordure à gauche.&lt;/p&gt;<br>
+                &lt;p class="bas" &gt;Une seule bordure en bas.&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <p style="border-top: 3px solid orange;">Une seule bordure en haut.</p>
+                <p style="border-right: 3px solid purple;">Une seule bordure à droite.</p>
+                <p style="border-left: 3px solid pink;">Une seule bordure à gauche.</p>
+                <p style="border-bottom: 3px solid brown;">Une seule bordure en bas.</p>
+            </div>
+
+            <p>Cette technique est utile pour souligner des éléments ou créer des effets visuels subtils.</p>
+
+            <p><strong>Vous pouvez combiner les bordures pour afficher celle que vous voulez. Cela marche aussi pour les bouttons, mais il faut enlever les autres bordures.</strong></p>
+
+            <h4>Arrondir les bordures</h4>
+            <p>Utilisez <code>border-radius</code>pour rendre les coins arrondis :</p>
+            <div class="code-block">
+                .arrondis {<br>
+                &nbsp;&nbsp;border: 1px solid black;<br>
+                &nbsp;&nbsp;border-radius: 10px;<br>
+                }<br>
+            </div>
+            <div class="code-block">
+                &lt;button class="haut" &gt;Bouton arrondi&lt;/button&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button style="border: 1px solid black; border-radius: 5px;">Bouton arrondi</button>
+            </div>
+
+
+            <div class="exercise">
+                <h3>Exercice pratique</h3>
+                <p>En reprenant le code HTML du formulaire du chapitre dernier :</p>
+                <div class="code-block">
+                    &lt;form&gt;<br>
+                    &nbsp;&nbsp;&lt;label class="grand"&gt;Prénom :&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="text" id="prenom" required&gt;<br><br>
         
-            <h2>Marges, espaces intérieurs et bordures</h2>
-            
-            <h3>Marges</h3>
-            <div class="code-block">
-                div {
-                    margin: 20px;
-                }
+                    &nbsp;&nbsp;&lt;label class="grand"&gt;Nom :&lt;label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="text" id="nom" required&gt;<br><br>
+        
+                    &nbsp;&nbsp;&lt;label&gt;Email :&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="email" id="email" placeholder="Votre email" required&gt;<br><br>
+        
+                    &nbsp;&nbsp;&lt;label&gt;Message :&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;textarea id="message" placeholder="Votre message" rows="4"&gt;&lt;/textarea&gt;<br><br>
+        
+                    &nbsp;&nbsp;&lt;label&gt;Date de naissance :&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="date" id="date-naissance"&gt;<br><br>
+        
+                    &nbsp;&nbsp;&lt;button type="submit"&gt;Envoyer&lt;/button&gt;<br>
+                    &lt;/form&gt;<br>
+                </div>
+
+                <p>Améliorez l'apparence du formulaire en utilisant CSS interne. Vous devrez :</p>
+                <ul>
+                    <li>Ajouter une couleur de fond au formulaire</li>
+                    <li>Changer les bords des champs et du bouton pour des bords plein, fin et noir</li>
+                    <li>Arrondir les bords des champs et du bouton</li>
+                    <li>Utiliser une police d'écriture lisible</li>
+                    <li>Changer la couleur de chaque champ de texte pour quelqu'elle soit différente pour chaque</li>
+                    <li>Changer la couleur des labels</li>
+                    <li>Augmenter la taille du texte sur la classe <code>grand</code></li>
+                </ul>
+        
+                <p>Écrivez votre CSS dans la zone ci-dessous :</p>
+                <div class="interactive-demo" contenteditable="true" id="code-editor4" onclick="divExercice(this)">
+                    Écrivez votre CSS ici
+                </div>
+                <button class="visualizer-btn" onclick="visualizeCode4()">Visualiser</button>
+                <button class="correction-btn" onclick="correction4()">Correction</button>
             </div>
-            <h3>Espaces intérieurs</h3>
-            <div class="code-block">
-                div {
-                    padding: 10px;
-                }
-            </div>
-            <h3>Bordures</h3>
-            <div class="code-block">
-                div {
-                    border: 2px solid black;
-                }
-            </div>
+            <button class="next-btn" onclick="changeChapter('chapitre5')">Leçon suivante →</button>
+        </section>
+
+
+        <section id="chapitre4.5" class="section">
+            <p>test</p>
         </section>
                 
 
-        <section id="chapitre4" class="section">
+        <section id="chapitre5" class="section">
             <h1>Mise en page avec CSS</h1>
             <p>Dans cette leçon, nous allons explorer différentes techniques de mise en page en CSS.</p>
         
@@ -670,7 +882,7 @@
         &lt;span style="display: inline; background-color: lightgreen;"&gt;Texte en ligne&lt;/span&gt;</pre>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <div style="display: block; background-color: lightblue; padding: 5px;">Bloc 1</div>
                 <span style="display: inline; background-color: lightgreen; padding: 5px;">Texte en ligne</span>
             </div>
@@ -684,7 +896,7 @@
         &lt;/div&gt;</pre>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <div style="display: flex; gap: 10px;">
                     <div style="background-color: lightcoral; padding: 10px;">Élément 1</div>
                     <div style="background-color: lightseagreen; padding: 10px;">Élément 2</div>
@@ -700,7 +912,7 @@
         &lt;/div&gt;</pre>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                     <div style="background-color: lightpink; padding: 10px;">Colonne 1</div>
                     <div style="background-color: lightgoldenrodyellow; padding: 10px;">Colonne 2</div>
@@ -724,7 +936,7 @@
         &lt;/nav&gt;</pre>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <nav style="background-color: navy; padding: 10px;">
                     <a href="#" style="color: white; margin-right: 10px;">Accueil</a>
                     <a href="#" style="color: white;">Contact</a>
@@ -746,7 +958,7 @@
             <button class="next-btn" onclick="changeChapter('chapitre5')">Leçon suivante →</button>
         </section>
 
-        <section id="chapitre5" class="section">
+        <section id="chapitre6" class="section">
             <h1>Chapitre 5 : Animation et Intéractions en CSS</h1>
             <p>Dans cette leçon, nous allons explorer comment animer et rendre nos éléments interactifs en CSS.</p>
     
@@ -770,7 +982,7 @@
                 </pre>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <button class="button">Survolez-moi</button>
             </div>
     
@@ -795,7 +1007,7 @@
                 </pre>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <div class="animated-box"></div>
             </div>
     
@@ -811,7 +1023,7 @@
                 </pre>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <p class="hover-text">Survolez ce texte !</p>
             </div>
     
@@ -832,7 +1044,7 @@
                 </pre>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <button class="button-click">Cliquez-moi</button>
             </div>
         </section>
