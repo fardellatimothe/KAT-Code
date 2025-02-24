@@ -858,12 +858,138 @@
                 <button class="visualizer-btn" onclick="visualizeCode4()">Visualiser</button>
                 <button class="correction-btn" onclick="correction4()">Correction</button>
             </div>
-            <button class="next-btn" onclick="changeChapter('chapitre5')">Leçon suivante →</button>
+            <button class="next-btn" onclick="changeChapter('chapitre4.5')">Leçon suivante →</button>
         </section>
 
 
         <section id="chapitre4.5" class="section">
-            <p>test</p>
+            <h1>Marges et Espacements en CSS</h1>
+            <p>Ce chapitre est intermédiaire, car il vous aidera à mieux comprendre comment organiser vos éléments sur une page. Après avoir appris les bases, il est temps d'explorer comment contrôler les espaces entre et à l'intérieur des éléments pour améliorer la lisibilité et l'esthétique de vos éléments.</p>
+
+            <h2>Les propriétes de marges et d'espacements</h2>
+
+            <p>Les propriétés <code>margin</code>(marge) et <code>padding</code>(espacement) permettent de gérer l’espace autour et à l’intérieur des éléments. Elles jouent un rôle clé dans l’organisation et l’apparence des pages web.</p>
+            
+            
+            <img src="../images/exemple-boite-css.webp" class="img-box-css">
+
+            <p>Dans la représentation ci-dessus, la zone <code>margin</code> se trouve en orange, la zone <code>border</code> en jaune, la zone <code>padding</code> en vert et le contenu HTML en bleu :</p>
+            <ul>
+                <li>La zone <code>border</code> permet de créer une bordure visible à l'élément, comme vous l'avez vu au chapitre précédent.</li>
+                <li>La zone <code>padding</code> permet de créer un espace entre l'élément HTML visible et sa bordure.</li>
+                <li>La zone <code>margin</code> permet de créer un espace entre la bordure de l'élément et les autres éléments de la page.</li>
+            </ul><br>
+            <p>Lorsque vous ajoutez un fond de couleur et un padding, celui-ci s’étend avec l’arrière-plan, rendant la marge intérieure visible. En revanche, margin reste invisible et n’agrandit pas l’élément.</p>
+
+            <h3>🔹 La marge (<code>margin</code>)</h3>
+            <p>La propriété <code>margin</code> définit l’espace extérieur d’un élément, c’est-à-dire l’écart entre cet élément et les autres autour de lui. Vous pouvez l'ajouter de différente façon :</p>
+            <div class="code-block">
+                .marge {<br>
+                    &nbsp;&nbsp;margin: 10px<br>
+                }
+            </div>
+            <p></p>
+            <div class="code-block">
+                .marge2 {<br>
+                    &nbsp;&nbsp;margin: 10px 0px;<br>
+                }
+            </div>
+            <div class="code-block">
+                .marge3 {<br>
+                    &nbsp;&nbsp;margin: 20px 5px 7px 2px;<br>
+                }
+            </div>
+            <ul>
+                <li><code>marge</code>→  L'élément aura une marge de 10 pixels sur tous les côtés.</li>
+                <li><code>marge2</code>→ L'élément aura une marge de 10 pixels en haut et en bas, mais aucune marge à droite et à gauche.</li>
+                <li><code>marge3</code>→ L'élément aura une marge différente pour chaque côté (haut, droite, bas, gauche)</li>
+            </ul><br>
+            <div class="example">
+                <h3>Résultat sans margin :</h3><br>
+                <button style="border: 1px solid black;">Bouton sans margin</button>
+                <button style="border: 1px solid black;">Deuxième bouton sans margin</button>
+            </div>
+            <div class="example">
+                <h3>Résultat avec margin :</h3><br>
+                <button style="margin: 10px; border: 1px solid black;">Bouton avec margin: 10px</button>
+                <button style="margin: 10px; border: 1px solid black;">Deuxième bouton avec margin: 10px</button>
+            </div>
+
+            
+            <h3>🔹 L’espace intérieur (<code>padding</code>)</h3>
+            <p>La propriété <code>padding</code> définit l’espace intérieur d’un élément, soit la distance entre le contenu et la bordure de l’élément.</p>
+            <div class="code-block">
+                .padding {<br>
+                &nbsp;&nbsp;padding: 20px;<br>
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button style="padding: 20px; border: 1px solid black;">Bouton avec padding: 20px</button>
+                <button style="border: 1px solid black;">Bouton sans padding</button>
+            </div>
+            
+            <h3>🔹 Combiner <code>margin</code> et <code>padding</code></h3>
+            <p>Bien sûr, vous pouvez utiliser les deux propriétés ensemble pour créer des espacements harmonieux.</p>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button style="padding: 10px; margin: 10px; border: 1px solid black;">Bouton avec padding: 20px</button>
+                <button style="padding: 10px; margin: 10px; border: 1px solid black;">Bouton sans padding</button>
+            </div>
+
+            <h3>Exemples supplémentaires</h3>
+            <p>Il est aussi possible d'appliquer des marges et des paddings uniquement sur certains côtés :</p>
+            <div class="code-block">
+                .top-margin {<br>
+                &nbsp;&nbsp;margin-top: 30px;<br>
+                }<br><br>
+                .left-padding {<br>
+                &nbsp;&nbsp;padding-left: 20px;<br>
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button style="display:block; margin-top: 20px; border: 1px solid black;">Margin en haut</button>
+                <button style="display:block; padding-left: 20px; border: 1px solid black;">Padding à gauche</button>
+            </div>
+            <p>Étant donné qu'aucune marge n'est définie entre les deux boutons, ils restent collés l'un à l'autre.</p>
+
+            <h3>🔹 Utiliser <code>margin: auto;</code></h3>
+            <p>La valeur <code>auto</code> pour la marge permet de centrer un élément horizontalement dans son conteneur.</p>
+            <div class="code-block">
+                .centered {<br>
+                &nbsp;&nbsp;margin: auto;<br>
+                &nbsp;&nbsp;width: 50%;<br>
+                }
+            </div>
+            <div class="code-block">
+                &lt;div class="centered"&gt;Bloc centré avec margin: auto&lt;/div&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <div style="margin: auto; width: 50%; border: 1px solid black; padding: 5px;">Bloc centré avec margin: auto</div>
+            </div>
+            
+            <h3> Visualisation Interactive</h3>
+            <p>Ajustez les valeurs ci-dessous pour voir l'effet de <code>margin</code> et <code>padding</code> sur un bouton.</p>
+
+            <label for="marginRange">Margin: <span id="marginValue">0</span>px</label>
+            <input type="range" id="marginRange" min="0" max="50" value="0">
+
+            <label for="paddingRange">Padding: <span id="paddingValue">0</span>px</label>
+            <input type="range" id="paddingRange" min="0" max="50" value="0">
+
+            <hr style="margin: 10px 0;"/>
+
+            <div style="height:200px;" class="container">
+                <button id="box">Bouton</button>
+            </div>
+
+            <hr style="margin-bottom: 10px;"/>
+
+            <p><strong>Pour en savoir plus sur les marges et les espacements en css, <a href="https://www.youtube.com/watch?v=YhgARUVflCI&ab_channel=PierreGiraud">cliquez ici (vidéo)</a> ou <a href="https://www.codeur.com/tuto/css/css-margin-ou-padding/">visitez ce site</a></strong></p>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre5')">Leçon suivante →</button>
         </section>
                 
 
@@ -871,92 +997,221 @@
             <h1>Mise en page avec CSS</h1>
             <p>Dans cette leçon, nous allons explorer différentes techniques de mise en page en CSS.</p>
         
-            <h2>Display : block vs inline</h2>
-            <p>En CSS, les éléments peuvent être affichés de différentes manières :</p>
+            <h2>1. Mode d'affichage (<code>display</code>)</h2>
+            <p>En CSS, la propriété <code>display</code> définit comment un élément doit être affiché dans la structure générale de la page.</p>
+            <h4>1.1 - <code>display: block</code><strong>vs</strong><code>display: inline</code></h4><br>
             <ul>
-                <li><strong>display: block;</strong> : Les éléments prennent toute la largeur disponible.</li>
-                <li><strong>display: inline;</strong> : Les éléments s'affichent à la suite des autres sans retour à la ligne.</li>
+                <li><code>display: block;</code> : Les éléments prennent toute la largeur disponible et force un retour à la ligne.</li>
+                <li><code>display: inline;</code> : Les éléments ne prennent que la place nécessaire et reste sur la même ligne que les autres éléments inline.</li>
             </ul>
             <div class="code-block">
-                <pre>&lt;div style="display: block; background-color: lightblue;"&gt;Bloc 1&lt;/div&gt;
-        &lt;span style="display: inline; background-color: lightgreen;"&gt;Texte en ligne&lt;/span&gt;</pre>
+                &lt;div style="display: block;"&gt;Bloc 1&lt;/div&gt;<br>
+                &lt;p&gt;Je suis un &lt;span style="display: inline;"&gt;texte en ligne&lt;/span&gt; dans un paragraphe&lt;/p&gt;
             </div>
             <div class="example">
                 <h3>Résultat :</h3><br>
-                <div style="display: block; background-color: lightblue; padding: 5px;">Bloc 1</div>
-                <span style="display: inline; background-color: lightgreen; padding: 5px;">Texte en ligne</span>
+                <div style="margin-bottom:5px; display: block; background-color: lightblue; padding: 5px;">Bloc 1</div>
+                <p>Je suis un<span style="display: inline; background-color: lightgreen; padding: 5px;">texte en ligne</span>dans un paragraphe</p>
             </div>
-            
-            <h2>Utilisation de Flexbox</h2>
-            <p>Flexbox permet d'organiser les éléments horizontalement ou verticalement.</p>
+
+            <h4>1.2 - <code>display: inline-block</code></h4><br>
+            <p>Combien les avantages des deux : il reste en ligne mais permet de féfinir une largeur et une hauteur à l'élément</p>
             <div class="code-block">
-                <pre>&lt;div style="display: flex; gap: 10px;"&gt;
-            &lt;div style="background-color: lightcoral; padding: 10px;"&gt;Élément 1&lt;/div&gt;
-            &lt;div style="background-color: lightseagreen; padding: 10px;"&gt;Élément 2&lt;/div&gt;
-        &lt;/div&gt;</pre>
+                &lt;div style="display: inline-block; width:100px; height: 50px;"&gt;Boîte&lt;/div&gt;<br>
             </div>
             <div class="example">
                 <h3>Résultat :</h3><br>
-                <div style="display: flex; gap: 10px;">
+                <div style="display: inline-block; background-color: coral; width: 100px; height: 50px;">Boîte</div>
+            </div>
+
+            <h4>1.3 - <code>display: none</code></h4><br>
+            <p>Cache l'élément sans prendre d'espace.</p>
+            <div class="code-block">
+                &lt;p style="display: none;"&gt;Ce texte est masqué&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <p style="display: none;">ce texte est masqué</p>
+                <h6>(Le texte n'est pas affiché)</h6>
+            </div>
+
+            <h2>2. Utilisation de Flexbox</h2>
+            <p>Flexbox est un outil puissant qui permet d'organiser facilement des éléments sur une page, que ce soit horizontalement ou verticalement.</p>
+            
+            <h4>2.1 Propriétés principales</h4><br>
+            <p>La zone d'un document qui utilise Flexbox est appelée un <strong>conteneur flexible</strong>. Pour le créer, on doit donner à un élément la propriété <code>display: flex;</code> (pour les éléments de type bloc) ou <code>display: inline-flex;</code> (pour les éléments de type inline). Dès que cela est fait, tous les éléments à l'intérieur deviennent des <strong>éléments flexibles</strong>.</p>
+            <ul>
+                <li><code>flex</code>: Le conteneur prend toute la largeur disponible.</li>
+                <li><code>inline-flex</code>: Le conteneur prend seulement la place nécessaire, comme un élément <code>inline</code>.</li>
+            </ul>
+            <p>Un élément flex est très utile pour organiser les éléments de manière fluide et responsive. Il permet un meilleur contrôle de l'alignement et de la répartition de l'espace sans avoir à utiliser énormement de ligne en CSS.</p>
+            <div class="code-block">
+                &lt;div style="display: flex;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 2&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+
+                &lt;p&gt;Je suis un<br>
+                &nbsp;&nbsp;&lt;span style="display: inline-flex;"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Élément inline-flex<br>
+                &nbsp;&nbsp;&lt;/span&gt;<br>
+                qui peut être stylisé.&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <div style="display: flex; background-color: lightgray; padding: 10px;">
+                    <div style="background-color: lightcoral; padding: 10px;">Élément 1</div>
+                    <div style="background-color: lightseagreen; padding: 10px;">Élément 2</div>
+                </div>
+                
+                <p>Je suis un <span style="display: inline-flex; background-color: lightblue; padding: 10px; margin-top: 10px;">
+                    élément inline-flex
+                </span>qui peut être stylisé.</p>
+            </div>
+
+            <h4>2.2 Propriétés principales</h4><br>
+            <ul>
+                <li><code>justify-content</code>: aligne les éléments horizontalement.</li>
+                <li><code>align-items</code>: aligne verticalement.</li>
+                <li><code>flex-wrap</code>: permet de passer à la ligne si nécessaire.</li>
+            </ul>
+            <div class="code-block">
+                &lt;div style="display: flex; justify-content: space-around;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;2&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;3&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+
+                &lt;div style="display: flex; align-items: center;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;2&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;3&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <div style="display: flex; justify-content: space-around; height: 100px; background-color: lightgray;">
+                    <div style="background-color: lightcoral; padding: 10px; width: 50px; height: 50px;">1</div>
+                    <div style="background-color: lightseagreen; padding: 10px; width: 100px; height: 80px;">2</div>
+                    <div style="background-color: lightblue; padding: 10px; width: 75px; height: 60px;">3</div>
+                </div>
+                
+                <div style="display: flex; align-items: center; height: 100px; background-color: lightgray; margin-top: 10px;">
+                    <div style="background-color: lightcoral; padding: 10px; width: 50px; height: 50px;">1</div>
+                    <div style="background-color: lightseagreen; padding: 10px; width: 100px; height: 80px;">2</div>
+                    <div style="background-color: lightblue; padding: 10px; width: 75px; height: 60px;">3</div>
+                </div>
+            </div>
+            <p>Dans le premier exemple, <code>justify-content: space-around</code> espace les éléments horizontalement. Dans le second, <code>align-items: center;</code> les centre verticalement malgré leurs tailles différentes.</p>
+            <p>Ces deux attributs peuvent avoir d'autres paramètres :</p>
+            <ul>
+                <li><code>justify-content</code>: contrôle l'alignement horizontalement des éléments flexibles.</li><br>
+                <ul>
+                    <li><code>flex-start</code> : aligne les éléments au début du conteneur (par défaut).</li>
+                    <li><code>flex-end</code> : aligne les éléments à la fin du conteneur.</li>
+                    <li><code>center</code> : centre les éléments horizontalement.</li>
+                    <li><code>space-between</code> : répartit l'espace entre les éléments.</li>
+                    <li><code>space-around</code> : ajoute un espace égal autour de chaque élément.</li>
+                    <li><code>space-evenly</code> : distribue l'espace de manière égale entre et autour des éléments.</li><br>
+                </ul>
+
+                <li><code>align-items</code>: contrôle l'alignement vertical des éléments flexibles.</li><br>
+                <ul>
+                    <li><code>flex-start</code> : aligne les éléments en haut du conteneur.</li>
+                    <li><code>flex-end</code> : aligne les éléments en bas du conteneur.</li>
+                    <li><code>center</code> : centre les éléments verticalement.</li>
+                    <li><code>stretch</code> : étire les éléments pour remplir l'espace disponible (par défaut).</li>
+                    <li><code>baseline</code> : aligne les éléments sur leur ligne de base du texte.</li>
+                </ul>
+            </ul><br>
+
+            <h4>2.3 Les axes en Flexbox</h4><br>
+            <ul>
+                <li><strong>Axe principal</strong> : défini par <code>flex-direction</code> (<code>row</code> ou <code>column</code>).</li>
+                <li><strong>Axe secondaire</strong> : défini par <code>align-items</code>.</li>
+            </ul>
+            <p><code>flex-direction</code>: définit l'axe principal sur lequel les éléments seront placés.</p>
+            <ul>
+                <li><code>row</code>(ligne) : aligne les éléments au début du conteneur (par défaut).</li>
+                <li><code>row-reverse</code> : aligne les éléments à la fin du conteneur.</li>
+                <li><code>column</code>(colonne) : ajoute un espace égal autour de chaque élément.</li>
+                <li><code>column-reverse</code> : distribue l'espace de manière égale entre et autour des éléments.</li>
+            </ul>
+            <div class="code-block">
+                &lt;div style="display: flex; flex-direction: row;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 2&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+                
+                &lt;div style="display: flex; flex-direction: column;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 1&lt;/div>&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 2&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <div style="display: flex; flex-direction: row; background-color: lightgray; padding: 10px;">
+                    <div style="background-color: lightcoral; padding: 10px;">Élément 1</div>
+                    <div style="background-color: lightseagreen; padding: 10px;">Élément 2</div>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; background-color: lightgray; padding: 10px; margin-top: 10px;">
                     <div style="background-color: lightcoral; padding: 10px;">Élément 1</div>
                     <div style="background-color: lightseagreen; padding: 10px;">Élément 2</div>
                 </div>
             </div>
             
-            <h2>Utilisation de CSS Grid</h2>
-            <p>Grid permet une mise en page plus avancée.</p>
+            <h2>3. Positionnement avec CSS</h2>
+            <p>Les éléments peuvent être positionnés de différentes façons :</p>
+            <ul>
+                <li><strong>static</strong> : Position par défaut des éléments HTML. Ils sont placés <strong>selon la structure normale du document</strong> et ne réagissent pas aux propriétés <code>top</code>, <code>right</code>, <code>left</code>ou <code>bottom</code>.</li>
+                <li><strong>relative</strong> : Position par rapport à sa position normale.</li>
+                <li><strong>absolute</strong> : Position par rapport à son premier <abbr class='abbr' data-title="Le parent d'un élément est simplement l'élément qui le contient dans le code HTML">parent</abbr> positionné.</li>
+                <li><strong>fixed</strong> : Position fixe par rapport à la fenêtre.</li>
+                <li><strong>sticky</strong> : Position fixe par rapport à la fenêtre.</li>
+            </ul><br>
+
+            <p>Les propriétés <code>top</code>, <code>right</code>, <code>left</code>et <code>bottom</code> permettent de déplacer un élément en fonction de son type de positionnement (relative, absolute, fixed, sticky).</p>
             <div class="code-block">
-                <pre>&lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"&gt;
-            &lt;div style="background-color: lightpink; padding: 10px;"&gt;Colonne 1&lt;/div&gt;
-            &lt;div style="background-color: lightgoldenrodyellow; padding: 10px;"&gt;Colonne 2&lt;/div&gt;
-        &lt;/div&gt;</pre>
+                .position {<br>
+                &nbsp;&nbsp;position: absolute; <span style="color: lightgreen">// Peut être relative, absolute, fixed, sticky</span><br>
+                &nbsp;&nbsp;top: 50px;  <span style="color: lightgreen">// Déplace l'élément de 50px vers le bas</span><br>
+                &nbsp;&nbsp;left: 100px; <span style="color: lightgreen">// Déplace l'élément de 100px vers la droite</span> <br>
+                }<br>
             </div>
-            <div class="example">
-                <h3>Résultat :</h3><br>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <div style="background-color: lightpink; padding: 10px;">Colonne 1</div>
-                    <div style="background-color: lightgoldenrodyellow; padding: 10px;">Colonne 2</div>
+
+            <h3>Démonstration des position CSS</h3>
+            <div class="course-position">
+                <div class="position-course">
+                    <div class="position-container">
+                        <label for="positionSelect">Choisissez une position :</label>
+                        <select id="positionSelect">
+                            <option value="static">Par défaut</option>
+                            <option value="relative">Relative</option>
+                            <option value="absolute">Absolute</option>
+                            <option value="fixed">Fixed</option>
+                            <option value="sticky">Sticky</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="course-position-container">
+                    <div class="position-relative-container">
+                        <div class="position-spacer-box"></div>
+                        <div class="box-position" id="box-position">Boîte</div>
+                        <div class="position-spacer-box"></div>
+                    </div>
+                </div>
+                <div class="position-info-box" id="infoBox">
+                    <strong>Explications :</strong>
+                    <p id="infoText">Sélectionnez une position pour voir l'explication ici.</p>
                 </div>
             </div>
             
-            <h2>Positionnement avec CSS</h2>
-            <p>Les éléments peuvent être positionnés de différentes façons :</p>
-            <ul>
-                <li><strong>relative</strong> : Position par rapport à sa position normale.</li>
-                <li><strong>absolute</strong> : Position par rapport à son premier ancêtre positionné.</li>
-                <li><strong>fixed</strong> : Position fixe par rapport à la fenêtre.</li>
-            </ul>
-            
-            <h2>Création d'une barre de navigation</h2>
-            <p>Voici un exemple de barre de navigation stylisée avec du CSS :</p>
-            <div class="code-block">
-                <pre>&lt;nav style="background-color: navy; padding: 10px;"&gt;
-            &lt;a href="#" style="color: white; margin-right: 10px;"&gt;Accueil&lt;/a&gt;
-            &lt;a href="#" style="color: white;"&gt;Contact&lt;/a&gt;
-        &lt;/nav&gt;</pre>
-            </div>
-            <div class="example">
-                <h3>Résultat :</h3><br>
-                <nav style="background-color: navy; padding: 10px;">
-                    <a href="#" style="color: white; margin-right: 10px;">Accueil</a>
-                    <a href="#" style="color: white;">Contact</a>
-                </nav>
-            </div>
+            <p><strong>Pour approfondir ces connaissances sur flexbox, regardez une vidéo <a href="https://www.youtube.com/watch?v=wrRd1W_vtUw&ab_channel=%C3%89coleduWeb">en cliquant ici</a></strong></p>
         
-            <h2>Responsive Design</h2>
-            <p>Le CSS permet d'adapter les pages aux écrans :</p>
-            <div class="code-block">
-                <pre>@media (max-width: 600px) {
-            body {
-                background-color: lightgray;
-            }
-        }</pre>
-            </div>
-        
-            <h2>Projet : Créer une page bien structurée</h2>
-            <p>Utilisez les concepts abordés pour créer une page de présentation.</p>
-            <button class="next-btn" onclick="changeChapter('chapitre5')">Leçon suivante →</button>
+            <button class="next-btn" onclick="changeChapter('chapitre6')">Leçon suivante →</button>
         </section>
+
 
         <section id="chapitre6" class="section">
             <h1>Chapitre 5 : Animation et Intéractions en CSS</h1>
@@ -1046,6 +1301,16 @@
             <div class="example">
                 <h3>Résultat :</h3><br>
                 <button class="button-click">Cliquez-moi</button>
+            </div>
+
+            <h2>Responsive Design</h2>
+            <p>Le CSS permet d'adapter les pages aux écrans :</p>
+            <div class="code-block">
+                <pre>@media (max-width: 600px) {
+            body {
+                background-color: lightgray;
+            }
+        }</pre>
             </div>
         </section>
 

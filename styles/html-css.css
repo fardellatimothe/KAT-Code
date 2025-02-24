@@ -104,6 +104,12 @@ body {
     display: block;
 }
 
+.img-box-css {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
 ul {
     margin-left: 2rem;
 }
@@ -183,21 +189,85 @@ code {
 .example .div2-course {
     background: lightblue;
 }
-
-.space-container {
-    width: 200px;
+.course-position {
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.position-course {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.position-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+.course-position-container {
+    position: relative;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    height: 400px;
+    overflow-y: scroll;
+}
+.box-position {
+    width: 100px;
     height: 100px;
-    background-color: lightblue;
-    margin: 20px; /* Marge extérieure */
-    padding: 10px; /* Espacement intérieur */
-    border: 2px solid black; /* Bordure */
-    text-align: center;
+    margin-top: 20px;
+    background-color: #ffeb3b;
+    border: 3px solid #f44336;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    border-radius: 8px;
 }
-.space-explanation {
-    max-width: 400px;
+.position-relative-container {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    background: #e3f2fd;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.position-spacer-box {
+    width: 120px;
+    height: 120px;
+    background: #90caf9;
+    border: 2px solid #1976d2;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+.position-info-box {
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    text-align: left;
+}
+#positionSelect {
+    padding: 10px;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .form-course p {

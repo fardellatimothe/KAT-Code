@@ -509,3 +509,51 @@ document.querySelectorAll(".interactive-demo").forEach(editor => {
         }
     });
 });
+
+const marginSlider = document.getElementById("marginRange");
+const paddingSlider = document.getElementById("paddingRange");
+const marginValue = document.getElementById("marginValue");
+const paddingValue = document.getElementById("paddingValue");
+const box = document.getElementById("box");
+
+function updateStyles() {
+    const margin = marginSlider.value + "px";
+    const padding = paddingSlider.value + "px";
+    
+    marginValue.textContent = marginSlider.value;
+    paddingValue.textContent = paddingSlider.value;
+    
+    box.style.margin = margin;
+    box.style.padding = padding;
+}
+
+marginSlider.addEventListener("input", updateStyles);
+paddingSlider.addEventListener("input", updateStyles);
+
+
+
+document.getElementById("positionSelect").addEventListener("change", function() {
+    let box = document.getElementById("box-position");
+    let infoText = document.getElementById("infoText");
+    let selectedValue = this.value;
+    
+    box.style.position = selectedValue;
+    box.style.top = (selectedValue === 'static') ? '' : '40px';
+    box.style.left = (selectedValue === 'static') ? '' : '40px';
+    
+    if (selectedValue === 'fixed') {
+        box.style.top = '5200px';
+        box.style.left = '10px';
+    }
+
+    
+    let explanations = {
+        'static': "<strong>Par défaut (static)</strong> : C'est la position normale d'un élément, il est placé selon le flux du document.",
+        'relative': "<strong>Relative</strong> : L'élément est placé normalement, mais on peut le déplacer sans impacter les autres éléments autour.",
+        'absolute': "<strong>Absolute</strong> : L'élément se détache complètement de son emplacement habituel. Elle ne suit plus les autres éléments et se positionne en fonction du premier parent.",
+        'fixed': "<strong>Fixed</strong> : L'élément est positionné par rapport à la fenêtre du navigateur, il reste toujours visible même quand on fait défiler la page.",
+        'sticky': "<strong>Sticky</strong> : L'élément commence comme un élément normal, mais devient fixe lorsqu'on fait défiler la page jusqu'à sa position définie."
+    };
+    
+    infoText.innerHTML = explanations[selectedValue];
+});
