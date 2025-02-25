@@ -16,7 +16,8 @@
         <div class="nav-item" onclick="changeChapter('chapitre4.5')">4,5. Organisation des éléments avec CSS</div>
         <div class="nav-item" onclick="changeChapter('chapitre5')">5. Mise en page avec CSS</div>
         <div class="nav-item" onclick="changeChapter('chapitre6')">6. Animations & Intéractions</div>
-        <div class="nav-item" onclick="changeChapter('chapitre9')">Projet Final</div>
+        <div class="nav-item" onclick="changeChapter('chapitre7')">Validez vos connaissances !</div>
+        <div class="nav-item" onclick="changeChapter('chapitre9')">Pour aller plus loin...</div>
     </nav>
 
     <div class="main-content">
@@ -703,7 +704,7 @@
             </div>
             <div class="example" style="background-image: url('../images/img-exemple.jpg'); height: 100px;">
                 <h3>Résultat :</h3><br>
-                <p>Une image de fond a été appliquée.</p>
+                <p>Une image de fond a été appliquée.</p><br>
             </div>
 
             <h2>Bordures</h2>
@@ -1471,13 +1472,96 @@
 
             <p>👉 Pratiquez ces concepts avec vos propres tests pour bien les assimiler avec les exemples de projets suivants ! 🚀</p>
         
-            <button class="next-btn" onclick="changeChapter('chapitre9')">Leçon suivante →</button>
+            <button class="next-btn" onclick="changeChapter('chapitre7')">Quiz Final →</button>
+        </section>
+
+        <section id="chapitre7" class="section">
+            <h1>QUIZ : Les questions pour valider tes connaissances en HTML / CSS</h1>
+
+            <div class="quiz-container">
+                <form id="quizForm">
+                    <div id="questions"></div>
+                    <button type="button" class="result-button" onclick="calculateScore()">
+                        Valider
+                        <svg class="result-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                            fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                            clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </button>
+                </form>
+                <div id="result" class="result"></div>
+            </div>
+            
+
+            <button class="next-btn" onclick="changeChapter('chapitre9')">La fin du cours →</button>
         </section>
 
         <section id="chapitre9" class="section">
-            <h1>Chapitre 2 : Structure d'une page HTML</h1>
-            <p>Une page HTML est composée de plusieurs balises essentielles :</p>
-            <button class="next-btn" onclick="changeChapter('chapitre1')">Leçon suivante →</button>
+            <h1>🎉 Bravo, tu as terminé !</h1>
+            <p>Félicitations ! Tu as appris les bases de HTML et CSS. C'est une super avancée, et maintenant tu es capable de créer tes propres pages web. Mais ce n'est que le début de ton aventure dans le monde du développement ! Il reste encore plein de choses passionnantes à découvrir. Voici quelques ressources pour continuer à progresser :</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=Y80juYcu3ZI&list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3&ab_channel=PierreGiraud" target="_blank">Cours HTML & CSS complet (Pierre Giraud)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=v1Pv-M6zf4c&ab_channel=YaoKevin" target="_blank">Créer un site web avec HTML & CSS (Yao Kevin)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=iSWjmVcfQGg&ab_channel=FromScratch-Led%C3%A9veloppementWebdez%C3%A9ro" target="_blank">Apprendre le CSS (From Scratch)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Jarz_GZG7-I&ab_channel=front-end" target="_blank">CSS Grid expliqué simplement (front-end)</a></li>
+            </ul><br>
+            <p>Tu comprendras sûrement facilement les premières minutes de ces vidéos, mais elles restent très intéressantes ! Elles proposent une approche différente de celle utilisée ici, ce qui peut être un vrai plus pour apprendre autrement. En plus, elles approfondissent certains points qui pourront t'aider à aller encore plus loin dans ta maîtrise du HTML et du CSS.</p>
+
+            <h2>💡 Petits projets pour s'entraîner</h2>
+            <p>La meilleure façon de progresser, c'est de pratiquer ! Voici quelques projets sympas à réaliser :</p>
+        
+            <h4>🔹 Facile :</h4>
+            <ul>
+                <li>Créer une page de présentation avec une photo et une petite description de toi.</li>
+                <li>Faire une page de contact avec un formulaire simple (nom, email, message).</li>
+            </ul>
+
+            <br><h4>🔸 Intermédiaire :</h4>
+            <ul>
+                <li>Créer un mini-blog où tu peux poster des articles sur tes passions.</li>
+                <li>Faire une carte de visite interactive avec des effets CSS et des animations.</li>
+            </ul>
+
+            <br><h4>🔺 Difficile :</h4>
+            <ul>
+                <li>Coder un portfolio responsive avec des animations et un design original.</li>
+                <li>Créer une petite boutique en ligne statique avec une page produit et un panier.</li>
+            </ul>
+
+            <h2>📚 Et JavaScript dans tout ça ?</h2> 
+            <p>Pour l'instant, tes pages web sont statiques, on appelle ça du <strong>Front-End</strong>, c'est-à-dire qu'elles affichent des informations, mais ne réagissent pas vraiment aux actions des utilisateurs. C'est là que <strong>JavaScript</strong> entre en jeu !</p>
+            <p>JavaScript est un langage de programmation qui permet d'ajouter de l'interactivité à tes sites. Avec lui, tu peux :</p>
+            <ul>
+                <li>Créer des animations et des effets visuels (comme des menus qui s'ouvrent ou des images qui changent).</li>
+                <li>Vérifier les informations entrées dans un formulaire avant qu'elles soient envoyées.</li>
+                <li>Créer des jeux et des applications web interactives.</li>
+            </ul><br>
+            <p>Apprendre JavaScript, c'est la suite logique après HTML et CSS, et ça te permettra d'aller beaucoup plus loin !</p>
+            <p>Si tu veux te lancer, voici quelques ressources :</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=v3Ho7QVaTXM&ab_channel=Melvynx%E2%80%A2Apprendre%C3%A0coder" target="_blank">Comprendre le Javascript en 5 minutes (Melvynx)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=VZLflMqC6dI&list=PLwLsbqvBlImFB8AuT6ENIg-s87ys4yGWI&ab_channel=PierreGiraud" target="_blank">Formation complète en Javascript (Pierre Giraud)</a></li>
+            </ul>
+        
+            <h2>🖥️ C'est quoi le Back-End ?</h2>
+            <p>Si tu souhaite vraiment aller plus loin et que tu veux un site où les utilisateurs peuvent se connecter, poster des messages ou enregistrer des données ? C'est là qu'intervient le <strong>Back-End</strong> !</p>
+            <p>Le Back-End, c'est la partie cachée d'un site web qui permet de stocker et gérer des informations.</p>
+            <ul>
+                <li><strong>Son rôle :</strong> gérer la base de données, les connexions des utilisateurs et tout ce qui se passe "dans l'ombre" d'un site.</li>
+                <li><strong>Langages utilisés :</strong> PHP, JavaScript (Node.js), Python (Django, Flask), Ruby.</li>
+                <li><strong>Bases de données :</strong> MySQL, PostgreSQL, MongoDB.</li>
+            </ul><br>
+            <p>Si ça t'intéresse, voici quelques ressources pour te renseigner :</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=UPDmfW9QIR0&ab_channel=Cookieconnect%C3%A9" target="_blank">La différence : Front-End vs Back-End (Cookie Connecté)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=do7A61AzRZ8&ab_channel=YannickDalbin" target="_blank">Comment fonctionne le Back-End ? (Yannick Dalbin)</a></li>
+            </ul><br>
+            <p>Encore bravo pour tout ce que tu as accompli ! Continue à apprendre et à t'amuser en codant grâce à nos autres cours proposés ! 🚀</p>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre1')">Recommencer le cours →</button>
         </section>
     </div>
 
