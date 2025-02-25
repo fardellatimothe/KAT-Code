@@ -189,6 +189,53 @@ code {
 .example .div2-course {
     background: lightblue;
 }
+
+.button-anim {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+.button-hover:hover {
+    background-color: red;
+}
+.button-active:active {
+    transform: scale(0.9);
+}
+
+.input-focus {
+    padding: 5px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+}
+.input-focus:focus {
+    border: 2px solid blue;
+    outline: none;
+}
+
+.input-checked:checked + .label-checked {
+    color: blue;
+    font-weight: bold;
+}
+
+.no-transition-button, .transition-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.transition-button {
+    transition: background-color 0.5s ease;
+}
+
+.no-transition-button:hover , .transition-button:hover {
+    background-color: red;
+}
+
 .course-position {
     border: 1px solid #aaa;
     border-radius: 10px;
@@ -502,4 +549,73 @@ code {
     font-size: 0.875rem;
     white-space: nowrap;
     z-index: 1;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+th {
+    background: #007BFF;
+    color: white;
+}
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+tr:hover {
+    background: #f1f1f1;
+}
+
+.animate-text {
+    animation: couleur 3s infinite ease-in-out;
+}
+
+.div-media {
+    width: 100%;
+    padding: 20px;
+    background-color: lightblue;
+    transition: background-color 0.3s ease-in-out;
+    animation: shrinkDiv 10s infinite forwards;
+}
+
+.button-media {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+@keyframes shrinkDiv {
+    0% {
+        width: 100%;  
+    }
+    50% {
+        width: 30%; 
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes couleur {
+    0% {
+        background-color: red;
+    } 50% {
+        background-color: green;
+    } 100% {
+        background-color: blue;
+    }
 }

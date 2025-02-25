@@ -1102,7 +1102,7 @@
                     <div style="background-color: lightblue; padding: 10px; width: 75px; height: 60px;">3</div>
                 </div>
             </div>
-            <p>Dans le premier exemple, <code>justify-content: space-around</code> espace les éléments horizontalement. Dans le second, <code>align-items: center;</code> les centre verticalement malgré leurs tailles différentes.</p>
+            <p>Dans le premier exemple, <code>justify-content: space-around</code> espace les éléments horizontalement.<br> Dans le second, <code>align-items: center;</code> les centre verticalement malgré leurs tailles différentes.</p>
             <p>Ces deux attributs peuvent avoir d'autres paramètres :</p>
             <ul>
                 <li><code>justify-content</code>: contrôle l'alignement horizontalement des éléments flexibles.</li><br>
@@ -1215,103 +1215,263 @@
 
         <section id="chapitre6" class="section">
             <h1>Chapitre 5 : Animation et Intéractions en CSS</h1>
-            <p>Dans cette leçon, nous allons explorer comment animer et rendre nos éléments interactifs en CSS.</p>
+            <p>Dans cette leçon, nous allons explorer comment donner vie à nos éléments HTML en utilisant les animations et interactions CSS. Ces concepts permettent d'améliorer l'expérience utilisateur en ajoutant du dynamisme et de la fluidité aux pages web.</p>
     
-            <h2>1. Introduction aux animations</h2>
-            <p>Les animations en CSS permettent de donner vie aux éléments en appliquant des changements progressifs.</p>
+            <h2>1. Rendre un élément interactif avec les pseudo-classes CSS</h2>
+            <p>Les pseudo-classes permettent de modifier l’apparence d’un élément lorsqu’une action spécifique est effectuée. Voici les plus essentielles à connaître :</p>
             
-            <h3>Les transitions</h3>
-            <p>Les transitions permettent de créer des effets de changement progressifs entre deux états CSS.</p>
+            <h4>🔹 <code>:hover</code>→ Modifier un élément au survol</h4>
+            <p>Permet de changer le style d’un élément lorsque l’utilisateur passe la souris dessus.</p>
             <div class="code-block">
-                <pre>
-    .button {
-        background-color: blue;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        transition: background-color 0.5s ease;
-    }
-    .button:hover {
-        background-color: red;
-    }
-                </pre>
+            .button { <br>
+            &nbsp;&nbsp;background-color: blue;<br>
+            &nbsp;&nbsp;color: white;<br>
+            &nbsp;&nbsp;padding: 10px 20px;<br>
+            &nbsp;&nbsp;border: none;<br>
+            &nbsp;&nbsp;transition: background-color 0.5s ease;<br>
+            }<br><br>
+            .button:hover {<br>
+            &nbsp;&nbsp;background-color: red;<br>
+            }<br>
             </div>
             <div class="example">
                 <h3>Résultat :</h3><br>
-                <button class="button">Survolez-moi</button>
+                <button class="button-anim button-hover">Survolez-moi</button>
             </div>
-    
-            <h3>Les animations avec @keyframes</h3>
-            <p>Avec <code>@keyframes</code>, on peut créer des animations plus complexes.</p>
+            <p>👉 Survoler le bouton change sa couleur.</p>
+
+            <h4>🔹 <code>:active</code>→ Effet au clic</h4>
+            <p>S’active uniquement lorsque l’élément est enfoncé.</p>
             <div class="code-block">
-                <pre>
-    @keyframes bounce {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-20px);
-        }
-    }
-    .animated-box {
-        width: 100px;
-        height: 100px;
-        background-color: green;
-        animation: bounce 1s infinite;
-    }
-                </pre>
+            .button:active {<br>
+            &nbsp;&nbsp;transform: scale(0.9);<br>
+            }<br>
             </div>
             <div class="example">
                 <h3>Résultat :</h3><br>
-                <div class="animated-box"></div>
+                <button class="button-anim button-active">Survolez-moi</button>
             </div>
-    
-            <h2>2. Effets interactifs</h2>
-            <h3>Changement de couleur au survol</h3>
-            <p>Avec <code>:hover</code>, on peut modifier l’apparence d’un élément lorsqu'on passe la souris dessus.</p>
+            <p>👉 Le bouton rapetisse légèrement quand on clique dessus.</p>
+
+            <h4>🔹 <code>:focus</code>→ Effet lorsqu’un champ est sélectionné</h4>
+            <p>Souvent utilisé pour améliorer l’accessibilité des formulaires.</p>
             <div class="code-block">
-                <pre>
-    p:hover {
-        color: orange;
-        font-weight: bold;
-    }
-                </pre>
+            .inout:focus { <br>
+            &nbsp;&nbsp;border: 2px solid blue;<br>
+            &nbsp;&nbsp;outline: none;<br>
+            }<br>
             </div>
             <div class="example">
                 <h3>Résultat :</h3><br>
-                <p class="hover-text">Survolez ce texte !</p>
+                <input class="input-focus">
             </div>
-    
-            <h3>Effets de boutons animés</h3>
-            <p>On peut rendre un bouton interactif en ajoutant une animation au clic.</p>
+            <p>👉 Le champ change de bordure quand on clique dedans.</p>
+
+            <h4>🔹 <code>:checked</code>→ Effet sur les cases à cocher activées</h4>
+            <p>Souvent utilisé pour améliorer l’accessibilité des formulaires.</p>
             <div class="code-block">
-                <pre>
-    .button-click {
-        background-color: purple;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-    }
-    .button-click:active {
-        transform: scale(0.9);
-    }
-                </pre>
+            .input[type=checkbox]:checked, label { <br>
+            &nbsp;&nbsp;color: blue;<br>
+            &nbsp;&nbsp;font-weight: bold;<br>
+            }<br>
+            </div>
+            <p>Le <code>[type=checkbok]</code>permet de selectionner, dans les éléments <code>input</code>, ceux qui sont de type <code>checkbox</code>.</p>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <input id="input-checked"type="checkbox" class="input-checked">
+                <label class="label-checked" for="input-checked">Apprendre HTML</label>
+            </div>
+            <p>👉 Le texte change lorsque la case est cochée.</p>
+
+
+            <h2>Transitions fluides en CSS</h2>
+            <p>La propriété <code>transition</code> permet de créer une animation fluide entre deux états CSS.</p>
+
+            <h4>Les paramètres des transitions</h4>
+            <p>Syntaxe :</p>
+            <div class="code-block">
+                transition: propriété durée timing-function delay;<br>
+            </div>
+            <ul>
+                <li><strong>Propriété</strong>→ La propriété que l'on veut animer (exemple: <code>background-color</code>)</li>
+                <li><strong>Durée</strong>→ Temps de l'animation (ex: 0.5s)</li>
+                <li><strong>Timing-function</strong>→ Détermine la vitesse (<code>ease</code>, <code>ease-in</code>, <code>ease-out</code>, <code>linear</code>...)</li>
+                <li><strong>Delay</strong><em>(optionnel)</em>→ Temps d’attente avant de commencer l’animation.</li>
+            </ul><br>
+
+            <h4>Différentes valeurs de <code>timing-function</code></h4>
+
+            <ul>
+                <li><code>linear</code> : L'animation avance à une vitesse constante.</li>
+                <li><code>ease</code> : L'animation commence lentement, accélère puis ralentit à la fin.</li>
+                <li><code>ease-in</code> : L'animation commence lentement puis accélère.</li>
+                <li><code>ease-out</code> : L'animation démarre vite et ralentit à la fin.</li>
+                <li><code>ease-in-out</code> : L'animation commence et finit lentement.</li>
+            </ul>
+            <div class="code-block">
+            .button { <br>
+            &nbsp;&nbsp;background-color: blue;<br>
+            &nbsp;&nbsp;color: white;<br>
+            &nbsp;&nbsp;padding: 10px 20px;<br>
+            &nbsp;&nbsp;border: none;<br>
+            &nbsp;&nbsp;transition: background-color 0.5s ease;<br>
+            }<br>
+            .button:hover { <br>
+            &nbsp;&nbsp;background-color: red;<br>
+            }<br>
             </div>
             <div class="example">
                 <h3>Résultat :</h3><br>
-                <button class="button-click">Cliquez-moi</button>
+                <button class="no-transition-button">Sans transition</button>
+                <button class="transition-button">Avec transition</button>
             </div>
 
-            <h2>Responsive Design</h2>
-            <p>Le CSS permet d'adapter les pages aux écrans :</p>
+            <p>📌 Explication : Quand la souris passe sur le bouton, la couleur change progressivement en 0.5s.</p>
+    
+            <h2>Animer un élément avec <code>@keyframes</code></h2>
+
+            <h4>La propriété <code>animation</code></h4>
+            <p>Syntaxe :</p>
             <div class="code-block">
-                <pre>@media (max-width: 600px) {
-            body {
-                background-color: lightgray;
-            }
-        }</pre>
+                animation: nom-animation durée timing-function delay iteration-count direction fill-mode;<br>
             </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paramètre</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>nom-animation</strong></td>
+                        <td>Le nom de l'animation définie avec <code>@keyframes</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>durée</strong></td>
+                        <td>Temps que met l’animation pour se jouer (ex: <code>2s</code>, <code>500ms</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>timing-function</strong></td>
+                        <td>Détermine la courbe d'accélération (<code>ease</code>, <code>linear</code>, etc.).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>delay</strong> (optionnel)</td>
+                        <td>Temps d’attente avant le début de l’animation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>iteration-count</strong> (optionnel)</td>
+                        <td>Nombre de répétitions de l’animation (<code>1</code>, <code>infinite</code>, etc.).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>direction</strong> (optionnel)</td>
+                        <td>Définit le sens de l’animation (<code>normal</code>, <code>reverse</code>, <code>alternate</code>, etc.).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>fill-mode</strong> (optionnel)</td>
+                        <td>Contrôle l’apparence de l’élément avant/après l’animation (<code>none</code>, <code>forwards</code>, etc.).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Les animations permettent de créer des effets plus avancés qu’une simple transition.<br><br><code>@keyframes</code> permet de créer une animation complète, en définissant différentes étapes.</p>
+            
+            <h4>Structure d’un @keyframes :</h4>
+            <div class="code-block">
+                @keyframes nom-animation { <br>
+                &nbsp;&nbsp;0% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur de départ;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;50% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur intermédiaire;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;100% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur finale;<br>
+                &nbsp;&nbsp;}<br>
+                }<br><br>
+                @keyframes nom-animation { <br>
+                &nbsp;&nbsp;from {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur de départ;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;to {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur finale;<br>
+                &nbsp;&nbsp;}<br>
+                }<br><br>
+            </div><br>
+
+            <ul>
+                <li><code>from</code> ou <code>0%</code>→ Début de l’animation.</li>
+                <li><code>50%</code>→ Milieu de l’animation.</li>
+                <li><code>to</code> ou <code>100%</code>→ Fin de l’animation.</li>
+            </ul><br>
+
+            <p>Par exemple, pour créer un effet de changer de la couleur de fond d'un texte, nous pouvons utiliser l'animation <code>keyframes</code> comme ceci :</p>
+
+            <div class="code-block">
+                .paragraphe-anime { <br>
+                &nbsp;&nbsp;animation: couleur 5s infinite ease-in-out<br>
+                }<br><br>
+                @keyframes couleur { <br>
+                &nbsp;&nbsp;0% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: red;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;50% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: green;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;100% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: blue;<br>
+                &nbsp;&nbsp;}<br>
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <p class="animate-text">La couleur de fond de ce texte est animée</p>
+            </div>
+
+            <p>📌 Explication : La couleur de fond de ce texte est intialement rouge, mais devient vert puis bleu. L'animation se répète à l'infini grâce à l'attribut <code>infinite</code>.</p>
+    
+            <h2>Adapter le contenu d'une page grâce au Responsive Design <code>@keyframes</code></h2>
+
+            <p>Le Responsive Design permet d’adapter les animations et interactions aux différentes tailles d’écran.</p>
+
+            <h4>Comprendre les media queries</h4>
+
+            <p>Les media queries permettent d'adapter le style des éléments en fonction de la taille de l'écran.</p>
+
+            <div class="code-block">
+                @media (max-width: 600px) {<br>
+                &nbsp;&nbsp;// Styles appliqués uniquement si la largeur de l'écran est inférieur à 600 pixels
+                }<br>
+            </div>
+            <ul>
+                <li><code>max-width: 600px</code> signifie que les styles définis à l'intérieur seront appliqués <strong>seulement</strong> si l'écran fait <strong>600 pixels ou moins</strong></li>
+                <li>On peut aussi utiliser <code>min-width</code> pour appliquer des styles à partir d'une certaine largeur d'écran.</li>
+            </ul>
+
+            <div class="code-block">
+                .button { <br>
+                &nbsp;&nbsp;background-color: yellow;<br>
+                &nbsp;&nbsp;color: black;<br>
+                }<br><br>
+                @media (max-width: 600px) { <br>
+                &nbsp;&nbsp;.button {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: purple;<br>
+                &nbsp;&nbsp;color: white;<br>
+                &nbsp;&nbsp;}<br>
+                }<br>
+            </div>
+            <div class="example div-media">
+                <h3>Résultat :</h3><br>
+
+                <button class="button-media">Exemple de Responsive Design</button>
+            </div>
+
+            <h3>Attention aux Erreurs courantes</h3>
+            <p>✅Problème : Les styles ne s’appliquent pas → Vérifiez que la media query est bien placée après les styles généraux. De plus, si cela ne suffit pas, rajoutez <code>!important</code> après l'attribut d'une propriété</p>
+
+            <p>👉 Pratiquez ces concepts avec vos propres tests pour bien les assimiler avec les exemples de projets suivants ! 🚀</p>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre9')">Leçon suivante →</button>
         </section>
 
         <section id="chapitre9" class="section">

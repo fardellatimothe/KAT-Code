@@ -557,3 +557,22 @@ document.getElementById("positionSelect").addEventListener("change", function() 
     
     infoText.innerHTML = explanations[selectedValue];
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    let div = document.querySelector(".div-media");
+    let button = document.querySelector(".button-media");
+
+    function checkWidth() {
+        let divWidth = div.offsetWidth; // Récupère la largeur actuelle du div
+        if (divWidth < 600) {
+            button.style.backgroundColor = "yellow";
+            button.style.color = "black";
+        } else {
+            button.style.backgroundColor = "purple";
+            button.style.color = "white";
+        }
+    }
+
+    // Vérifier toutes les 100ms
+    setInterval(checkWidth, 100);
+});
