@@ -1,51 +1,54 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // 🎨 Effet de texte qui s'écrit tout seul
-  const textElement = document.querySelector(".typing-text");
-  const text = "De Zéro à Calé en code";
-  let index = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Page À Propos chargée !");
 
-  function typeText() {
-    if (index < text.length) {
-      textElement.innerHTML += text.charAt(index);
-      index++;
-      setTimeout(typeText, 50);
-    }
-  }
-  typeText();
-
-  // ✨ Animation d'apparition des sections au scroll
-  const sections = document.querySelectorAll("section");
-
-  function revealSections() {
-    sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      if (sectionTop < windowHeight - 100) {
-        section.classList.add("visible");
-      }
-    });
-  }
-  window.addEventListener("scroll", revealSections);
-  revealSections();
-
-  // 🌀 Effet flip card sur les étudiants
+  // Sélection des éléments de la page
+  const teamSection = document.querySelector(".team");
   const cards = document.querySelectorAll(".card");
+  const visionSection = document.querySelector(".vision");
 
-  cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      card.classList.toggle("flipped");
-    });
+  // Fonction pour révéler les cartes d'équipe au scroll
+  const revealCards = () => {
+    if (!teamSection) return;
+
+    const sectionTop = teamSection.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight / 1.2;
+
+    if (sectionTop < triggerPoint) {
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.classList.add("visible");
+        }, index * 200); // Effet décalé pour chaque carte
+      });
+    }
+  };
+
+  // Fonction pour révéler la section "Notre Mission" au scroll
+  const revealVision = () => {
+    if (!visionSection) return;
+
+    const sectionTop = visionSection.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight / 1.2;
+
+    if (sectionTop < triggerPoint) {
+      visionSection.classList.add("visible");
+    }
+  };
+
+  // Ajout des écouteurs d'événements
+  window.addEventListener("scroll", () => {
+    revealCards();
+    revealVision();
   });
 
-  // 🔥 Zoom sur les images de la galerie au survol
-  document.querySelectorAll(".gallery img").forEach((img) => {
-    img.addEventListener("mouseover", () => {
-      img.style.transform = "scale(1.1)";
-      img.style.boxShadow = "0 6px 12px rgba(0, 0, 0, 0.2)";
-    });
-    img.addEventListener("mouseout", () => {
-      img.style.transform = "scale(1)";
-      img.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
-    });
-  });
+  // Lancer l'effet au chargement si les sections sont déjà visibles
+  revealCards();
+  revealVision();
+
+  // Animation de bienvenue dans la console
+  setTimeout(() => {
+    console.log(
+      "%cBienvenue sur la page À Propos de KAT & Code !",
+      "color: blue; font-size: 16px;"
+    );
+  }, 500);
 });
