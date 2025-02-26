@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction à Python - Turtle</title>
+    <link rel="stylesheet" href="../styles/python.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">KAT & Code</div>
+        <div class="nav-item active" onclick="changeChapter('chapitre1')">1. Introduction avec Turtle 🐢</div>
+        <div class="nav-item" onclick="changeChapter('chapitre2')">2. Variables et Types</div>
+        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Conditions et Boucles</div>
+        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Fonctions</div>
+        <div class="nav-item" onclick="changeChapter('chapitre5')">5. Projet final</div>
+    </nav>
+
+    <div class="main-content">
+        <section id="chapitre1" class="section active">
+            <h1>Introduction à Turtle 🐢</h1>
+
+            <!-- Qu'est-ce qu'un IDE ? -->
+            <h2>Qu'est-ce qu'un IDE ? 🖥️</h2>
+            <p>
+                Un IDE (Environnement de Développement Intégré) est un logiciel qui facilite l'écriture et l'exécution de code.
+                Il propose des fonctionnalités comme la coloration syntaxique, l'auto-complétion et l'affichage des erreurs.
+            </p>
+            <p>Voici quelques IDE populaires :</p>
+            <ul>
+                <li><strong>Replit</strong> : Un IDE en ligne, simple et rapide. <a href="https://aipure.ai/fr/products/replit/howto">Utiliser Replit comme IDE</a></li>
+                <li><strong>Jupyter Notebook</strong> : Idéal pour les débutants et l'expérimentation. <a href="https://www.feaseo.com/fr/how-to-use-jupyter-notebook.html">Utiliser Jupyter Notebook comme IDE</a></li>
+                <li><strong>VS Code</strong> : Un IDE puissant avec de nombreuses extensions. <a href="https://blog.alphorm.com/installation-utilisation-visual-studio-code-html#:~:text=Pour%20installer%20Visual%20Studio%20Code%2C%20recherchez-le%20dans%20votre,lancez%20Visual%20Studio%20Code%20pour%20commencer%20%C3%A0%20l%E2%80%99utiliser.">Utiliser VS code comme IDE</a></li>
+            </ul>
+            <p>Choisis l'IDE qui te convient pour exécuter ton code Python. <a href="https://datascientest.com/ide" target="_blank" rel="noopener noreferrer">Clique ici pour en savoir plus</a></p>
+            <!-- Qu'est-ce qu'une bibliothèque ? -->
+            <h2>Qu'est-ce qu'une bibliothèque en Python ? 📚</h2>
+            <p>
+                Une bibliothèque est un ensemble de fonctions et de modules prêts à l'emploi, 
+                qui permettent d'effectuer des tâches spécifiques sans avoir à les coder soi-même.
+            </p>
+            <p>
+                Par exemple, la bibliothèque <code><strong>turtle</strong></code> permet de dessiner facilement avec Python.
+                Plutôt que de programmer nous-mêmes comment déplacer un crayon sur l'écran,
+                nous pouvons utiliser les fonctions déjà fournies par <code><strong>turtle</strong></code>.
+            </p>
+
+            <!-- Explication des commentaires -->
+            <h2>Les commentaires en Python 📝</h2>
+            <p>
+                En Python, nous pouvons écrire des commentaires en utilisant le symbole <code><strong>#</strong></code>.
+                Tout ce qui est écrit après <code><strong>#</strong></code> dans une ligne ne sera pas exécuté par Python.
+                Cela permet d'ajouter des explications pour rendre le code plus compréhensible.
+            </p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+            # Ceci est un commentaire, Python ne l'exécutera pas<br>
+            <br>
+            # Il est utile pour expliquer le code<br>
+            <br>
+            import turtle  # Importe la bibliothèque Turtle<br>
+                </code>
+            </div>
+            
+
+            <!-- Introduction à Turtle -->
+            <h2>Qu'est-ce que Turtle ?</h2>
+            <p>
+                Le module <code>turtle</code> est une bibliothèque Python qui permet de dessiner à l'écran
+                en déplaçant une "tortue virtuelle".
+            </p>
+            <p>Commençons par importer le module :</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>import turtle</code>
+            </div>
+
+            <h2>Déplacer la tortue</h2>
+            <p>Voici quelques commandes de base :</p>
+            <ul>
+                <li><code>turle.Turtle()</code> : Créer une <strong>"tortue"</strong></li>
+                <li><code>turtle.forward(100)</code> : Avancer de 100 pixels</li>
+                <li><code>turtle.right(90)</code> : Tourner à droite de 90°</li>
+                <li><code>turtle.left(90)</code> : Tourner à gauche de 90°</li>
+                <li><code>turtle.done()</code> : Fermer la fenêtre en cliquant</li>
+            </ul>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+import turtle  #Importation de la bibliothèque Turtle<br>
+t = turtle.Turtle()  #  Créer une tortue <br>
+t.forward(100)  # Avance de 100 pixels<br>
+t.right(90)     # Tourne à droite de 90 degrés<br>
+t.forward(100)  # Avance à nouveau<br>
+t.done()        # Fenêtre refermée en cliquant<br>
+                </code>
+            </div>
+
+            <h2>Personnaliser la tortue</h2>
+            <p>Nous pouvons changer son apparence :</p>
+            <ul>
+                <li><code>turtle.color("blue")</code> : Change la couleur</li>
+                <li><code>turtle.speed(3)</code> : Définit la vitesse</li>
+                <li><code>turtle.shape("turtle")</code> : Donne la forme d’une tortue</li>
+            </ul>
+            <a href="https://docs.python.org/fr/3/library/turtle.html">Pour voir toutes les fonctionnalités du module <strong>turtle</strong></a>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+import turtle  #Importation de la bibliothèque Turtle<br>
+turtle.color("blue")  #Couleur bleue<br>
+turtle.speed(3)  # Vitesse modifiee<br>
+turtle.shape("turtle")  # Forme Tortue<br>
+                </code>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercice pratique</h3>
+                <p>💡 <strong>Défi :</strong> Utilisez la bibliothèque <code>turtle</code> pour dessiner un carré de 100 pixels de côté.
+                    La tortue doit :</p>
+                <ul style="margin-left: 2rem;">
+                    <li>Être de couleur <strong>verte</strong> 🟢</li>
+                    <li>Avancer et tourner correctement pour dessiner un <strong>carré</strong> </li>
+                    <li>Avoir la forme d'une <strong>tortue</strong> lors du tracé🐢</li>
+                </ul>
+                <p>Appuyez sur "Correction" pour voir le code attendu.</p>
+            
+                <!-- ÉDITEUR AVEC NUMÉROS DE LIGNES -->
+                <div class="editor-container">
+                    <div id="line-numbers" class="line-numbers"></div>
+                    <textarea id="code-editor1" class="code-editor" rows="10" placeholder="Écrivez votre code ici..."></textarea>
+                </div>
+                <button onclick="checkCode()">Vérifier</button>
+                <div id="success-message" class="hidden">
+                    🎉 Bravo ! Tu as réussi ! 🎉
+                </div>
+                <div id="error-message" class="hidden"></div>
+
+
+                <button class="correction-btn" onclick="correction1(); showCorrection();">Correction</button>
+            </div>
+            
+            <button class="next-btn" onclick="changeChapter('chapitre2')">Leçon suivante →</button>
+            
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+    <script src="../scripts/python.js"></script>
+</body>
+</html>
