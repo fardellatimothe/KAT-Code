@@ -179,7 +179,7 @@
                 <li><strong>&lt;aside&gt;</strong> : Contient des informations complémentaires, comme des liens ou un encart publicitaire.</li>
                 <li><strong>&lt;article&gt;</strong> : Contient un article indépendant.</li>
                 <li><strong>&lt;section&gt;</strong> : Regroupe un ensemble de contenus, souvent par thème.</li>
-            </ul>
+            </ul><br>
 
             <img class="image-balises" src="../images/balises-html-course.png">
 
@@ -628,13 +628,13 @@
                 &lt;/head&gt;<br>
                 &lt;body&gt;<br>
                 &nbsp;&nbsp;&lt;p id="unique"&gt;Ce texte est en rouge.&lt;/p&gt;<br>
-                &nbsp;&nbsp;&lt;p&gt;Ce texte n'a pas l'ID unique, il reste en couleur par défaut.&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Ce texte n'a pas d'ID unique, il reste en couleur par défaut.&lt;/p&gt;<br>
                 &lt;/body&gt;<br>
             </div>
             <div class="example">
                 <h3>Résultat :</h3><br>
                 <p style="color: red;">Ce texte est en rouge.</p>
-                <p>Ce texte n'a pas l'ID <code>unique</code>, il reste avec couleur par défaut.</p>
+                <p>Ce texte n'a pas d'ID unique, il reste en couleur par défaut.</p>
             </div>
 
             <p><strong>⚠️ Bien sûr, vous pouvez appliqué à plusieurs style sur un seul élément, mais n'oubliez pas le <code>;</code> après chaque déclaration de style. ⚠️</strong></p>
@@ -699,7 +699,7 @@
             <p>Utilisez <code>background-image</code> pour ajouter une image en fond :</p>
             <div class="code-block">
                 div {<br>
-                &nbsp;&nbsp;background-image: url('image.jpg');<br>
+                &nbsp;&nbsp;background-image: url('fond-paysage.jpg');<br>
                 }<br>
             </div>
             <div class="example" style="background-image: url('../images/img-exemple.jpg'); height: 100px;">
@@ -850,7 +850,7 @@
                     <li>Changer la couleur de chaque champ de texte pour quelqu'elle soit différente pour chaque</li>
                     <li>Changer la couleur des labels</li>
                     <li>Augmenter la taille du texte sur la classe <code>grand</code></li>
-                </ul>
+                </ul><br>
         
                 <p>Écrivez votre CSS dans la zone ci-dessous :</p>
                 <div class="interactive-demo" contenteditable="true" id="code-editor4" onclick="divExercice(this)">
@@ -1016,13 +1016,13 @@
             </div>
 
             <h4>1.2 - <code>display: inline-block</code></h4><br>
-            <p>Combien les avantages des deux : il reste en ligne mais permet de féfinir une largeur et une hauteur à l'élément</p>
+            <p>Combine les avantages des deux : il reste en ligne mais permet de définir une largeur et une hauteur à l'élément</p>
             <div class="code-block">
-                &lt;div style="display: inline-block; width:100px; height: 50px;"&gt;Boîte&lt;/div&gt;<br>
+                &lt;p&gt;C'est une &lt;div style="display: inline-block; width:100px; height: 50px;"&gt;Boîte&lt;/div&gt; inline&lt;p&gt;<br>
             </div>
             <div class="example">
                 <h3>Résultat :</h3><br>
-                <div style="display: inline-block; background-color: coral; width: 100px; height: 50px;">Boîte</div>
+                <p>C'est une<div style="display: inline-block; background-color: coral; width: 100px; height: 50px;">Boîte</div>inline</p>
             </div>
 
             <h4>1.3 - <code>display: none</code></h4><br>
@@ -1044,7 +1044,7 @@
             <ul>
                 <li><code>flex</code>: Le conteneur prend toute la largeur disponible.</li>
                 <li><code>inline-flex</code>: Le conteneur prend seulement la place nécessaire, comme un élément <code>inline</code>.</li>
-            </ul>
+            </ul><br>
             <p>Un élément flex est très utile pour organiser les éléments de manière fluide et responsive. Il permet un meilleur contrôle de l'alignement et de la répartition de l'espace sans avoir à utiliser énormement de ligne en CSS.</p>
             <div class="code-block">
                 &lt;div style="display: flex;"&gt;<br>
@@ -1074,7 +1074,6 @@
             <ul>
                 <li><code>justify-content</code>: aligne les éléments horizontalement.</li>
                 <li><code>align-items</code>: aligne verticalement.</li>
-                <li><code>flex-wrap</code>: permet de passer à la ligne si nécessaire.</li>
             </ul>
             <div class="code-block">
                 &lt;div style="display: flex; justify-content: space-around;"&gt;<br>
@@ -1130,7 +1129,7 @@
             <ul>
                 <li><strong>Axe principal</strong> : défini par <code>flex-direction</code> (<code>row</code> ou <code>column</code>).</li>
                 <li><strong>Axe secondaire</strong> : défini par <code>align-items</code>.</li>
-            </ul>
+            </ul><br>
             <p><code>flex-direction</code>: définit l'axe principal sur lequel les éléments seront placés.</p>
             <ul>
                 <li><code>row</code>(ligne) : aligne les éléments au début du conteneur (par défaut).</li>
@@ -1257,7 +1256,7 @@
             <h4>🔹 <code>:focus</code>→ Effet lorsqu’un champ est sélectionné</h4>
             <p>Souvent utilisé pour améliorer l’accessibilité des formulaires.</p>
             <div class="code-block">
-            .inout:focus { <br>
+            .input:focus { <br>
             &nbsp;&nbsp;border: 2px solid blue;<br>
             &nbsp;&nbsp;outline: none;<br>
             }<br>
@@ -1431,7 +1430,7 @@
 
             <p>📌 Explication : La couleur de fond de ce texte est intialement rouge, mais devient vert puis bleu. L'animation se répète à l'infini grâce à l'attribut <code>infinite</code>.</p>
     
-            <h2>Adapter le contenu d'une page grâce au Responsive Design <code>@keyframes</code></h2>
+            <h2>Adapter le contenu d'une page grâce au Responsive Design <code>@media</code></h2>
 
             <p>Le Responsive Design permet d’adapter les animations et interactions aux différentes tailles d’écran.</p>
 
@@ -1517,15 +1516,15 @@
             <ul>
                 <li>Créer une page de présentation avec une photo et une petite description de toi.</li>
                 <li>Faire une page de contact avec un formulaire simple (nom, email, message).</li>
-            </ul>
+            </ul><br>
 
-            <br><h4>🔸 Intermédiaire :</h4>
+            <h4>🔸 Intermédiaire :</h4>
             <ul>
                 <li>Créer un mini-blog où tu peux poster des articles sur tes passions.</li>
                 <li>Faire une carte de visite interactive avec des effets CSS et des animations.</li>
-            </ul>
+            </ul><br>
 
-            <br><h4>🔺 Difficile :</h4>
+            <h4>🔺 Difficile :</h4>
             <ul>
                 <li>Coder un portfolio responsive avec des animations et un design original.</li>
                 <li>Créer une petite boutique en ligne statique avec une page produit et un panier.</li>
