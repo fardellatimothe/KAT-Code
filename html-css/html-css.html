@@ -11,10 +11,13 @@
         <div class="logo">CodeCamp</div>
         <div class="nav-item active" onclick="changeChapter('chapitre1')">1. Introduction au HTML</div>
         <div class="nav-item" onclick="changeChapter('chapitre2')">2. Structure de base</div>
-        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Introduction au CSS</div>
-        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Mise en page avec CSS</div>
-        <div class="nav-item" onclick="changeChapter('chapitre5')">5. Animations & Intéractions</div>
-        <div class="nav-item" onclick="changeChapter('chapitre9')">Projet Final</div>
+        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Formulaire en HTML</div>
+        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Introduction au CSS</div>
+        <div class="nav-item" onclick="changeChapter('chapitre4.5')">4,5. Organisation des éléments avec CSS</div>
+        <div class="nav-item" onclick="changeChapter('chapitre5')">5. Mise en page avec CSS</div>
+        <div class="nav-item" onclick="changeChapter('chapitre6')">6. Animations & Intéractions</div>
+        <div class="nav-item" onclick="changeChapter('chapitre7')">Validez vos connaissances !</div>
+        <div class="nav-item" onclick="changeChapter('chapitre9')">Pour aller plus loin...</div>
     </nav>
 
     <div class="main-content">
@@ -24,11 +27,21 @@
 
             <h2>Qu'est-ce que le HTML ?</h2>
             <p>
-                Le HTML (HyperText Markup Language) est le <strong>langage de balisage</strong> utilisé pour créer des pages web.
-                Il sert à définir la structure et le contenu des sites internet.
+                Le HTML (HyperText Markup Language) est le <strong>langage de balisage</strong>, c'est à dire un langage qui utilise des balises pour définir les éléments d'un document, utilisé pour créer des pages web.
+                Il sert à définir la structure et le contenu des sites internet.<br><br>
+
+                Si vous voulez en savoir plus sur l'origine du language HTML, <a href="https://kinsta.com/fr/base-de-connaissances/qu-est-ce-que-le-html/" target="_blank">cliquez ici.</a>
             </p>
             <h2>Structure de base d'une page HTML</h2>
             <p>Chaque page commence toujours par les mêmes balises. Voici à quoi ressemble une structure de code HTML basique :</p>
+            <ul>
+                <li><strong>&lt;!DOCTYPE html&gt;</strong> : Cette ligne est toujours la première d'un fichier HTML. Elle indique au navigateur internet (Chrome, Safari, Firefox, ...) que vous utilisez la dernière version du HTML (HTML5).</li>
+                <li><strong>&lt;html&gt;</strong> : Cette balise est la racine de votre document HTML. Tout son contenu doit se trouver à l'intérieur de cette balise.</li>
+                <li><strong>&lt;head&gt;</strong> : Cette section contient des informations sur la page, comme son titre, ses styles ou des scripts.</li>
+                <li><strong>&lt;title&gt;</strong> : Définit le titre de la page qui s'affiche dans l'onglet de votre navigateur.</li>
+                <li><strong>&lt;body&gt;</strong> : Contient tout le contenu visible de votre page, comme des titres, paragraphes, images, etc.</li>
+            </ul>
+            
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                 &lt;!DOCTYPE html&gt;<br>
@@ -43,17 +56,8 @@
                 &lt;/html&gt;
             </div>
 
-            <p><strong>Explication des balises :</strong></p>
-            <ul>
-                <li><strong>&lt;!DOCTYPE html&gt;</strong> : Cette ligne est toujours la première d'un fichier HTML. Elle indique au navigateur internet (Chrome, Safari, Firefox, ...) que vous utilisez la dernière version du HTML (HTML5).</li>
-                <li><strong>&lt;html&gt;</strong> : Cette balise est la racine de votre document HTML. Tout son contenu doit se trouver à l'intérieur de cette balise.</li>
-                <li><strong>&lt;head&gt;</strong> : Cette section contient des informations sur la page, comme son titre, ses styles ou des scripts.</li>
-                <li><strong>&lt;title&gt;</strong> : Définit le titre de la page qui s'affiche dans l'onglet de votre navigateur.</li>
-                <li><strong>&lt;body&gt;</strong> : Contient tout le contenu visible de votre page, comme des titres, paragraphes, images, etc.</li>
-            </ul>
-
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <h1>Bonjour tout le monde !</h1>
                 <p>Ceci est un paragraphe.</p>
             </div>
@@ -91,10 +95,10 @@
             </div>
 
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <h1>Bienvenue sur ma page</h1>
                 <p>Ceci est un paragraphe d'exemple.</p>
-                <a href="https://google.com">Visitez ce lien</a><br>
+                <a href="https://google.com" target="_blank">Visitez ce lien</a><br>
                 <img src="../images/img-exemple.jpg">
                 <ul>
                     <li>Élément de liste 1</li>
@@ -115,12 +119,11 @@
                 <p>Ensuite, cliquez sur "Visualiser" pour voir le résultat de votre code.</p>
                 <p>Appuyez sur "Correction" pour voir le résultat attendu.</p>
 
-                <div class="interactive-demo" contenteditable="true" id="code-editor" onclick="divExercice()">
-                    <!-- Zone d'édition pour l'exercice -->
+                <div class="interactive-demo" contenteditable="true" id="code-editor1" onclick="divExercice(this)">
                     Écrivez votre code ici
                 </div>
 
-                <button class="visualizer-btn" onclick="visualizeCode()">Visualiser</button>
+                <button class="visualizer-btn" onclick="visualizeCode1()">Visualiser</button>
                 <button class="correction-btn" onclick="correction1()">Correction</button>
             </div>
 
@@ -129,28 +132,92 @@
 
         <section id="chapitre2" class="section">
             <h1>Organisation du contenu avec HTML</h1>
-            <p>Dans cette leçon, vous allez apprendre comment structurer efficacement une page web en utilisant les conteneurs et les balises sémantiques.</p>
+            <p>Dans cette leçon, vous allez apprendre à comment structurer efficacement une page web en utilisant des balises adaptées, en améliorant sa lisibilité et son accessibilité.</p>
             
-            <h2>Les conteneurs : &lt;div&gt; et &lt;span&gt;</h2>
-            <p>Les conteneurs sont utilisés pour regrouper des éléments HTML et organiser leur affichage.</p>
+            <h2>Les conteneurs</h2>
+            <p>Les conteneur sont des éléments qui servent à structurer et organiser le contenu d'un page web. Ils permettent de regrouper des éléments afin de les manipuler plus facilement.</p>
+
+            <h2>Le conteneur générique &lt;div&gt; </h2>
+            <p>La balise &lt;div&gt; est un conteneur <abbr class="abbr" data-title="Balise qui sert uniquement à organiser le contenu d'une page sans ajouter de signification sémantique.">générique</abbr> de type <abbr class="abbr" data-title="Balise qui occupe toute la largeur disponible et force un retour à la ligne avant et après son contenu.">bloc</abbr> utilisé pour structurer une page web. Elle permet la plupart du temps de regrouper plusieurs éléments sans leur attribuer de signification particulière.</p>
             <ul>
-                <li><strong>&lt;div&gt;</strong> : Bloc de conteneur utilisé pour regrouper plusieurs éléments.</li>
-                <li><strong>&lt;span&gt;</strong> : Conteneur en ligne utilisé pour styliser une partie de texte.</li>
+                <li><strong>&lt;div&gt;</strong> : Conteneur de type bloc utilisé pour regrouper plusieurs éléments.</li>
             </ul>
             
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
-                &lt;div class="box"&gt; Ceci est un bloc div &lt;/div&gt;<br>
-                &lt;p&gt;Un texte avec un &lt;span style="color: red;"&gt;mot en rouge&lt;/span&gt;&lt;/p&gt;
+                &lt;div&gt;<br>
+                &nbsp;&nbsp;Ceci est un bloc div<br>
+                &lt;/div&gt;<br>
+
+                &lt;div&gt;<br>
+                &nbsp;&nbsp;&lt;h4&gt;Ceci est un autre bloc div&lt;/h4&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Il regroupe plusieurs éléments&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;a href="google.fr"&gt;Faites une recherche Google&lt;/a&gt;<br>
+                &lt;/div&gt;<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <div class="box">Ceci est un bloc div</div>
-                <p>Un texte avec un <span style="color: red;">mot en rouge</span></p>
+                <h3>Résultat :</h3><br>
+
+                <div class="div1-course">
+                    Ceci est un bloc div
+                </div>
+
+                <div class="div2-course">
+                    <h4>Ceci est un autre bloc div</h4>
+                    <p>Il regroupe plusieurs éléments</p> 
+                    <strong><a href="https://blog.hubspot.fr/website/div-html" target="_blank">Pour en savoir plus sur le conteneur &lt;div&gt;</a></strong>
+                </div>
             </div>
             
-            <h2>Créer une barre de navigation</h2>
-            <p>La balise &lt;nav&gt; est utilisée pour créer un menu de navigation.</p>
+            <h2>Les conteneurs sémantiques</h2>
+            <p>Contrairement au div, les conteneurs <abbr class="abbr" data-title="Signifie donner du sens à quelque chose">sémantiques</abbr> donnent un sens au contenu qu'ils englobent, facilitant le référencement.</p>
+            
+            <ul>
+                <li><strong>&lt;header&gt; & &lt;footer&gt;</strong> : Respectivement l'en-tête et le pied de page d'une page.</li>
+                <li><strong>&lt;main&gt;</strong> : Enveloppe le contenu principal de la page, généralement entre le header et le footer.</li>
+                <li><strong>&lt;nav&gt;</strong> : Spécifique aux menus de navigation.</li>
+                <li><strong>&lt;aside&gt;</strong> : Contient des informations complémentaires, comme des liens ou un encart publicitaire.</li>
+                <li><strong>&lt;article&gt;</strong> : Contient un article indépendant.</li>
+                <li><strong>&lt;section&gt;</strong> : Regroupe un ensemble de contenus, souvent par thème.</li>
+            </ul><br>
+
+            <img class="image-balises" src="../images/balises-html-course.png">
+
+            <h3>Le code :</h3>
+            <div class="code-block no-copy">
+                &lt;header&gt;HEADER&lt;/header&gt;<br>
+                &lt;nav&gt;NAVIGATION&lt;/nav&gt;<br>
+                &lt;main&gt;<br>
+                &nbsp;&nbsp;&lt;aside&gt;SIDEBAR&lt;aside&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;MAIN CONTENT&lt;/div&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt;ARTICLE&lt;/article&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt;SECTION&lt;/section&gt;<br>
+                &nbsp;&nbsp;&lt;/div&gt;<br>
+                &lt;/main&gt;<br>
+                &lt;footer&gt;FOOTER&lt;/footer&gt;<br>
+            </div>
+            <div class="example conteneur-course">
+                <h3>Résultat :</h3><br>
+
+                <header>HEADER</header>
+                <nav>NAVIGATION</nav>
+                <div class="layout">
+                    <aside>SIDEBAR</aside>
+                    <main>
+                        <div class="content">
+                            <div>MAIN CONTENT</div>
+                            <article>ARTICLE</article>
+                            <article>ARTICLE</article>
+                        </div>
+                    </main>
+                </div>
+                <footer>FOOTER</footer>
+            </div>
+
+            <h3>Exemple d'utilisation des balises :</h3>
+
+            <h4>Barre de navigation : &lt;Nav&gt;</h4>
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                 &lt;nav&gt;<br>
@@ -162,7 +229,8 @@
                 &lt;/nav&gt;
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
+
                 <nav>
                     <ul>
                         <li><a href="#">Accueil</a></li>
@@ -171,393 +239,1328 @@
                     </ul>
                 </nav>
             </div>
-            
-            <h2>Structurer une page web</h2>
-            <p>Voici comment organiser une page avec les balises sémantiques :</p>
+
+            <h4>Section de texte : &lt;section&gt;</h4>
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
-                &lt;header&gt;En-tête&lt;/header&gt;<br>
-                &lt;main&gt;<br>
-                &nbsp;&nbsp;&lt;section&gt;Section principale&lt;/section&gt;<br>
-                &nbsp;&nbsp;&lt;article&gt;Article&lt;/article&gt;<br>
-                &nbsp;&nbsp;&lt;aside&gt;Sidebar&lt;/aside&gt;<br>
-                &lt;/main&gt;<br>
-                &lt;footer&gt;Pied de page&lt;/footer&gt;
+                &lt;section&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Les animaux&lt;/p&gt;
+                &lt;/section&gt;<br>
+                &lt;section&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Les Fleures&lt;/p&gt;
+                &lt;/section&gt;<br>
+                &lt;section&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;L'espace&lt;/p&gt;
+                &lt;/section&gt;<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <header>En-tête</header>
-                <main>
-                    <section>Section principale</section>
-                    <article>Article</article>
-                    <aside>Sidebar</aside>
-                </main>
-                <footer>Pied de page</footer>
+                <h3>Résultat :</h3><br>
+                
+                <section>
+                    <p>Les animaux</p>
+                </section>
+                <section>
+                    <p>Les Fleures</p>
+                </section>
+                <section>
+                    <p>L'espace</p>
+                </section>
             </div>
+
+            <h3>Article : &lt;article&gt;</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;article&gt;<br>
+                &nbsp;&nbsp;&lt;h2&gt;Article du jour&lt;/h2&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Ceci est un article indépendant sur un sujet particulier.&lt;/p&gt;<br>
+                &lt;/article&gt;
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <article>
+                    <h2>Article du jour</h2>
+                    <p>Ceci est un article indépendant sur un sujet particulier.</p>
+                </article>
+            </div>
+
+            <h2>Le conteneur en ligne</h2>
+            <p>Un conteneur en ligne ne créent pas de saut de ligne et sont utilisés pour <abbr class="abbr" data-title="Modifier l'apparence d'un élément HTML (vous pourrez le faire aussi 😉)">styliser</abbr> ou manipuler des parties précises de textes.</p>
+            <ul>
+                <li><strong>&lt;strong&gt;</strong> : Met un texte en gras</li>
+                <li><strong>&lt;em&gt;</strong> : Met un texte en italique</li>
+                <li><strong>&lt;mark&gt;</strong> : Met un texte en surbrillance</li>
+                <li><strong>&lt;code&gt;</strong> : Utile pour afficher du code source</li>
+                <li><strong>&lt;abbr&gt;</strong> : Définit une abréviation avec une info-bulle au survol de la souris</li>
+            </ul>
+
+            <h3>Strong</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;strong&gt;gras&lt;/strong&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <strong>gras</strong></p>
+            </div>
+
+            <h3>Em</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;em&gt;italique&lt;/em&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <em>italique</em></p>
+            </div>
+
+            <h3>Mark</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;mark&gt;surbrillance&lt;/mark&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <mark>surbrillance</mark></p>
+            </div>
+
+            <h3>Code</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;code&gt;code&lt;/code&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <code>code</code></p>
+            </div>
+
+            <h3>Abbr</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;p&gt;Ce texte est en&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <p>Ce texte est en <abbr title="HyperText Markup Language">HTML</abbr></p>
+            </div>
+
+            <div>
+                <p><strong>Pour en apprendre plus sur les balises, ou pour en découvrir des nouvelles, <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element" target="_blank">appuyez ici.</a></strong></p>
+            </div>
+
             
-            <h2>Créer un formulaire simple</h2>
-            <p>Les formulaires permettent d'interagir avec les utilisateurs.</p>
+            <div class="exercise">
+                <h3>Exercice pratique</h3>
+                <p>Créez une structure HTML en utilisant les conteneurs suivants :</p>
+                <ul>
+                    <li>Une en-tête de page contenant un titre et un menu de navigation simple.</li>
+                    <li>Un conteneur générique contenant la section et l'article suivant.</li>
+                    <li>Une section avec un titre et un paragraphe.</li>
+                    <li>Un article avec un titre et un paragraphe de description.</li>
+                    <li>Un pied de page avec un texte de <abbr class="abbr" data-title="Droit légal qui protège une création contre la copie et l'utilisation sans autorisation">copyright</abbr>.</li>
+                    <li>Un mot en gras et une phrase en surbrillance pour mettre du texte en valeur.</li>
+                </ul>
+                <p>Écrivez votre code dans la zone ci-dessous :</p>
+                <div class="interactive-demo" contenteditable="true" id="code-editor2" onclick="divExercice(this)">
+                    Écrivez votre code ici
+                </div>
+
+                <button class="visualizer-btn" onclick="visualizeCode2()">Visualiser</button>
+                <button class="correction-btn" onclick="correction2()">Correction</button>
+            </div>
+            <button class="next-btn" onclick="changeChapter('chapitre2')">Leçon suivante →</button>
+        </section>
+
+        <section id="chapitre3" class="section">
+            <h1>Les formulaires en HTML</h1>
+            <p>Les formulaires sont un élément clé des sites web : ils permettent d’interagir avec les visiteurs, que ce soit pour recueillir des informations, envoyer un message ou s’inscrire à un service. Dans ce chapitre, vous découvrirez comment créer des formulaires simples et efficaces pour rendre votre site plus interactif.</p>
+            
+            <h2>La balise &lt;form&gt;</h2>
+            <p>La balise <code>&lt;form&gt;</code> est un conteneur sémantique utilisée pour créer un formulaire permettant aux utilisateurs de saisir des informations.</p>
             <div class="code-block">
                 <button class="copy-btn" onclick="copyCode(this)">Copier</button>
                 &lt;form&gt;<br>
-                &nbsp;&nbsp;&lt;label for="name"&gt;Nom :&lt;/label&gt;<br>
-                &nbsp;&nbsp;&lt;input type="text" id="name" name="name"&gt;<br>
-                &nbsp;&nbsp;&lt;button type="submit"&gt;Envoyer&lt;/button&gt;<br>
+                &nbsp;&nbsp;&lt;!-- Contenu du formulaire ici --&gt;<br>
                 &lt;/form&gt;
             </div>
+            
+            <h2>Les champs de saisie &lt;input&gt;</h2>
+            <p>
+                La balise <code>&lt;input&gt;</code> permet de créer des champs de saisie de texte.<br>
+                La façon dont l'élément <code>&lt;input&gt;</code> fonctionne dépend de son type <code>&lt;input type="..."&gt;</code>. Voici les types les plus courants :<br>
+            </p>
+            <ul>
+                <li><code>type="text"</code> : champ de texte.</li>
+                <li><code>type="email"</code> : champ pour les emails.</li>
+                <li><code>type="date"</code> : champ pour les dates.</li>
+                <li><code>type="password"</code> : champ pour les mots de passe.</li>
+                <li><code>type="checkbox"</code> : champ pour les cases à cocher.</li>
+            </ul><br>
+
+            <p style>
+                Il est possible d'ajouter un <code>placeholder</code> à la balise qui est un texte d'exemple à l'intérieur du champ, visible tant qu'aucune donnée n'a été saisie.<br>
+                Nous pouvons aussi rendre ce champ obligatoire pour l'envoie du formulaire grâce à l'attribut <code>required</code>.<br>
+            </p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;input type="text" required&gt;<br>
+                &lt;input type="email" placeholder="Votre email"&gt;<br>
+                &lt;input type="date"&gt;<br>
+                &lt;input type="password" placeholder="Votre mot de passe"&gt;<br>
+                &lt;input type="checkbox"&gt;<br>
+            </div>
+            
+            <div class="example input-course">
+                <h3>Résultat :</h3><br>
+
+                <input type="text">
+                <input type="email" placeholder="Votre email">
+                <input type="date">
+                <input type="password" placeholder="Votre mot de passe">
+                <input type="checkbox">
+            </div>
+
+            <p>Pour découvrir les autres types de la balise <code>input</code>, <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/input" target="_blank">appuyez ici.</a></p>
+            
+            <h2>Les labels &lt;label&gt;</h2>
+            <p>La balise <code>&lt;label&gt;</code> est utilisée pour associer un texte descriptif à un champ de formulaire.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;label>Email :&lt;/label&gt;<br>
+                &lt;input type="email" placeholder="Entrez votre email"&gt;<br>
+            </div>
+
             <div class="example">
-                <h3>Résultat :</h3>
-                <form>
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name">
+                <h3>Résultat :</h3><br>
+
+                <label for="email">Email :</label>
+                <input type="email" placeholder="Entrez votre email">
+            </div>
+            
+            <h2>Les zones de texte &lt;textarea&gt;</h2>
+            <p>La balise <code>&lt;textarea&gt;</code> permet de saisir du texte sur plusieurs lignes. Vous pouvez choisir sa taille avec les attributs <code>rows</code> et <code>cols</code>.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;textarea rows="4" cols="50" placeholder="Votre message"&gt;&lt;/textarea&gt;
+            </div>
+
+            <div class="example">
+                <h3>Résultat :</h3><br>
+
+                <textarea rows="4" cols="50" placeholder="Votre message" style="resize: none;"></textarea>
+            </div>
+            
+            <h2>Les boutons &lt;button&gt;</h2>
+            <p>La balise <code>&lt;button&gt;</code> permet de créer des boutons. Ils peuvent être utiles dans les formulaires pour réaliser des actions (déposer un fichier, envoyer ou réinistialiser un formulaire).</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                &lt;button&gt;Envoyer&lt;/button&gt;
+            </div>
+
+            <div class="example">
+                <h3>Résultat :</h3><br>
+
+                <button>Envoyer</button>
+            </div>
+            
+            <h2>Exemple de formulaire complet</h2>
+            <div class="code-block no-copy">
+                &lt;form&gt;<br>
+                &nbsp;&nbsp;&lt;label>Nom :&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="text" placeholder="Entrez votre nom" required&gt;<br>
+                &nbsp;&nbsp;&lt;label>Email :&lt;/label&gt;<br>
+                &nbsp;&nbsp;&lt;input type="email" placeholder="Entrez votre email" required&gt;<br>
+                &nbsp;&nbsp;&lt;p>Message :&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;textarea" rows="4" cols="50" placeholder="Entrez votre message" required&gt;&lt;/textarea&gt;<br>
+                &nbsp;&nbsp;&lt;button type="submit">Envoyer&lt;/button&gt;<br>
+                &lt;/form&gt;
+            </div>
+            
+            <div class="example form-course">
+                <h3>Résultat :</h3><br>
+                <form >
+                    <label>Nom :</label>
+                    <input type="text" placeholder="Entrez votre nom" required><br>
+                    <label>Email :</label>
+                    <input type="email" placeholder="Entrez votre email" required><br>
+                    <p>Message :</p>
+                    <textarea rows="4" cols="50" placeholder="Entrez votre message" style="resize: none;"></textarea><br>
                     <button type="submit">Envoyer</button>
                 </form>
             </div>
+
+            <p><strong>Si vous voulez en apprendre plus sur la création de formulaire, vous pouvez regarder cette vidéo : <a href="https://www.youtube.com/watch?v=WTXGb5tqM10&ab_channel=Faizdev" target="_blank">Formulaire HTML CSS pour débutant</a><br></strong></p>
             
             <div class="exercise">
-                <h3>Projet pratique</h3>
-                <p>Créez une page avec une navigation, une section principale et un formulaire.</p>
-                <button class="next-btn" onclick="changeChapter('chapitre3')">Leçon suivante →</button>
+                <h3>Exercice pratique</h3>
+                <p>Créez un formulaire (nous avons amélioré le style), en incluant :</p>
+                <ul>
+                    <li>Un champ texte pour le nom et pour le prénom requis pour envoyer le formulaire.</li>
+                    <li>Un champ email requis avec une pré-inscription "Votre email".</li>
+                    <li>Un champ message (textarea) avec une pré-inscription "Votre message".</li>
+                    <li>Un champ pour la date de naissance.</li>
+                    <li>Un bouton pour envoyer.</li>
+                </ul>
+                <p>Écrivez votre code dans la zone ci-dessous :</p>
+                <div class="interactive-demo" contenteditable="true" id="code-editor3" onclick="divExercice(this)">
+                    Écrivez votre code ici
+                </div>
+                <button class="visualizer-btn" onclick="visualizeCode3()">Visualiser</button>
+                <button class="correction-btn" onclick="correction3()">Correction</button>
             </div>
+            <button class="next-btn" onclick="changeChapter('chapitre4')">Leçon suivante →</button>
         </section>
         
 
-        <section id="chapitre3" class="section">
+        <section id="chapitre4" class="section">
             <h1>Introduction au CSS</h1>
-            <p>Dans ce chapitre, vous allez apprendre les bases du CSS et comment styliser vos pages web.</p>
+            <p>Jusqu'ici, vous avez créé et structuré une page web avec HTML, mais sans style. Avec le CSS, vous pourrez personnaliser les couleurs, tailles et mises en page. Ce chapitre vous apprendra les bases pour styliser votre site.</p>
         
             <h2>Qu'est-ce que le CSS ?</h2>
-            <p>Le CSS (Cascading Style Sheets) est un langage utilisé pour décrire l'apparence des pages web. Il permet de définir les couleurs, les polices, les marges, et bien plus encore.</p>
+            <p>Le CSS (Cascading Style Sheets) est un langage utilisé pour décrire l'apparence des pages web. Il permet de définir les couleurs, les polices d'écritures, les positions des éléments et bien plus encore.</p>
         
-            <h2>Comment lier une page HTML à une feuille CSS ?</h2>
+            <h2>Comment lier un fichier CSS à une page HTML ?</h2>
             <p>Il existe trois manières d'ajouter du CSS :</p>
             <ul>
-                <li><strong>CSS en ligne</strong> : ajouté directement dans l'attribut <code>style</code> d'une balise.</li>
-                <li><strong>CSS interne</strong> : ajouté dans une balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code>.</li>
-                <li><strong>CSS externe</strong> : stocké dans un fichier séparé et lié avec <code>&lt;link&gt;</code>.</li>
+                <li><strong>CSS en ligne</strong> : ajouté directement dans l'attribut <code>style</code> d'une balise. Nous l'utiliserons au début.</li>
+                <li><strong>CSS interne</strong> : ajouté dans une balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code>de la page.</li>
+                <li><strong>CSS externe</strong> : stocké dans un fichier séparé et lié avec la balise <code>&lt;link&gt;</code>. C'est la méthode la plus recommandée pour les sites web. </li>
             </ul>
-        
+
+            <h3>CSS en ligne</h3>
+            <div class="code-block">
+                &lt;p style="color:red;"&gt;Ceci est du CSS en ligne&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+
+                <p style="color:red">Ceci est du CSS en ligne</p>
+            </div>
+
+            <h3>CSS interne</h3>
+            <div class="code-block">
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&lt;style&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;body { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color: lightblue; <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Le fond de la page est maintenant bleu clair.&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
+            </div>
+            <div style="background-color: lightblue;" class="example">
+                <h3>Résultat :</h3><br>
+
+                <p>Le fond de la page est maintenant bleu clair.</p>
+            </div>
+
+            <h3>CSS externe</h3>
             <div class="code-block">
                 &lt;head&gt;<br>
                 &nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css"&gt;<br>
                 &lt;/head&gt;
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <p>Le fichier "styles.css" est maintenant appliqué à votre page.</p>
             </div>
         
             <h2>Sélecteurs CSS</h2>
-            <p>Les sélecteurs permettent de cibler des éléments HTML pour les styliser.</p>
+            <p>Les sélecteurs permettent de cibler des éléments HTML pour les styliser. Cela permet d'appliquer des styles précis à différents éléments</p>
             
-            <h3>Sélection par balise</h3>
+            <h4>Sélection par balise</h4>
             <p>Applique un style à toutes les balises du même type :</p>
             <div class="code-block">
-                p {
-                    color: blue;
-                }
+                p {<br>
+                &nbsp;&nbsp;color: green;<br>
+                }<br>
+            </div>
+            <div class="example"><br>
+                <h3>Résultat :</h3><br>
+                <p style="color: green;">Ce texte est en vert.</p>
+
+                <p style="color: green;">Celui-ci aussi est en vert.</p>
+            </div>
+            <p>
+                👉 Cela rend tous les paragraphes <code>&lt;p&gt;</code> de la page en vert.<br>
+            </p>
+            
+            <h4>Sélection par classe</h4>
+            <p>Une classe permet de styliser plusieurs éléments en même temps. Pour ajouter une classe à un élément, on utilise l’attribut class dans la balise HTML :</p>
+            <div class="code-block">
+                &lt;p class="exemple"&gt;Ce texte a une classe !&lt;/p&gt;
+            </div>
+
+            <p>Puis en CSS, Utilisez un point (.) pour cibler la classe.</p>
+            <div class="code-block">
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&lt;style&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;.exemple { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;font-size: 20px;  <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&lt;p class="exemple"&gt;Ce texte est grand.&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Ce texte n'a pas la classe exemple, sa taille n'est donc pas modifiée.&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;p class="exemple"&gt;La taille de la police d'écriture de ce texte aussi plus grand, grâce à la classe exemple.&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <p style="color: blue;">Ce texte est en bleu.</p>
+                <h3>Résultat :</h3><br>
+                <p style="font-size: 20px;">Ce texte est grand.</p>
+                <p>Ce texte n'a pas la classe <code>exemple</code>, sa taille n'est donc pas modifié.</p>
+                <p style="font-size: 20px;">La taille de la police d'écriture de ce texte aussi plus grand, grâce à la classe <code>exemple</code>.</p>
             </div>
             
-            <h3>Sélection par classe</h3>
-            <p>Utilise un point (.) pour sélectionner des éléments avec une classe spécifique :</p>
+            <h4>Sélection par ID</h4>
+            <p>Un ID permet de styliser un seul élément unique. Pour ajouter un ID à un élément, on utilise l’attribut <code>id</code> dans la balise HTML :</p>
+
             <div class="code-block">
-                .important {
-                    font-weight: bold;
-                }
+                &lt;p id="unique"&gt;Ce texte a un ID !&lt;/p&gt;
+            </div>
+
+            <p>Puis en CSS, utilisez un dièse (#) pour cibler l’ID.</p>
+            <div class="code-block">
+                &lt;head&gt;<br>
+                &nbsp;&nbsp;&lt;style&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;#unique { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: red;  <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&lt;/style&gt;<br>
+                &lt;/head&gt;<br>
+                &lt;body&gt;<br>
+                &nbsp;&nbsp;&lt;p id="unique"&gt;Ce texte est en rouge.&lt;/p&gt;<br>
+                &nbsp;&nbsp;&lt;p&gt;Ce texte n'a pas d'ID unique, il reste en couleur par défaut.&lt;/p&gt;<br>
+                &lt;/body&gt;<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <p class="important" style="font-weight: bold;">Ce texte est en gras.</p>
+                <h3>Résultat :</h3><br>
+                <p style="color: red;">Ce texte est en rouge.</p>
+                <p>Ce texte n'a pas d'ID unique, il reste en couleur par défaut.</p>
             </div>
-            
-            <h3>Sélection par ID</h3>
-            <p>Utilise un dièse (#) pour cibler un élément unique :</p>
-            <div class="code-block">
-                #titre {
-                    font-size: 24px;
-                }
-            </div>
-            <div class="example">
-                <h3>Résultat :</h3>
-                <h2 id="titre" style="font-size: 24px;">Ce titre est plus grand.</h2>
-            </div>
+
+            <p><strong>⚠️ Bien sûr, vous pouvez appliqué à plusieurs style sur un seul élément, mais n'oubliez pas le <code>;</code> après chaque déclaration de style. ⚠️</strong></p>
         
-            <h2>Modifier l’apparence du texte</h2>
+            <h2>Modifier l'apparence d'un texte :</h2>
             
-            <h3>Changer la couleur</h3>
+            <h4>Changer la couleur</h4>
             <p>Utilisez la propriété <code>color</code> pour modifier la couleur du texte :</p>
             <div class="code-block">
-                p {
-                    color: red;
-                }
+                p {<br>
+                &nbsp;&nbsp;color: red;<br>
+                }<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <p style="color: red;">Ce texte est rouge.</p>
             </div>
             
-            <h3>Modifier la taille</h3>
+            <h4>Modifier la taille</h4>
             <p>Utilisez <code>font-size</code> pour changer la taille du texte :</p>
             <div class="code-block">
-                h1 {
-                    font-size: 32px;
-                }
+                h1 {<br>
+                &nbsp;&nbsp;font-size: 32px;<br>
+                }<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <h1 style="font-size: 32px;">Titre agrandi</h1>
             </div>
             
-            <h3>Modifier la police</h3>
+            <h4>Modifier la police</h4>
             <p>Utilisez <code>font-family</code> pour changer la police d’écriture :</p>
             <div class="code-block">
-                body {
-                    font-family: Arial, sans-serif;
-                }
+                body {<br>
+                &nbsp;&nbsp;font-family: Fantasy, sans-serif;<br>
+                }<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <p style="font-family: Arial, sans-serif;">Ce texte est en Arial.</p>
+                <h3>Résultat :</h3><br>
+                <p style="font-family: Fantasy, sans-serif;">Ce texte est en Fantasy.</p>
             </div>
-        
+
+            <ul>
+                <li><code>Fantasy</code>→ Police d'écriture appliquée</li>
+                <li><code>sans-sherif</code>→ Police d'écriture par defaut si le navigateur web ne supporte pas la première police d'écriture.</li>
+            </ul><br>
+
             <h2>Couleurs et arrière-plans</h2>
-            <h3>Arrière-plan uni</h3>
+            <h4>Arrière-plan uni</h4>
             <p>Utilisez <code>background-color</code> pour modifier l’arrière-plan :</p>
             <div class="code-block">
-                body {
-                    background-color: lightgray;
-                }
+                body {<br>
+                &nbsp;&nbsp;background-color: lightgray;<br>
+                }<br>
             </div>
             <div class="example" style="background-color: lightgray; padding: 10px;">
-                <h3>Résultat :</h3>
+                <h3>Résultat :</h3><br>
                 <p>Fond gris appliqué.</p>
             </div>
             
-            <h3>Image en arrière-plan</h3>
+            <h4>Image en arrière-plan</h4>
             <p>Utilisez <code>background-image</code> pour ajouter une image en fond :</p>
             <div class="code-block">
-                div {
-                    background-image: url('image.jpg');
-                }
+                div {<br>
+                &nbsp;&nbsp;background-image: url('fond-paysage.jpg');<br>
+                }<br>
             </div>
             <div class="example" style="background-image: url('../images/img-exemple.jpg'); height: 100px;">
-                <h3>Résultat :</h3>
-                <p>Image de fond appliquée.</p>
+                <h3>Résultat :</h3><br>
+                <p>Une image de fond a été appliquée.</p><br>
             </div>
+
+            <h2>Bordures</h2>
+            <p>Les bordures permettent d'entourer un élément avec une ligne. Elles sont très utiles pour mettre en valeur certaines parties d’une page.</p>
+
+            <h4>Ajouter une bordure simple</h4>
+            <p>Utilisez la propriété border pour ajouter une bordure autour d'un élément :</p>
+            <div class="code-block">
+                .bordure {<br>
+                &nbsp;&nbsp;border: 2px solid black;<br>
+                }<br><br>
+
+                .pas-bordure{<br>
+                &nbsp;&nbsp;border-style: none;<br>
+                }<br>
+            </div>
+            <div class="code-block">
+                &lt;p class="bordure" &gt;Une bordure a été appliquée au texte.&lt;/p&gt;<br>
+                &lt;button class="pas-bordure"&gt;Pas de Bordure&lt;/button&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <p style="border: 2px solid black;">Une bordure a été appliqué au texte.</p>
+                <button style="border:none;">Pas de Bordure</button>
+            </div>
+            <ul>
+                <li><code>2px</code>→ Épaisseur de la bordure</li>
+                <li><code>solid</code>→ Type de bordure (ici → pleine)</li>
+                <li><code>black</code>→ Couleur de la bordure</li>
+            </ul><br>
+
+            <h4>Changer le style de la bordure</h4>
+            <p>Il existe plusieurs styles de bordures :</p>
+            <div class="code-block">
+                .dashed {<br>
+                &nbsp;&nbsp;border: 2px dashed red;<br>
+                }<br><br>
+
+                .dotted {<br>
+                    &nbsp;&nbsp;border: 2px dotted blue;<br>
+                }<br><br>
+
+                .double {<br>
+                    &nbsp;&nbsp;border: 2px double green;<br>
+                }<br><br>
+            </div>
+            <div class="code-block">
+                &lt;p class="dashed" &gt;Une bordure en pointillés rouge a été appliqué au texte.&lt;/p&gt;<br>
+                &lt;p class="dotted" &gt;Une bordure avec des petits points bleus a été appliqué au texte.&lt;/p&gt;<br>
+                &lt;p class="double" &gt;Une double bordure verte a été appliquée au texte.&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <p style="border: 2px dashed red;">Une bordure en pointillés rouge a été appliqué au texte.</p><br>
+                <p style="border: 2px dotted blue;">Une bordure avec des petits points bleus a été appliqué au texte.</p><br>
+                <p style="border: 2px double green;">Une double bordure verte a été appliqué au texte.</p><br>
+            </div>
+
+            <h4>Changer les bordures d'un seul côté</h4>
+            <p>Vous pouvez appliquer une bordure uniquement sur un des côtés :</p>
+            <div class="code-block">
+                .haut {<br>
+                &nbsp;&nbsp;border-top: 3px solid orange;<br>
+                }<br><br>
+
+                .droite {<br>
+                    &nbsp;&nbsp;border-right: 3px solid purple;<br>
+                }<br><br>
+
+                .gauche {<br>
+                    &nbsp;&nbsp;border-left: 3px solid pink;<br>
+                }<br><br>
+
+                .bas {<br>
+                    &nbsp;&nbsp;border-bottom: 3px solid brown;<br>
+                }<br><br>
+            </div>
+            <div class="code-block">
+                &lt;p class="haut" &gt;Une seule bordure en haut.&lt;/p&gt;<br>
+                &lt;p class="droite" &gt;Une seule bordure à droite.&lt;/p&gt;<br>
+                &lt;p class="gauche" &gt;Une seule bordure à gauche.&lt;/p&gt;<br>
+                &lt;p class="bas" &gt;Une seule bordure en bas.&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <p style="border-top: 3px solid orange;">Une seule bordure en haut.</p>
+                <p style="border-right: 3px solid purple;">Une seule bordure à droite.</p>
+                <p style="border-left: 3px solid pink;">Une seule bordure à gauche.</p>
+                <p style="border-bottom: 3px solid brown;">Une seule bordure en bas.</p>
+            </div>
+
+            <p>Cette technique est utile pour souligner des éléments ou créer des effets visuels subtils.</p>
+
+            <p><strong>Vous pouvez combiner les bordures pour afficher celle que vous voulez. Cela marche aussi pour les bouttons, mais il faut enlever les autres bordures.</strong></p>
+
+            <h4>Arrondir les bordures</h4>
+            <p>Utilisez <code>border-radius</code>pour rendre les coins arrondis :</p>
+            <div class="code-block">
+                .arrondis {<br>
+                &nbsp;&nbsp;border: 1px solid black;<br>
+                &nbsp;&nbsp;border-radius: 10px;<br>
+                }<br>
+            </div>
+            <div class="code-block">
+                &lt;button class="haut" &gt;Bouton arrondi&lt;/button&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button style="border: 1px solid black; border-radius: 5px;">Bouton arrondi</button>
+            </div>
+
+
+            <div class="exercise">
+                <h3>Exercice pratique</h3>
+                <p>En reprenant le code HTML du formulaire du chapitre dernier :</p>
+                <div class="code-block">
+                    &lt;form&gt;<br>
+                    &nbsp;&nbsp;&lt;label class="grand"&gt;Prénom :&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="text" id="prenom" required&gt;<br><br>
         
-            <h2>Marges, espaces intérieurs et bordures</h2>
+                    &nbsp;&nbsp;&lt;label class="grand"&gt;Nom :&lt;label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="text" id="nom" required&gt;<br><br>
+        
+                    &nbsp;&nbsp;&lt;label&gt;Email :&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="email" id="email" placeholder="Votre email" required&gt;<br><br>
+        
+                    &nbsp;&nbsp;&lt;label&gt;Message :&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;textarea id="message" placeholder="Votre message" rows="4"&gt;&lt;/textarea&gt;<br><br>
+        
+                    &nbsp;&nbsp;&lt;label&gt;Date de naissance :&lt;/label&gt;<br>
+                    &nbsp;&nbsp;&lt;input type="date" id="date-naissance"&gt;<br><br>
+        
+                    &nbsp;&nbsp;&lt;button type="submit"&gt;Envoyer&lt;/button&gt;<br>
+                    &lt;/form&gt;<br>
+                </div>
+
+                <p>Améliorez l'apparence du formulaire en utilisant CSS interne. Vous devrez :</p>
+                <ul>
+                    <li>Ajouter une couleur de fond au formulaire</li>
+                    <li>Changer les bords des champs et du bouton pour des bords plein, fin et noir</li>
+                    <li>Arrondir les bords des champs et du bouton</li>
+                    <li>Utiliser une police d'écriture lisible</li>
+                    <li>Changer la couleur de chaque champ de texte pour quelqu'elle soit différente pour chaque</li>
+                    <li>Changer la couleur des labels</li>
+                    <li>Augmenter la taille du texte sur la classe <code>grand</code></li>
+                </ul><br>
+        
+                <p>Écrivez votre CSS dans la zone ci-dessous :</p>
+                <div class="interactive-demo" contenteditable="true" id="code-editor4" onclick="divExercice(this)">
+                    Écrivez votre CSS ici
+                </div>
+                <button class="visualizer-btn" onclick="visualizeCode4()">Visualiser</button>
+                <button class="correction-btn" onclick="correction4()">Correction</button>
+            </div>
+            <button class="next-btn" onclick="changeChapter('chapitre4.5')">Leçon suivante →</button>
+        </section>
+
+
+        <section id="chapitre4.5" class="section">
+            <h1>Marges et Espacements en CSS</h1>
+            <p>Ce chapitre est intermédiaire, car il vous aidera à mieux comprendre comment organiser vos éléments sur une page. Après avoir appris les bases, il est temps d'explorer comment contrôler les espaces entre et à l'intérieur des éléments pour améliorer la lisibilité et l'esthétique de vos éléments.</p>
+
+            <h2>Les propriétes de marges et d'espacements</h2>
+
+            <p>Les propriétés <code>margin</code>(marge) et <code>padding</code>(espacement) permettent de gérer l’espace autour et à l’intérieur des éléments. Elles jouent un rôle clé dans l’organisation et l’apparence des pages web.</p>
             
-            <h3>Marges</h3>
+            
+            <img src="../images/exemple-boite-css.webp" class="img-box-css">
+
+            <p>Dans la représentation ci-dessus, la zone <code>margin</code> se trouve en orange, la zone <code>border</code> en jaune, la zone <code>padding</code> en vert et le contenu HTML en bleu :</p>
+            <ul>
+                <li>La zone <code>border</code> permet de créer une bordure visible à l'élément, comme vous l'avez vu au chapitre précédent.</li>
+                <li>La zone <code>padding</code> permet de créer un espace entre l'élément HTML visible et sa bordure.</li>
+                <li>La zone <code>margin</code> permet de créer un espace entre la bordure de l'élément et les autres éléments de la page.</li>
+            </ul><br>
+            <p>Lorsque vous ajoutez un fond de couleur et un padding, celui-ci s’étend avec l’arrière-plan, rendant la marge intérieure visible. En revanche, margin reste invisible et n’agrandit pas l’élément.</p>
+
+            <h3>🔹 La marge (<code>margin</code>)</h3>
+            <p>La propriété <code>margin</code> définit l’espace extérieur d’un élément, c’est-à-dire l’écart entre cet élément et les autres autour de lui. Vous pouvez l'ajouter de différente façon :</p>
             <div class="code-block">
-                div {
-                    margin: 20px;
+                .marge {<br>
+                    &nbsp;&nbsp;margin: 10px<br>
                 }
             </div>
-            <h3>Espaces intérieurs</h3>
+            <p></p>
             <div class="code-block">
-                div {
-                    padding: 10px;
+                .marge2 {<br>
+                    &nbsp;&nbsp;margin: 10px 0px;<br>
                 }
             </div>
-            <h3>Bordures</h3>
             <div class="code-block">
-                div {
-                    border: 2px solid black;
+                .marge3 {<br>
+                    &nbsp;&nbsp;margin: 20px 5px 7px 2px;<br>
                 }
             </div>
+            <ul>
+                <li><code>marge</code>→  L'élément aura une marge de 10 pixels sur tous les côtés.</li>
+                <li><code>marge2</code>→ L'élément aura une marge de 10 pixels en haut et en bas, mais aucune marge à droite et à gauche.</li>
+                <li><code>marge3</code>→ L'élément aura une marge différente pour chaque côté (haut, droite, bas, gauche)</li>
+            </ul><br>
+            <div class="example">
+                <h3>Résultat sans margin :</h3><br>
+                <button style="border: 1px solid black;">Bouton sans margin</button>
+                <button style="border: 1px solid black;">Deuxième bouton sans margin</button>
+            </div>
+            <div class="example">
+                <h3>Résultat avec margin :</h3><br>
+                <button style="margin: 10px; border: 1px solid black;">Bouton avec margin: 10px</button>
+                <button style="margin: 10px; border: 1px solid black;">Deuxième bouton avec margin: 10px</button>
+            </div>
+
+            
+            <h3>🔹 L’espace intérieur (<code>padding</code>)</h3>
+            <p>La propriété <code>padding</code> définit l’espace intérieur d’un élément, soit la distance entre le contenu et la bordure de l’élément.</p>
+            <div class="code-block">
+                .padding {<br>
+                &nbsp;&nbsp;padding: 20px;<br>
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button style="padding: 20px; border: 1px solid black;">Bouton avec padding: 20px</button>
+                <button style="border: 1px solid black;">Bouton sans padding</button>
+            </div>
+            
+            <h3>🔹 Combiner <code>margin</code> et <code>padding</code></h3>
+            <p>Bien sûr, vous pouvez utiliser les deux propriétés ensemble pour créer des espacements harmonieux.</p>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button style="padding: 10px; margin: 10px; border: 1px solid black;">Bouton avec padding: 20px</button>
+                <button style="padding: 10px; margin: 10px; border: 1px solid black;">Bouton sans padding</button>
+            </div>
+
+            <h3>Exemples supplémentaires</h3>
+            <p>Il est aussi possible d'appliquer des marges et des paddings uniquement sur certains côtés :</p>
+            <div class="code-block">
+                .top-margin {<br>
+                &nbsp;&nbsp;margin-top: 30px;<br>
+                }<br><br>
+                .left-padding {<br>
+                &nbsp;&nbsp;padding-left: 20px;<br>
+                }
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button style="display:block; margin-top: 20px; border: 1px solid black;">Margin en haut</button>
+                <button style="display:block; padding-left: 20px; border: 1px solid black;">Padding à gauche</button>
+            </div>
+            <p>Étant donné qu'aucune marge n'est définie entre les deux boutons, ils restent collés l'un à l'autre.</p>
+
+            <h3>🔹 Utiliser <code>margin: auto;</code></h3>
+            <p>La valeur <code>auto</code> pour la marge permet de centrer un élément horizontalement dans son conteneur.</p>
+            <div class="code-block">
+                .centered {<br>
+                &nbsp;&nbsp;margin: auto;<br>
+                &nbsp;&nbsp;width: 50%;<br>
+                }
+            </div>
+            <div class="code-block">
+                &lt;div class="centered"&gt;Bloc centré avec margin: auto&lt;/div&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <div style="margin: auto; width: 50%; border: 1px solid black; padding: 5px;">Bloc centré avec margin: auto</div>
+            </div>
+            
+            <h3> Visualisation Interactive</h3>
+            <p>Ajustez les valeurs ci-dessous pour voir l'effet de <code>margin</code> et <code>padding</code> sur un bouton.</p>
+
+            <label for="marginRange">Margin: <span id="marginValue">0</span>px</label>
+            <input type="range" id="marginRange" min="0" max="50" value="0">
+
+            <label for="paddingRange">Padding: <span id="paddingValue">0</span>px</label>
+            <input type="range" id="paddingRange" min="0" max="50" value="0">
+
+            <hr style="margin: 10px 0;"/>
+
+            <div style="height:200px;" class="container">
+                <button id="box">Bouton</button>
+            </div>
+
+            <hr style="margin-bottom: 10px;"/>
+
+            <p><strong>Pour en savoir plus sur les marges et les espacements en css, <a href="https://www.youtube.com/watch?v=YhgARUVflCI&ab_channel=PierreGiraud">cliquez ici (vidéo)</a> ou <a href="https://www.codeur.com/tuto/css/css-margin-ou-padding/">visitez ce site</a></strong></p>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre5')">Leçon suivante →</button>
         </section>
                 
 
-        <section id="chapitre4" class="section">
+        <section id="chapitre5" class="section">
             <h1>Mise en page avec CSS</h1>
             <p>Dans cette leçon, nous allons explorer différentes techniques de mise en page en CSS.</p>
         
-            <h2>Display : block vs inline</h2>
-            <p>En CSS, les éléments peuvent être affichés de différentes manières :</p>
+            <h2>1. Mode d'affichage (<code>display</code>)</h2>
+            <p>En CSS, la propriété <code>display</code> définit comment un élément doit être affiché dans la structure générale de la page.</p>
+            <h4>1.1 - <code>display: block</code><strong>vs</strong><code>display: inline</code></h4><br>
             <ul>
-                <li><strong>display: block;</strong> : Les éléments prennent toute la largeur disponible.</li>
-                <li><strong>display: inline;</strong> : Les éléments s'affichent à la suite des autres sans retour à la ligne.</li>
+                <li><code>display: block;</code> : Les éléments prennent toute la largeur disponible et force un retour à la ligne.</li>
+                <li><code>display: inline;</code> : Les éléments ne prennent que la place nécessaire et reste sur la même ligne que les autres éléments inline.</li>
             </ul>
             <div class="code-block">
-                <pre>&lt;div style="display: block; background-color: lightblue;"&gt;Bloc 1&lt;/div&gt;
-        &lt;span style="display: inline; background-color: lightgreen;"&gt;Texte en ligne&lt;/span&gt;</pre>
+                &lt;div style="display: block;"&gt;Bloc 1&lt;/div&gt;<br>
+                &lt;p&gt;Je suis un &lt;span style="display: inline;"&gt;texte en ligne&lt;/span&gt; dans un paragraphe&lt;/p&gt;
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <div style="display: block; background-color: lightblue; padding: 5px;">Bloc 1</div>
-                <span style="display: inline; background-color: lightgreen; padding: 5px;">Texte en ligne</span>
+                <h3>Résultat :</h3><br>
+                <div style="margin-bottom:5px; display: block; background-color: lightblue; padding: 5px;">Bloc 1</div>
+                <p>Je suis un<span style="display: inline; background-color: lightgreen; padding: 5px;">texte en ligne</span>dans un paragraphe</p>
             </div>
-            
-            <h2>Utilisation de Flexbox</h2>
-            <p>Flexbox permet d'organiser les éléments horizontalement ou verticalement.</p>
+
+            <h4>1.2 - <code>display: inline-block</code></h4><br>
+            <p>Combine les avantages des deux : il reste en ligne mais permet de définir une largeur et une hauteur à l'élément</p>
             <div class="code-block">
-                <pre>&lt;div style="display: flex; gap: 10px;"&gt;
-            &lt;div style="background-color: lightcoral; padding: 10px;"&gt;Élément 1&lt;/div&gt;
-            &lt;div style="background-color: lightseagreen; padding: 10px;"&gt;Élément 2&lt;/div&gt;
-        &lt;/div&gt;</pre>
+                &lt;p&gt;C'est une &lt;div style="display: inline-block; width:100px; height: 50px;"&gt;Boîte&lt;/div&gt; inline&lt;p&gt;<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <div style="display: flex; gap: 10px;">
+                <h3>Résultat :</h3><br>
+                <p>C'est une<div style="display: inline-block; background-color: coral; width: 100px; height: 50px;">Boîte</div>inline</p>
+            </div>
+
+            <h4>1.3 - <code>display: none</code></h4><br>
+            <p>Cache l'élément sans prendre d'espace.</p>
+            <div class="code-block">
+                &lt;p style="display: none;"&gt;Ce texte est masqué&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <p style="display: none;">ce texte est masqué</p>
+                <h6>(Le texte n'est pas affiché)</h6>
+            </div>
+
+            <h2>2. Utilisation de Flexbox</h2>
+            <p>Flexbox est un outil puissant qui permet d'organiser facilement des éléments sur une page, que ce soit horizontalement ou verticalement.</p>
+            
+            <h4>2.1 Propriétés principales</h4><br>
+            <p>La zone d'un document qui utilise Flexbox est appelée un <strong>conteneur flexible</strong>. Pour le créer, on doit donner à un élément la propriété <code>display: flex;</code> (pour les éléments de type bloc) ou <code>display: inline-flex;</code> (pour les éléments de type inline). Dès que cela est fait, tous les éléments à l'intérieur deviennent des <strong>éléments flexibles</strong>.</p>
+            <ul>
+                <li><code>flex</code>: Le conteneur prend toute la largeur disponible.</li>
+                <li><code>inline-flex</code>: Le conteneur prend seulement la place nécessaire, comme un élément <code>inline</code>.</li>
+            </ul><br>
+            <p>Un élément flex est très utile pour organiser les éléments de manière fluide et responsive. Il permet un meilleur contrôle de l'alignement et de la répartition de l'espace sans avoir à utiliser énormement de ligne en CSS.</p>
+            <div class="code-block">
+                &lt;div style="display: flex;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 2&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+
+                &lt;p&gt;Je suis un<br>
+                &nbsp;&nbsp;&lt;span style="display: inline-flex;"&gt;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Élément inline-flex<br>
+                &nbsp;&nbsp;&lt;/span&gt;<br>
+                qui peut être stylisé.&lt;/p&gt;<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <div style="display: flex; background-color: lightgray; padding: 10px;">
+                    <div style="background-color: lightcoral; padding: 10px;">Élément 1</div>
+                    <div style="background-color: lightseagreen; padding: 10px;">Élément 2</div>
+                </div>
+                
+                <p>Je suis un <span style="display: inline-flex; background-color: lightblue; padding: 10px; margin-top: 10px;">
+                    élément inline-flex
+                </span>qui peut être stylisé.</p>
+            </div>
+
+            <h4>2.2 Propriétés principales</h4><br>
+            <ul>
+                <li><code>justify-content</code>: aligne les éléments horizontalement.</li>
+                <li><code>align-items</code>: aligne verticalement.</li>
+            </ul>
+            <div class="code-block">
+                &lt;div style="display: flex; justify-content: space-around;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;2&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;3&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+
+                &lt;div style="display: flex; align-items: center;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;2&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;3&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <div style="display: flex; justify-content: space-around; height: 100px; background-color: lightgray;">
+                    <div style="background-color: lightcoral; padding: 10px; width: 50px; height: 50px;">1</div>
+                    <div style="background-color: lightseagreen; padding: 10px; width: 100px; height: 80px;">2</div>
+                    <div style="background-color: lightblue; padding: 10px; width: 75px; height: 60px;">3</div>
+                </div>
+                
+                <div style="display: flex; align-items: center; height: 100px; background-color: lightgray; margin-top: 10px;">
+                    <div style="background-color: lightcoral; padding: 10px; width: 50px; height: 50px;">1</div>
+                    <div style="background-color: lightseagreen; padding: 10px; width: 100px; height: 80px;">2</div>
+                    <div style="background-color: lightblue; padding: 10px; width: 75px; height: 60px;">3</div>
+                </div>
+            </div>
+            <p>Dans le premier exemple, <code>justify-content: space-around</code> espace les éléments horizontalement.<br> Dans le second, <code>align-items: center;</code> les centre verticalement malgré leurs tailles différentes.</p>
+            <p>Ces deux attributs peuvent avoir d'autres paramètres :</p>
+            <ul>
+                <li><code>justify-content</code>: contrôle l'alignement horizontalement des éléments flexibles.</li><br>
+                <ul>
+                    <li><code>flex-start</code> : aligne les éléments au début du conteneur (par défaut).</li>
+                    <li><code>flex-end</code> : aligne les éléments à la fin du conteneur.</li>
+                    <li><code>center</code> : centre les éléments horizontalement.</li>
+                    <li><code>space-between</code> : répartit l'espace entre les éléments.</li>
+                    <li><code>space-around</code> : ajoute un espace égal autour de chaque élément.</li>
+                    <li><code>space-evenly</code> : distribue l'espace de manière égale entre et autour des éléments.</li><br>
+                </ul>
+
+                <li><code>align-items</code>: contrôle l'alignement vertical des éléments flexibles.</li><br>
+                <ul>
+                    <li><code>flex-start</code> : aligne les éléments en haut du conteneur.</li>
+                    <li><code>flex-end</code> : aligne les éléments en bas du conteneur.</li>
+                    <li><code>center</code> : centre les éléments verticalement.</li>
+                    <li><code>stretch</code> : étire les éléments pour remplir l'espace disponible (par défaut).</li>
+                    <li><code>baseline</code> : aligne les éléments sur leur ligne de base du texte.</li>
+                </ul>
+            </ul><br>
+
+            <h4>2.3 Les axes en Flexbox</h4><br>
+            <ul>
+                <li><strong>Axe principal</strong> : défini par <code>flex-direction</code> (<code>row</code> ou <code>column</code>).</li>
+                <li><strong>Axe secondaire</strong> : défini par <code>align-items</code>.</li>
+            </ul><br>
+            <p><code>flex-direction</code>: définit l'axe principal sur lequel les éléments seront placés.</p>
+            <ul>
+                <li><code>row</code>(ligne) : aligne les éléments au début du conteneur (par défaut).</li>
+                <li><code>row-reverse</code> : aligne les éléments à la fin du conteneur.</li>
+                <li><code>column</code>(colonne) : ajoute un espace égal autour de chaque élément.</li>
+                <li><code>column-reverse</code> : distribue l'espace de manière égale entre et autour des éléments.</li>
+            </ul>
+            <div class="code-block">
+                &lt;div style="display: flex; flex-direction: row;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 1&lt;/div&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 2&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+                
+                &lt;div style="display: flex; flex-direction: column;"&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 1&lt;/div>&gt;<br>
+                &nbsp;&nbsp;&lt;div&gt;Élément 2&lt;/div&gt;<br>
+                &lt;/div&gt;<br><br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <div style="display: flex; flex-direction: row; background-color: lightgray; padding: 10px;">
+                    <div style="background-color: lightcoral; padding: 10px;">Élément 1</div>
+                    <div style="background-color: lightseagreen; padding: 10px;">Élément 2</div>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; background-color: lightgray; padding: 10px; margin-top: 10px;">
                     <div style="background-color: lightcoral; padding: 10px;">Élément 1</div>
                     <div style="background-color: lightseagreen; padding: 10px;">Élément 2</div>
                 </div>
             </div>
             
-            <h2>Utilisation de CSS Grid</h2>
-            <p>Grid permet une mise en page plus avancée.</p>
+            <h2>3. Positionnement avec CSS</h2>
+            <p>Les éléments peuvent être positionnés de différentes façons :</p>
+            <ul>
+                <li><strong>static</strong> : Position par défaut des éléments HTML. Ils sont placés <strong>selon la structure normale du document</strong> et ne réagissent pas aux propriétés <code>top</code>, <code>right</code>, <code>left</code>ou <code>bottom</code>.</li>
+                <li><strong>relative</strong> : Position par rapport à sa position normale.</li>
+                <li><strong>absolute</strong> : Position par rapport à son premier <abbr class='abbr' data-title="Le parent d'un élément est simplement l'élément qui le contient dans le code HTML">parent</abbr> positionné.</li>
+                <li><strong>fixed</strong> : Position fixe par rapport à la fenêtre.</li>
+                <li><strong>sticky</strong> : Position fixe par rapport à la fenêtre.</li>
+            </ul><br>
+
+            <p>Les propriétés <code>top</code>, <code>right</code>, <code>left</code>et <code>bottom</code> permettent de déplacer un élément en fonction de son type de positionnement (relative, absolute, fixed, sticky).</p>
             <div class="code-block">
-                <pre>&lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;"&gt;
-            &lt;div style="background-color: lightpink; padding: 10px;"&gt;Colonne 1&lt;/div&gt;
-            &lt;div style="background-color: lightgoldenrodyellow; padding: 10px;"&gt;Colonne 2&lt;/div&gt;
-        &lt;/div&gt;</pre>
+                .position {<br>
+                &nbsp;&nbsp;position: absolute; <span style="color: lightgreen">// Peut être relative, absolute, fixed, sticky</span><br>
+                &nbsp;&nbsp;top: 50px;  <span style="color: lightgreen">// Déplace l'élément de 50px vers le bas</span><br>
+                &nbsp;&nbsp;left: 100px; <span style="color: lightgreen">// Déplace l'élément de 100px vers la droite</span> <br>
+                }<br>
             </div>
-            <div class="example">
-                <h3>Résultat :</h3>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <div style="background-color: lightpink; padding: 10px;">Colonne 1</div>
-                    <div style="background-color: lightgoldenrodyellow; padding: 10px;">Colonne 2</div>
+
+            <h3>Démonstration des position CSS</h3>
+            <div class="course-position">
+                <div class="position-course">
+                    <div class="position-container">
+                        <label for="positionSelect">Choisissez une position :</label>
+                        <select id="positionSelect">
+                            <option value="static">Par défaut</option>
+                            <option value="relative">Relative</option>
+                            <option value="absolute">Absolute</option>
+                            <option value="fixed">Fixed</option>
+                            <option value="sticky">Sticky</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="course-position-container">
+                    <div class="position-relative-container">
+                        <div class="position-spacer-box"></div>
+                        <div class="box-position" id="box-position">Boîte</div>
+                        <div class="position-spacer-box"></div>
+                    </div>
+                </div>
+                <div class="position-info-box" id="infoBox">
+                    <strong>Explications :</strong>
+                    <p id="infoText">Sélectionnez une position pour voir l'explication ici.</p>
                 </div>
             </div>
             
-            <h2>Positionnement avec CSS</h2>
-            <p>Les éléments peuvent être positionnés de différentes façons :</p>
-            <ul>
-                <li><strong>relative</strong> : Position par rapport à sa position normale.</li>
-                <li><strong>absolute</strong> : Position par rapport à son premier ancêtre positionné.</li>
-                <li><strong>fixed</strong> : Position fixe par rapport à la fenêtre.</li>
-            </ul>
-            
-            <h2>Création d'une barre de navigation</h2>
-            <p>Voici un exemple de barre de navigation stylisée avec du CSS :</p>
-            <div class="code-block">
-                <pre>&lt;nav style="background-color: navy; padding: 10px;"&gt;
-            &lt;a href="#" style="color: white; margin-right: 10px;"&gt;Accueil&lt;/a&gt;
-            &lt;a href="#" style="color: white;"&gt;Contact&lt;/a&gt;
-        &lt;/nav&gt;</pre>
-            </div>
-            <div class="example">
-                <h3>Résultat :</h3>
-                <nav style="background-color: navy; padding: 10px;">
-                    <a href="#" style="color: white; margin-right: 10px;">Accueil</a>
-                    <a href="#" style="color: white;">Contact</a>
-                </nav>
-            </div>
+            <p><strong>Pour approfondir ces connaissances sur flexbox, regardez une vidéo <a href="https://www.youtube.com/watch?v=wrRd1W_vtUw&ab_channel=%C3%89coleduWeb">en cliquant ici</a></strong></p>
         
-            <h2>Responsive Design</h2>
-            <p>Le CSS permet d'adapter les pages aux écrans :</p>
-            <div class="code-block">
-                <pre>@media (max-width: 600px) {
-            body {
-                background-color: lightgray;
-            }
-        }</pre>
-            </div>
-        
-            <h2>Projet : Créer une page bien structurée</h2>
-            <p>Utilisez les concepts abordés pour créer une page de présentation.</p>
-            <button class="next-btn" onclick="changeChapter('chapitre5')">Leçon suivante →</button>
+            <button class="next-btn" onclick="changeChapter('chapitre6')">Leçon suivante →</button>
         </section>
 
-        <section id="chapitre5" class="section">
-            <h1>Chapitre 5 : Animation et interactions en CSS</h1>
-            <p>Dans cette leçon, nous allons explorer comment animer et rendre nos éléments interactifs en CSS.</p>
+
+        <section id="chapitre6" class="section">
+            <h1>Chapitre 5 : Animation et Intéractions en CSS</h1>
+            <p>Dans cette leçon, nous allons explorer comment donner vie à nos éléments HTML en utilisant les animations et interactions CSS. Ces concepts permettent d'améliorer l'expérience utilisateur en ajoutant du dynamisme et de la fluidité aux pages web.</p>
     
-            <h2>1. Introduction aux animations</h2>
-            <p>Les animations en CSS permettent de donner vie aux éléments en appliquant des changements progressifs.</p>
+            <h2>1. Rendre un élément interactif avec les pseudo-classes CSS</h2>
+            <p>Les pseudo-classes permettent de modifier l’apparence d’un élément lorsqu’une action spécifique est effectuée. Voici les plus essentielles à connaître :</p>
             
-            <h3>Les transitions</h3>
-            <p>Les transitions permettent de créer des effets de changement progressifs entre deux états CSS.</p>
+            <h4>🔹 <code>:hover</code>→ Modifier un élément au survol</h4>
+            <p>Permet de changer le style d’un élément lorsque l’utilisateur passe la souris dessus.</p>
             <div class="code-block">
-                <pre>
-    .button {
-        background-color: blue;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        transition: background-color 0.5s ease;
-    }
-    .button:hover {
-        background-color: red;
-    }
-                </pre>
+            .button { <br>
+            &nbsp;&nbsp;background-color: blue;<br>
+            &nbsp;&nbsp;color: white;<br>
+            &nbsp;&nbsp;padding: 10px 20px;<br>
+            &nbsp;&nbsp;border: none;<br>
+            &nbsp;&nbsp;transition: background-color 0.5s ease;<br>
+            }<br><br>
+            .button:hover {<br>
+            &nbsp;&nbsp;background-color: red;<br>
+            }<br>
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <button class="button">Survolez-moi</button>
+                <h3>Résultat :</h3><br>
+                <button class="button-anim button-hover">Survolez-moi</button>
             </div>
+            <p>👉 Survoler le bouton change sa couleur.</p>
+
+            <h4>🔹 <code>:active</code>→ Effet au clic</h4>
+            <p>S’active uniquement lorsque l’élément est enfoncé.</p>
+            <div class="code-block">
+            .button:active {<br>
+            &nbsp;&nbsp;transform: scale(0.9);<br>
+            }<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button class="button-anim button-active">Survolez-moi</button>
+            </div>
+            <p>👉 Le bouton rapetisse légèrement quand on clique dessus.</p>
+
+            <h4>🔹 <code>:focus</code>→ Effet lorsqu’un champ est sélectionné</h4>
+            <p>Souvent utilisé pour améliorer l’accessibilité des formulaires.</p>
+            <div class="code-block">
+            .input:focus { <br>
+            &nbsp;&nbsp;border: 2px solid blue;<br>
+            &nbsp;&nbsp;outline: none;<br>
+            }<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <input class="input-focus">
+            </div>
+            <p>👉 Le champ change de bordure quand on clique dedans.</p>
+
+            <h4>🔹 <code>:checked</code>→ Effet sur les cases à cocher activées</h4>
+            <p>Souvent utilisé pour améliorer l’accessibilité des formulaires.</p>
+            <div class="code-block">
+            .input[type=checkbox]:checked, label { <br>
+            &nbsp;&nbsp;color: blue;<br>
+            &nbsp;&nbsp;font-weight: bold;<br>
+            }<br>
+            </div>
+            <p>Le <code>[type=checkbok]</code>permet de selectionner, dans les éléments <code>input</code>, ceux qui sont de type <code>checkbox</code>.</p>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <input id="input-checked"type="checkbox" class="input-checked">
+                <label class="label-checked" for="input-checked">Apprendre HTML</label>
+            </div>
+            <p>👉 Le texte change lorsque la case est cochée.</p>
+
+
+            <h2>Transitions fluides en CSS</h2>
+            <p>La propriété <code>transition</code> permet de créer une animation fluide entre deux états CSS.</p>
+
+            <h4>Les paramètres des transitions</h4>
+            <p>Syntaxe :</p>
+            <div class="code-block">
+                transition: propriété durée timing-function delay;<br>
+            </div>
+            <ul>
+                <li><strong>Propriété</strong>→ La propriété que l'on veut animer (exemple: <code>background-color</code>)</li>
+                <li><strong>Durée</strong>→ Temps de l'animation (ex: 0.5s)</li>
+                <li><strong>Timing-function</strong>→ Détermine la vitesse (<code>ease</code>, <code>ease-in</code>, <code>ease-out</code>, <code>linear</code>...)</li>
+                <li><strong>Delay</strong><em>(optionnel)</em>→ Temps d’attente avant de commencer l’animation.</li>
+            </ul><br>
+
+            <h4>Différentes valeurs de <code>timing-function</code></h4>
+
+            <ul>
+                <li><code>linear</code> : L'animation avance à une vitesse constante.</li>
+                <li><code>ease</code> : L'animation commence lentement, accélère puis ralentit à la fin.</li>
+                <li><code>ease-in</code> : L'animation commence lentement puis accélère.</li>
+                <li><code>ease-out</code> : L'animation démarre vite et ralentit à la fin.</li>
+                <li><code>ease-in-out</code> : L'animation commence et finit lentement.</li>
+            </ul>
+            <div class="code-block">
+            .button { <br>
+            &nbsp;&nbsp;background-color: blue;<br>
+            &nbsp;&nbsp;color: white;<br>
+            &nbsp;&nbsp;padding: 10px 20px;<br>
+            &nbsp;&nbsp;border: none;<br>
+            &nbsp;&nbsp;transition: background-color 0.5s ease;<br>
+            }<br>
+            .button:hover { <br>
+            &nbsp;&nbsp;background-color: red;<br>
+            }<br>
+            </div>
+            <div class="example">
+                <h3>Résultat :</h3><br>
+                <button class="no-transition-button">Sans transition</button>
+                <button class="transition-button">Avec transition</button>
+            </div>
+
+            <p>📌 Explication : Quand la souris passe sur le bouton, la couleur change progressivement en 0.5s.</p>
     
-            <h3>Les animations avec @keyframes</h3>
-            <p>Avec <code>@keyframes</code>, on peut créer des animations plus complexes.</p>
+            <h2>Animer un élément avec <code>@keyframes</code></h2>
+
+            <h4>La propriété <code>animation</code></h4>
+            <p>Syntaxe :</p>
             <div class="code-block">
-                <pre>
-    @keyframes bounce {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-20px);
-        }
-    }
-    .animated-box {
-        width: 100px;
-        height: 100px;
-        background-color: green;
-        animation: bounce 1s infinite;
-    }
-                </pre>
+                animation: nom-animation durée timing-function delay iteration-count direction fill-mode;<br>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paramètre</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>nom-animation</strong></td>
+                        <td>Le nom de l'animation définie avec <code>@keyframes</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>durée</strong></td>
+                        <td>Temps que met l’animation pour se jouer (ex: <code>2s</code>, <code>500ms</code>).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>timing-function</strong></td>
+                        <td>Détermine la courbe d'accélération (<code>ease</code>, <code>linear</code>, etc.).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>delay</strong> (optionnel)</td>
+                        <td>Temps d’attente avant le début de l’animation.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>iteration-count</strong> (optionnel)</td>
+                        <td>Nombre de répétitions de l’animation (<code>1</code>, <code>infinite</code>, etc.).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>direction</strong> (optionnel)</td>
+                        <td>Définit le sens de l’animation (<code>normal</code>, <code>reverse</code>, <code>alternate</code>, etc.).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>fill-mode</strong> (optionnel)</td>
+                        <td>Contrôle l’apparence de l’élément avant/après l’animation (<code>none</code>, <code>forwards</code>, etc.).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Les animations permettent de créer des effets plus avancés qu’une simple transition.<br><br><code>@keyframes</code> permet de créer une animation complète, en définissant différentes étapes.</p>
+            
+            <h4>Structure d’un @keyframes :</h4>
+            <div class="code-block">
+                @keyframes nom-animation { <br>
+                &nbsp;&nbsp;0% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur de départ;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;50% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur intermédiaire;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;100% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur finale;<br>
+                &nbsp;&nbsp;}<br>
+                }<br><br>
+                @keyframes nom-animation { <br>
+                &nbsp;&nbsp;from {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur de départ;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;to {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;propriété: valeur finale;<br>
+                &nbsp;&nbsp;}<br>
+                }<br><br>
+            </div><br>
+
+            <ul>
+                <li><code>from</code> ou <code>0%</code>→ Début de l’animation.</li>
+                <li><code>50%</code>→ Milieu de l’animation.</li>
+                <li><code>to</code> ou <code>100%</code>→ Fin de l’animation.</li>
+            </ul><br>
+
+            <p>Par exemple, pour créer un effet de changer de la couleur de fond d'un texte, nous pouvons utiliser l'animation <code>keyframes</code> comme ceci :</p>
+
+            <div class="code-block">
+                .paragraphe-anime { <br>
+                &nbsp;&nbsp;animation: couleur 5s infinite ease-in-out<br>
+                }<br><br>
+                @keyframes couleur { <br>
+                &nbsp;&nbsp;0% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: red;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;50% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: green;<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;100% {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: blue;<br>
+                &nbsp;&nbsp;}<br>
+                }
             </div>
             <div class="example">
-                <h3>Résultat :</h3>
-                <div class="animated-box"></div>
+                <h3>Résultat :</h3><br>
+                <p class="animate-text">La couleur de fond de ce texte est animée</p>
             </div>
+
+            <p>📌 Explication : La couleur de fond de ce texte est intialement rouge, mais devient vert puis bleu. L'animation se répète à l'infini grâce à l'attribut <code>infinite</code>.</p>
     
-            <h2>2. Effets interactifs</h2>
-            <h3>Changement de couleur au survol</h3>
-            <p>Avec <code>:hover</code>, on peut modifier l’apparence d’un élément lorsqu'on passe la souris dessus.</p>
+            <h2>Adapter le contenu d'une page grâce au Responsive Design <code>@media</code></h2>
+
+            <p>Le Responsive Design permet d’adapter les animations et interactions aux différentes tailles d’écran.</p>
+
+            <h4>Comprendre les media queries</h4>
+
+            <p>Les media queries permettent d'adapter le style des éléments en fonction de la taille de l'écran.</p>
+
             <div class="code-block">
-                <pre>
-    p:hover {
-        color: orange;
-        font-weight: bold;
-    }
-                </pre>
+                @media (max-width: 600px) {<br>
+                &nbsp;&nbsp;// Styles appliqués uniquement si la largeur de l'écran est inférieur à 600 pixels
+                }<br>
             </div>
-            <div class="example">
-                <h3>Résultat :</h3>
-                <p class="hover-text">Survolez ce texte !</p>
-            </div>
-    
-            <h3>Effets de boutons animés</h3>
-            <p>On peut rendre un bouton interactif en ajoutant une animation au clic.</p>
+            <ul>
+                <li><code>max-width: 600px</code> signifie que les styles définis à l'intérieur seront appliqués <strong>seulement</strong> si l'écran fait <strong>600 pixels ou moins</strong></li>
+                <li>On peut aussi utiliser <code>min-width</code> pour appliquer des styles à partir d'une certaine largeur d'écran.</li>
+            </ul>
+
             <div class="code-block">
-                <pre>
-    .button-click {
-        background-color: purple;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-    }
-    .button-click:active {
-        transform: scale(0.9);
-    }
-                </pre>
+                .button { <br>
+                &nbsp;&nbsp;background-color: yellow;<br>
+                &nbsp;&nbsp;color: black;<br>
+                }<br><br>
+                @media (max-width: 600px) { <br>
+                &nbsp;&nbsp;.button {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;background-color: purple;<br>
+                &nbsp;&nbsp;color: white;<br>
+                &nbsp;&nbsp;}<br>
+                }<br>
             </div>
-            <div class="example">
-                <h3>Résultat :</h3>
-                <button class="button-click">Cliquez-moi</button>
+            <div class="example div-media">
+                <h3>Résultat :</h3><br>
+
+                <button class="button-media">Exemple de Responsive Design</button>
             </div>
+
+            <h3>Attention aux Erreurs courantes</h3>
+            <p>✅Problème : Les styles ne s’appliquent pas → Vérifiez que la media query est bien placée après les styles généraux. De plus, si cela ne suffit pas, rajoutez <code>!important</code> après l'attribut d'une propriété</p>
+
+            <p>👉 Pratiquez ces concepts avec vos propres tests pour bien les assimiler avec les exemples de projets suivants ! 🚀</p>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre7')">Quiz Final →</button>
+        </section>
+
+        <section id="chapitre7" class="section">
+            <h1>QUIZ : Les questions pour valider tes connaissances en HTML / CSS</h1>
+
+            <div class="quiz-container">
+                <form id="quizForm">
+                    <div id="questions"></div>
+                    <button type="button" class="result-button" onclick="calculateScore()">
+                        Valider
+                        <svg class="result-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                            fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                            clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </button>
+                </form>
+                <div id="result" class="result"></div>
+            </div>
+            
+
+            <button class="next-btn" onclick="changeChapter('chapitre9')">La fin du cours →</button>
         </section>
 
         <section id="chapitre9" class="section">
-            <h1>Chapitre 2 : Structure d'une page HTML</h1>
-            <p>Une page HTML est composée de plusieurs balises essentielles :</p>
-            <button class="next-btn" onclick="changeChapter('chapitre1')">Leçon suivante →</button>
+            <h1>🎉 Bravo, tu as terminé !</h1>
+            <p>Félicitations ! Tu as appris les bases de HTML et CSS. C'est une super avancée, et maintenant tu es capable de créer tes propres pages web. Mais ce n'est que le début de ton aventure dans le monde du développement ! Il reste encore plein de choses passionnantes à découvrir. Voici quelques ressources pour continuer à progresser :</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=Y80juYcu3ZI&list=PLwLsbqvBlImHG5yeUCXJ1aqNMgUKi1NK3&ab_channel=PierreGiraud" target="_blank">Cours HTML & CSS complet (Pierre Giraud)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=v1Pv-M6zf4c&ab_channel=YaoKevin" target="_blank">Créer un site web avec HTML & CSS (Yao Kevin)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=iSWjmVcfQGg&ab_channel=FromScratch-Led%C3%A9veloppementWebdez%C3%A9ro" target="_blank">Apprendre le CSS (From Scratch)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Jarz_GZG7-I&ab_channel=front-end" target="_blank">CSS Grid expliqué simplement (front-end)</a></li>
+            </ul><br>
+            <p>Tu comprendras sûrement facilement les premières minutes de ces vidéos, mais elles restent très intéressantes ! Elles proposent une approche différente de celle utilisée ici, ce qui peut être un vrai plus pour apprendre autrement. En plus, elles approfondissent certains points qui pourront t'aider à aller encore plus loin dans ta maîtrise du HTML et du CSS.</p>
+
+            <h2>💡 Petits projets pour s'entraîner</h2>
+            <p>La meilleure façon de progresser, c'est de pratiquer ! Voici quelques projets sympas à réaliser :</p>
+        
+            <h4>🔹 Facile :</h4>
+            <ul>
+                <li>Créer une page de présentation avec une photo et une petite description de toi.</li>
+                <li>Faire une page de contact avec un formulaire simple (nom, email, message).</li>
+            </ul><br>
+
+            <h4>🔸 Intermédiaire :</h4>
+            <ul>
+                <li>Créer un mini-blog où tu peux poster des articles sur tes passions.</li>
+                <li>Faire une carte de visite interactive avec des effets CSS et des animations.</li>
+            </ul><br>
+
+            <h4>🔺 Difficile :</h4>
+            <ul>
+                <li>Coder un portfolio responsive avec des animations et un design original.</li>
+                <li>Créer une petite boutique en ligne statique avec une page produit et un panier.</li>
+            </ul>
+
+            <h2>📚 Et JavaScript dans tout ça ?</h2> 
+            <p>Pour l'instant, tes pages web sont statiques, on appelle ça du <strong>Front-End</strong>, c'est-à-dire qu'elles affichent des informations, mais ne réagissent pas vraiment aux actions des utilisateurs. C'est là que <strong>JavaScript</strong> entre en jeu !</p>
+            <p>JavaScript est un langage de programmation qui permet d'ajouter de l'interactivité à tes sites. Avec lui, tu peux :</p>
+            <ul>
+                <li>Créer des animations et des effets visuels (comme des menus qui s'ouvrent ou des images qui changent).</li>
+                <li>Vérifier les informations entrées dans un formulaire avant qu'elles soient envoyées.</li>
+                <li>Créer des jeux et des applications web interactives.</li>
+            </ul><br>
+            <p>Apprendre JavaScript, c'est la suite logique après HTML et CSS, et ça te permettra d'aller beaucoup plus loin !</p>
+            <p>Si tu veux te lancer, voici quelques ressources :</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=v3Ho7QVaTXM&ab_channel=Melvynx%E2%80%A2Apprendre%C3%A0coder" target="_blank">Comprendre le Javascript en 5 minutes (Melvynx)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=VZLflMqC6dI&list=PLwLsbqvBlImFB8AuT6ENIg-s87ys4yGWI&ab_channel=PierreGiraud" target="_blank">Formation complète en Javascript (Pierre Giraud)</a></li>
+            </ul>
+        
+            <h2>🖥️ C'est quoi le Back-End ?</h2>
+            <p>Si tu souhaite vraiment aller plus loin et que tu veux un site où les utilisateurs peuvent se connecter, poster des messages ou enregistrer des données ? C'est là qu'intervient le <strong>Back-End</strong> !</p>
+            <p>Le Back-End, c'est la partie cachée d'un site web qui permet de stocker et gérer des informations.</p>
+            <ul>
+                <li><strong>Son rôle :</strong> gérer la base de données, les connexions des utilisateurs et tout ce qui se passe "dans l'ombre" d'un site.</li>
+                <li><strong>Langages utilisés :</strong> PHP, JavaScript (Node.js), Python (Django, Flask), Ruby.</li>
+                <li><strong>Bases de données :</strong> MySQL, PostgreSQL, MongoDB.</li>
+            </ul><br>
+            <p>Si ça t'intéresse, voici quelques ressources pour te renseigner :</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=UPDmfW9QIR0&ab_channel=Cookieconnect%C3%A9" target="_blank">La différence : Front-End vs Back-End (Cookie Connecté)</a></li>
+                <li><a href="https://www.youtube.com/watch?v=do7A61AzRZ8&ab_channel=YannickDalbin" target="_blank">Comment fonctionne le Back-End ? (Yannick Dalbin)</a></li>
+            </ul><br>
+            <p>Encore bravo pour tout ce que tu as accompli ! Continue à apprendre et à t'amuser en codant grâce à nos autres cours proposés ! 🚀</p>
+        
+            <button class="next-btn" onclick="window.location.href='../index.html'">Revenir au menu principal →</button>
         </section>
     </div>
 
