@@ -1,13 +1,22 @@
 // Copier le code
 function copyCode(button) {
-    const codeText = button.nextElementSibling.innerText;
-    navigator.clipboard.writeText(codeText)
-    
-    button.textContent = "Copié !";
-    setTimeout(() => {
-        button.textContent = "Copier";
-    }, 2000);
+    const codeBlock = button.closest('.code-block'); // Trouve la div parent contenant le code
+    const codeText = codeBlock.innerText; // Récupère le texte de la div, avec les entités HTML
+
+    const codeWithoutButton = codeText.replace("Copier\n", ""); // Remplace "Copier" par rien
+
+    navigator.clipboard.writeText(codeWithoutButton) // Copie dans le presse-papiers
+        .then(() => {
+            button.textContent = "Copié !"; // Change le texte du bouton pour informer l'utilisateur
+            setTimeout(() => {
+                button.textContent = "Copier"; // Restaure le texte du bouton après 2 secondes
+            }, 2000);
+        })
+        .catch(err => {
+            console.error("Erreur de copie :", err); // En cas d'erreur
+        });
 }
+
 
 // Actualisation de la page
 document.addEventListener("DOMContentLoaded", function() {
