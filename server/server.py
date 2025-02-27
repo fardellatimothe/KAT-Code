@@ -8,30 +8,48 @@ CORS(app, resources={r"/check-code": {"origins": "*"}})
 # Liste des bibliothèques interdites
 FORBIDDEN_LIBRARIES = {"os", "sys", "random", "math", "subprocess", "shutil"}
 
+# 📌 Nombre maximal d'instructions autorisées pour éviter les répétitions inutiles
+MAX_INSTRUCTIONS = 20
+
 def is_valid_turtle_code(user_code):
     try:
-        # 📌 Vérifier que le code est bien du Python valide
-        tree = ast.parse(user_code)
+        tree = ast.parse(user_code)  # Analyse du code en AST
+        calls = [node for node in ast.walk(tree) if isinstance(node, ast.Call)]
+        error_types = set()  # 📌 Types d'erreurs détectées
 
-        # 📌 Vérifier les imports
+        # 📌 Vérifier que le code ne contient pas trop d'instructions inutiles
+        if len(calls) > MAX_INSTRUCTIONS:
+            error_types.add("❌ Ton code contient trop d'instructions inutiles. Essaie de le simplifier.")
+
+        # 📌 Vérifier les imports interdits et s'assurer que import turtle est présent
         import_nodes = [node for node in ast.walk(tree) if isinstance(node, ast.Import) or isinstance(node, ast.ImportFrom)]
         used_libraries = {imp.names[0].name for imp in import_nodes if isinstance(imp, ast.Import)}
 
-        # ✅ Accepter uniquement `import turtle`
-        if used_libraries - {"turtle"}:
-            return False, "❌ Tu utilises une bibliothèque non autorisée. Seul `import turtle` est permis."
+        if used_libraries & FORBIDDEN_LIBRARIES:
+            error_types.add("❌ Il y a des éléments non autorisés dans ton code.")
 
-        # 📌 Vérifier que l'élève n'a pas importé `turtle` mais ne l'a jamais utilisé
-        calls = [node for node in ast.walk(tree) if isinstance(node, ast.Call)]
+        if "turtle" not in used_libraries:
+            error_types.add("❌ Il semble manquer un élément essentiel au début du code.")
+
+        # 📌 Vérifier si turtle est importé mais jamais utilisé
         has_turtle_usage = any(
             isinstance(call.func, ast.Attribute) and isinstance(call.func.value, ast.Name) and call.func.value.id == "turtle"
             for call in calls
         )
-
         if "turtle" in used_libraries and not has_turtle_usage:
-            return False, "❌ Tu as importé `turtle`, mais tu ne l'utilises pas. Ajoute des commandes pour dessiner !"
+            error_types.add("❌ Il semble manquer des éléments essentiels pour que ton code fonctionne.")
 
-        # 📌 Vérifier que le premier appel est bien turtle.Turtle()
+        # 📌 Vérifier que la tortue est bien créée avant son utilisation
+        turtle_created = False
+        for call in calls:
+            if isinstance(call.func, ast.Attribute) and isinstance(call.func.value, ast.Name):
+                if call.func.value.id == "turtle" and call.func.attr == "Turtle":
+                    turtle_created = True
+                elif call.func.attr in ["forward", "right", "color", "shape"] and not turtle_created:
+                    error_types.add("❌ Certaines instructions sont placées avant la création de la tortue. Vérifie ton code.")
+                    break  # Pas besoin de continuer à vérifier, on a détecté une erreur
+
+        # 📌 Vérifier que le premier appel est turtle.Turtle()
         first_call = calls[0] if calls else None
         has_turtle_constructor_at_start = (
             first_call and isinstance(first_call.func, ast.Attribute) and 
@@ -39,8 +57,10 @@ def is_valid_turtle_code(user_code):
             first_call.func.value.id == "turtle" and 
             first_call.func.attr == "Turtle"
         )
+        if not has_turtle_constructor_at_start:
+            error_types.add("❌ L'organisation du code ne semble pas correcte.")
 
-        # 📌 Vérifier que le dernier appel est bien turtle.done()
+        # 📌 Vérifier que le dernier appel est turtle.done()
         last_call = calls[-1] if calls else None
         has_turtle_done_at_end = (
             last_call and isinstance(last_call.func, ast.Attribute) and 
@@ -48,8 +68,10 @@ def is_valid_turtle_code(user_code):
             last_call.func.value.id == "turtle" and 
             last_call.func.attr == "done"
         )
+        if not has_turtle_done_at_end:
+            error_types.add("❌ L'organisation du code ne semble pas correcte.")
 
-        # 📌 Vérifier qu'il n'y a pas plusieurs instances de `turtle.Turtle()`
+        # 📌 Vérifier qu'il n'y a pas plusieurs turtle.Turtle()
         turtle_instances = sum(
             1 for call in calls 
             if isinstance(call.func, ast.Attribute) and 
@@ -57,8 +79,10 @@ def is_valid_turtle_code(user_code):
                call.func.value.id == "turtle" and 
                call.func.attr == "Turtle"
         )
+        if turtle_instances > 1:
+            error_types.add("❌ Il y a des répétitions inutiles dans ton code.")
 
-        # 📌 Vérifier les mouvements (forward(100) et right(90))
+        # 📌 Vérifier les mouvements
         forward_calls = sum(
             1 for call in calls 
             if isinstance(call.func, ast.Attribute) and 
@@ -66,6 +90,8 @@ def is_valid_turtle_code(user_code):
                call.args and isinstance(call.args[0], ast.Constant) and 
                call.args[0].value == 100
         )
+        if forward_calls != 4:
+            error_types.add("❌ Le déplacement de la tortue semble incorrect.")
 
         right_calls = sum(
             1 for call in calls 
@@ -74,11 +100,10 @@ def is_valid_turtle_code(user_code):
                call.args and isinstance(call.args[0], ast.Constant) and 
                call.args[0].value == 90
         )
+        if right_calls != 4:
+            error_types.add("❌ Le déplacement de la tortue semble incorrect.")
 
-        # 📌 Vérifier la couleur et la forme (peu importe leur emplacement, mais une seule fois)
-        color_calls = sum(1 for call in calls if isinstance(call.func, ast.Attribute) and call.func.attr == "color")
-        shape_calls = sum(1 for call in calls if isinstance(call.func, ast.Attribute) and call.func.attr == "shape")
-
+        # 📌 Vérifier la couleur et la forme (peu importe l'emplacement)
         has_color_green = any(
             isinstance(call.func, ast.Attribute) and 
             call.func.attr == "color" and 
@@ -87,6 +112,8 @@ def is_valid_turtle_code(user_code):
             call.args[0].value.lower() == "green"
             for call in calls
         )
+        if not has_color_green:
+            error_types.add("❌ Il manque un élément de personnalisation.")
 
         has_shape_turtle = any(
             isinstance(call.func, ast.Attribute) and 
@@ -96,32 +123,29 @@ def is_valid_turtle_code(user_code):
             call.args[0].value.lower() == "turtle"
             for call in calls
         )
+        if not has_shape_turtle:
+            error_types.add("❌ Il manque un élément de personnalisation.")
 
-        # 📌 Vérification finale avec prise en compte des répétitions
-        if (
-            has_turtle_constructor_at_start and forward_calls == 4 and right_calls == 4 and 
-            has_color_green and has_shape_turtle and has_turtle_done_at_end and
-            turtle_instances == 1 and color_calls <= 1 and shape_calls <= 1
-        ):
+        # 📌 Suggérer une simplification si le code est presque bon
+        if forward_calls >= 2 and right_calls >= 2 and (forward_calls < 4 or right_calls < 4):
+            error_types.add("💡 Ton code semble presque bon, mais il pourrait être mieux organisé.")
+
+        # 📌 Vérification finale avec gestion des erreurs multiples
+        if not error_types:
             return True, "🎉 Bravo ! Ton code est logique et optimisé !"
-
-        # 🟡 Cas où il y a des répétitions → message subtil d'optimisation
-        elif turtle_instances > 1 or color_calls > 1 or shape_calls > 1:
-            return False, "🔍 Ton code fonctionne, mais il pourrait être mieux optimisé ! Essaie de simplifier certaines parties."
-
-        # 🟡 Cas où le code est presque bon → encourager sans donner la réponse exacte
-        elif has_turtle_constructor_at_start and has_turtle_done_at_end and forward_calls >= 3 and right_calls >= 3:
-            return False, "🤔 Ton code est presque correct... Regarde bien l'ordre et l'efficacité des instructions."
-
-        # 🔴 Cas général → message d'erreur générique
-        else:
-            return False, "❌ Il semble y avoir une erreur dans la logique du code. Essaie encore !"
+        
+        # 📌 Si plusieurs erreurs sont détectées, donner un message global
+        if len(error_types) > 2:
+            return False, "❌ Il y a plusieurs erreurs dans ton code. Reprends-le et vérifie chaque élément."
+        
+        # 📌 Si une ou deux erreurs seulement, afficher des messages plus généraux
+        return False, "\n".join(error_types)
 
     except SyntaxError:
         return False, "❌ Erreur de syntaxe détectée. Vérifie bien ton code !"
 
     except Exception as e:
-        return False, "❌ Erreur dans ton code. Assure-toi d'écrire uniquement du Python valide !"
+        return False, "❌ Il y a une erreur générale dans ton code. Vérifie bien ce que tu as écrit."
 
 @app.route('/check-code', methods=['POST'])
 def check_code():
