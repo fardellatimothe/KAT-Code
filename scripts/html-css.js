@@ -608,18 +608,18 @@ document.addEventListener("DOMContentLoaded", function () {
 const questions = [
     { q: "Quel est le rôle du doctype en HTML ?", options: ["Définir l'encodage", "Indiquer la version du document HTML", "Ajouter un commentaire", "Spécifier le CSS à utiliser"], correct: 1 },
     { q: "Que doit on préciser lorsqu'on utilise l'élément &lt;a&gt; ?", options: ["Un attribut <code>target=''</code>", "Un attribut <code>href=''</code>", "Deux attributs <code>href</code> et <code>target</code>", "Aucun attribut est obligatoire"], correct: 1 },
-    { q: "Quelle est la différence entre &lt;section&gt; et &lt;article&gt; ?", options: ["Aucune différence", "<code>&lt;section&gt</code>; est plus générique", "<code>&lt;article&gt;</code> est un contenu autonome", "<code>&lt;section&gt;</code> doit être utilisé à l'intérieur de <code>&lt;article&gt;</code>"], correct: 2 },
+    { q: "Quelle est la différence entre &lt;section&gt; et &lt;article&gt; ?", options: ["Aucune différence", "<code>&lt;section&gt</code> est plus générique", "<code>&lt;article&gt;</code> est un contenu autonome", "<code>&lt;section&gt;</code> doit être utilisé à l'intérieur de <code>&lt;article&gt;</code>"], correct: 2 },
     { q: "Quelle propriété CSS permet de changer la police du texte ?", options: ["font-family", "text-style", "font-type", "font-weight"], correct: 0 },
     { q: "Quel mode d'affichage est par défaut pour un élément &lt;span&gt; ?", options: ["block", "inline", "flex", "grid"], correct: 1 },
     { q: "Que fait 'position: sticky' en CSS ?", options: ["Fixe l'élément en haut de la page", "Le rend collant après un certain défilement", "Le centre horizontalement", "Ajuste la transparence"], correct: 1 },
     { q: "Quel est l'intérêt des feuilles de style CSS ?", options: ["Séparer le design du contenu", "Structurer le texte", "Créer des liens", "Ajouter des images"], correct: 0 },
     { q: "Quelle unité CSS est dépendante de la largeur de la fenêtre ?", options: ["px", "vw", "em", "rem"], correct: 1 },
     { q: "Quelle méthode est la plus efficace pour un site responsive ?", options: ["Utiliser uniquement des media queries", "Utiliser Flexbox et Grid", "Tout coder en pixels", "Utiliser des tableaux HTML"], correct: 1 },
-    { q: "Quel est l'élément parent de <th> et <td> dans un tableau HTML ?", options: ["<code>&lt;tr&gt;</code>", "<code>&lt;table&gt;</code>", "<code>&lt;thead&gt;</code>", "<code>&lt;tbody&gt;</code>"], correct: 0 },
+    { q: "Quel est l'élément parent de &lt;th&gt; et &lt;td&gt; dans un tableau HTML ?", options: ["<code>&lt;tr&gt;</code>", "<code>&lt;table&gt;</code>", "<code>&lt;thead&gt;</code>", "<code>&lt;tbody&gt;</code>"], correct: 0 },
     { q: "Quelle pseudo-classe permet de cibler un élément au clique ?", options: ["<code>:focus</code>", "<code>:hover</code>", "<code>:checked</code>", "<code>:active</code>"], correct: 0 },
     { q: "Quelle est la meilleure pratique pour améliorer l'accessibilité HTML ?", options: ["Utiliser uniquement des &lt;div&gt;", "Éviter les balises sémantiques", "Utiliser des attributs ARIA et des labels", "Tout écrire en majuscules"], correct: 2 },
     { q: "Quelle propriété CSS permet de créer une grille de mise en page ?", options: ["grid-template-columns", "flex-direction", "display: block", "align-content"], correct: 0 },
-    { q: "A quoi sert la balise &lt;rem&gt; en CSS ?", options: ["Met le texte en surbrillance", "Souligne de texte", "Barre de texte", "Met le texte en italique"], correct: 1 },
+    { q: "A quoi sert la balise &lt;rem&gt; en CSS ?", options: ["Met le texte en surbrillance", "Souligne de texte", "Barrer de texte", "Met le texte en italique"], correct: 1 },
     { q: "Quel sélecteur CSS cible tous les paragraphes ?", options: ["p", "#p", ".p", "*"], correct: 0 },
     { q: "Quel attribut permet d'ouvrir un lien dans un nouvel onglet ?", options: ["<code>target='_blank'</code>", "<code>rel='noopener'</code>", "<code>href='_new'</code>", "<code>open='newtab'</code>"], correct: 0 },
     { q: "Quelle propriété CSS permet d'ajouter une ombre à un texte ?", options: ["text-shadow", "shadow-text", "box-shadow", "font-shadow"], correct: 0 },
@@ -652,7 +652,7 @@ function calculateScore() {
     const resultDiv = document.getElementById("result");
     resultDiv.innerHTML = `Score: ${score} / 20`;
     
-    if (score >= 10) {
+    if (score >= 15) {
         resultDiv.style.color= "green"
         resultDiv.innerHTML += "<br>Félicitations, vous avez validé l'examen !";
     } else {
