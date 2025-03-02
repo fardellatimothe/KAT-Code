@@ -3,211 +3,292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apprendre Excel - KAT&Code</title>
+    <title>Cours Excel - CodeCamp</title>
     <link rel="stylesheet" href="../styles/excel.css">
-
-    <script src="https://kit.fontawesome.com/f2f740f43e.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="sidebar">
-        <div class="logo" style="cursor: pointer;" onclick="window.location.href='../index.html'">KAT & Code</div>
-        <div class="nav-item active" onclick="changeChapter('chapitre1')">1. Introduction à Excel</div>
-        <div class="nav-item" onclick="changeChapter('chapitre2')">2. Formules de base</div>
-        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Mise en forme conditionnelle</div>
-        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Graphiques</div>
+        <div class="logo">Cours Excel</div>
+        <div class="nav-item" onclick="showSection('section1')">1. Introduction à Excel</div>
+        <div class="nav-item" onclick="showSection('section2')">2. Formules de base</div>
+        <div class="nav-item" onclick="showSection('section3')">3. Mise en forme conditionnelle</div>
+        <div class="nav-item active" onclick="showSection('section4')">4. Graphiques</div>
     </nav>
 
-    <div class="main-content">
-        <i class="fa-solid fa-xmark" onclick="window.location.href='../index.html'"></i>
-        <section id="chapitre1" class="section active">
+    <main class="main-content">
+        <!-- Section 1 : Introduction à Excel -->
+        <section id="section1" class="section" style="display: none;">
             <h1>Introduction à Excel</h1>
-            <p>Microsoft Excel est un tableur puissant qui permet de manipuler des données, effectuer des calculs et créer des visualisations.</p>
-
-            <h2>L'interface Excel</h2>
-            <div class="excel-interface">
-                <img src="/api/placeholder/800/400" alt="Interface Excel" />
-                <p>Les éléments principaux de l'interface Excel :</p>
-                <ul style="margin-left: 2rem;">
-                    <li>Ruban : contient toutes les commandes organisées en onglets</li>
-                    <li>Barre de formule : affiche le contenu de la cellule active</li>
-                    <li>Zone de travail : grille de cellules où vous entrez vos données</li>
-                    <li>Onglets de feuilles : permet de naviguer entre différentes feuilles</li>
-                </ul>
-            </div>
-
-            <h2>Structure d'une feuille Excel</h2>
-            <div class="excel-grid">
-                <div class="cell header-cell"></div>
-                <div class="cell header-cell">A</div>
-                <div class="cell header-cell">B</div>
-                <div class="cell header-cell">C</div>
-                <div class="cell header-cell">D</div>
-                <div class="cell header-cell">E</div>
-                
-                <div class="cell header-cell">1</div>
-                <div class="cell">Produit</div>
-                <div class="cell">Prix</div>
-                <div class="cell">Quantité</div>
-                <div class="cell">Total</div>
-                <div class="cell">Date</div>
-
-                <div class="cell header-cell">2</div>
-                <div class="cell">Ordinateur</div>
-                <div class="cell">1200 €</div>
-                <div class="cell">2</div>
-                <div class="cell">=B2*C2</div>
-                <div class="cell">01/01/2024</div>
-            </div>
+            <p>Excel est un outil incontournable pour la gestion et l'analyse de données. Que vous soyez étudiant, comptable, analyste ou entrepreneur, il vous permet d'effectuer des calculs, de visualiser vos données et d'automatiser des tâches répétitives.</p>
+            <p>Avec Excel, vous pouvez :</p>
+            <ul>
+                <li>Créer des tableaux et organiser vos informations</li>
+                <li>Utiliser des formules pour effectuer des calculs automatisés</li>
+                <li>Appliquer des mises en forme conditionnelles pour mieux visualiser les tendances</li>
+                <li>Générer des graphiques pour représenter vos données</li>
+            </ul>
 
             <div class="tip-box">
-                <h3>💡 Astuce</h3>
-                <p>Pour naviguer rapidement dans Excel, utilisez ces raccourcis clavier :</p>
-                <ul style="margin-left: 2rem;">
-                    <li><span class="keyboard-shortcut">Ctrl + →</span> Pour aller à la dernière cellule contenant des données</li>
-                    <li><span class="keyboard-shortcut">Ctrl + Espace</span> Pour sélectionner une colonne entière</li>
-                    <li><span class="keyboard-shortcut">Shift + Espace</span> Pour sélectionner une ligne entière</li>
-                </ul>
+                <h3>💡 Astuces</h3>
+                <p>Une <strong>cellule</strong> est l'unité de base dans Excel, chaque case où l'on entre des données. <br>
+                    Une <strong>colonne</strong> est un ensemble vertical de cellules, identifiée par des lettres (A, B, C…). <br>
+                    Une <strong>ligne</strong> est un ensemble horizontal de cellules, identifiée par des chiffres (1, 2, 3…).</p>
             </div>
 
-            <h2>Types de données</h2>
-            <div class="practice-section">
-                <h3>Les principaux types de données dans Excel :</h3>
-                <ul style="margin-left: 2rem;">
-                    <li><strong>Texte :</strong> Lettres, chiffres ou symboles (ex: "Produit A")</li>
-                    <li><strong>Nombres :</strong> Valeurs numériques (ex: 1200,50)</li>
-                    <li><strong>Dates :</strong> Format date (ex: 01/01/2024)</li>
-                    <li><strong>Formules :</strong> Commencent par = (ex: =SOMME(A1:A10))</li>
-                </ul>
-
-                <div class="interactive-example">
-                    <h4>Exercice pratique</h4>
-                    <p>Créez un tableau simple avec les colonnes suivantes :</p>
-                    <ul style="margin-left: 2rem;">
-                        <li>Nom du produit (texte)</li>
-                        <li>Prix unitaire (nombre)</li>
-                        <li>Date d'achat (date)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <button class="next-btn" onclick="changeChapter('chapitre2')">Chapitre suivant : Formules de base →</button>
+            <button class="next-btn" onclick="showSection('section2')">Chapitre suivant : Formules de base →</button>
         </section>
-        <section id="chapitre2" class="section">
-            <h1>Formules de base Excel</h1>
-            
-            <div class="formula-box">
-                <h2>Structure d'une formule</h2>
-                <p>Les formules Excel commencent toujours par le signe =</p>
-                <div class="formula-syntax">
-                    =SOMME(A1:A10)
-                </div>
+
+        <!-- Section 2 : Formules de base -->
+        <section id="section2" class="section" style="display: none;">
+            <h1>Formules de base dans Excel</h1>
+            <p>Les formules permettent d’automatiser les calculs et de manipuler les données facilement. Voici un guide complet pour maîtriser les formules essentielles.</p>
+
+            <div class="info-box">
+                <h3>📌 Pourquoi utiliser les formules ?</h3>
                 <ul>
-                    <li>= : Indique le début d'une formule</li>
-                    <li>SOMME : Nom de la fonction</li>
-                    <li>() : Contient les arguments</li>
-                    <li>A1:A10 : Plage de cellules</li>
+                    <li>Automatiser les calculs répétitifs</li>
+                    <li>Faciliter l'analyse des données</li>
+                    <li>Améliorer la précision des résultats</li>
                 </ul>
             </div>
 
-            <h2>Formules essentielles</h2>
-            
-            <div class="example-table">
-                <h3>SOMME</h3>
-                <table>
-                    <tr>
-                        <th>A</th>
-                        <th>B</th>
-                        <th>C</th>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>20</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Formule: =SOMME(A1:C1)</td>
-                        <td class="formula-result">60</td>
-                    </tr>
-                </table>
+            <h2>Écrire une formule</h2>
+            <p>Toutes les formules commencent par <code>=</code>. Exemple :</p>
+            <div class="formula-example">
+                <code>=A1+B1</code> → Addition des cellules A1 et B1.
             </div>
 
-            [Autres exemples similaires pour MOYENNE, MIN, MAX]
-
-            <div class="practice-section">
-                <h3>Exercice pratique : Budget mensuel</h3>
-                <!-- Exercice interactif -->
+            <h2>📌 Formules essentielles</h2>
+            <div class="formula-grid">
+                <div class="formula-card">
+                    <h3>SOMME</h3>
+                    <p>Additionne une plage de cellules.</p>
+                    <div class="formula-code">
+                        <code>=SOMME(A1:A5)</code>
+                    </div>
+                </div>
+                <div class="formula-card">
+                    <h3>MOYENNE</h3>
+                    <p>Calcule la moyenne des valeurs.</p>
+                    <div class="formula-code">
+                        <code>=MOYENNE(A1:A5)</code>
+                    </div>
+                </div>
+                <div class="formula-card">
+                    <h3>MAX</h3>
+                    <p>Retourne la valeur maximale.</p>
+                    <div class="formula-code">
+                        <code>=MAX(A1:A5)</code>
+                    </div>
+                </div>
+                <div class="formula-card">
+                    <h3>MIN</h3>
+                    <p>Retourne la valeur minimale.</p>
+                    <div class="formula-code">
+                        <code>=MIN(A1:A5)</code>
+                    </div>
+                </div>
+                <div class="formula-card">
+                    <h3>SI</h3>
+                    <p>Teste une condition et retourne une valeur.</p>
+                    <div class="formula-code">
+                        <code>=SI(A1>10, "Oui", "Non")</code>
+                    </div>
+                </div>
             </div>
 
-            <button class="next-btn" onclick="changeChapter('chapitre3')">Chapitre suivant : Mise en forme conditionnelle →</button>
-        </section>
-        <section id="chapitre3" class="section">
-            <h1>Mise en forme conditionnelle et filtres</h1>
+            <h2>📌 Formules avancées</h2>
+            <div class="formula-grid">
+                <div class="formula-card">
+                    <h3>RECHERCHEV</h3>
+                    <p>Recherche une valeur dans une plage.</p>
+                    <div class="formula-code">
+                        <code>=RECHERCHEV("nom", A1:B10, 2, FAUX)</code>
+                    </div>
+                </div>
+                <div class="formula-card">
+                    <h3>INDEX</h3>
+                    <p>Retourne une valeur à partir d'une plage.</p>
+                    <div class="formula-code">
+                        <code>=INDEX(A1:B10, 2, 2)</code>
+                    </div>
+                </div>
+                <div class="formula-card">
+                    <h3>EQUIV</h3>
+                    <p>Trouve la position d'une valeur.</p>
+                    <div class="formula-code">
+                        <code>=EQUIV("nom", A1:A10, 0)</code>
+                    </div>
+                </div>
+            </div>
 
-            <div class="conditional-example">
-                <h2>Règles de mise en forme</h2>
-                <div class="cell-example cell-high">1000 €</div>
-                <div class="cell-example cell-medium">500 €</div>
-                <div class="cell-example cell-low">100 €</div>
-                <p>Exemple de règles :</p>
+            <h2>📌 Exercice pratique</h2>
+            <div class="exercise">
+                <p>Vous avez un tableau de ventes mensuelles :</p>
                 <ul>
-                    <li>Rouge : > 750 €</li>
-                    <li>Jaune : entre 300 € et 750 €</li>
-                    <li>Vert : < 300 €</li>
+                    <li>Janvier : 2000€</li>
+                    <li>Février : 2500€</li>
+                    <li>Mars : 1800€</li>
+                    <li>Avril : 3000€</li>
                 </ul>
+                <p><strong>Objectif :</strong> Utilisez les formules apprises pour :</p>
+                <ol>
+                    <li>Calculer le total des ventes.</li>
+                    <li>Trouver le mois avec les ventes les plus élevées.</li>
+                    <li>Calculer la moyenne des ventes.</li>
+                </ol>
+                <button class="show-btn" onclick="showSolution('solution2')">Afficher la solution</button>
+                <div class="solution" id="solution2">
+                    <h3>✅ Solution</h3>
+                    <ol>
+                        <li>Total des ventes : <code>=SOMME(B2:B5)</code></li>
+                        <li>Mois avec les ventes les plus élevées : <code>=INDEX(A2:A5, EQUIV(MAX(B2:B5), B2:B5, 0))</code></li>
+                        <li>Moyenne des ventes : <code>=MOYENNE(B2:B5)</code></li>
+                    </ol>
+                </div>
             </div>
 
-            <div class="filter-demo">
-                <h2>Utilisation des filtres</h2>
-                <!-- Démo interactive des filtres -->
-            </div>
-
-            <div class="practice-section">
-                <h3>Exercice : Analyse des ventes</h3>
-                <!-- Exercice pratique -->
-            </div>
-
-            <button class="next-btn" onclick="changeChapter('chapitre4')">Chapitre suivant : Graphiques →</button>
+            <button class="next-btn" onclick="showSection('section3')">Chapitre suivant : Mise en forme conditionnelle →</button>
         </section>
-        <section id="chapitre4" class="section">
-            <h1>Création de graphiques</h1>
 
-            <div class="chart-types">
-                <div class="chart-type">
-                    <h3>Histogramme</h3>
-                    <img src="/api/placeholder/200/150" alt="Exemple d'histogramme">
-                    <p>Idéal pour comparer des valeurs entre différentes catégories</p>
-                </div>
+        <!-- Section 3 : Mise en forme conditionnelle -->
+        <section id="section3" class="section" style="display: none;">
+            <h1>Mise en forme conditionnelle</h1>
+            <p>La mise en forme conditionnelle permet de mettre en évidence des données spécifiques en fonction de critères définis.</p>
 
-                <div class="chart-type">
-                    <h3>Graphique en secteurs</h3>
-                    <img src="/api/placeholder/200/150" alt="Exemple de graphique en secteurs">
-                    <p>Parfait pour montrer les proportions d'un tout</p>
-                </div>
-
-                <div class="chart-type">
-                    <h3>Graphique en ligne</h3>
-                    <img src="/api/placeholder/200/150" alt="Exemple de graphique en ligne">
-                    <p>Idéal pour montrer l'évolution dans le temps</p>
-                </div>
-            </div>
-
-            <div class="best-practices">
-                <h2>Bonnes pratiques</h2>
+            <div class="info-box">
+                <h3>📌 Pourquoi utiliser la mise en forme conditionnelle ?</h3>
                 <ul>
-                    <li>Choisir le bon type de graphique selon vos données</li>
-                    <li>Utiliser des couleurs contrastées</li>
-                    <li>Ajouter des titres et légendes clairs</li>
-                    <li>Éviter la surcharge d'informations</li>
+                    <li>Visualiser rapidement les tendances</li>
+                    <li>Identifier les valeurs critiques</li>
+                    <li>Rendre les données plus lisibles</li>
                 </ul>
             </div>
 
-            <div class="practice-section">
-                <h3>Exercice : Analyse des ventes mensuelles</h3>
-                <!-- Exercice pratique -->
+            <h2>🛠️ Appliquer une mise en forme conditionnelle</h2>
+            <ol>
+                <li>Sélectionnez les cellules à formater.</li>
+                <li>Allez dans l'onglet <strong>Accueil</strong> &gt; <strong>Mise en forme conditionnelle</strong>.</li>
+                <li>Choisissez une règle (par exemple, "Cellules contenant...").</li>
+                <li>Définissez les critères et le format souhaité.</li>
+            </ol>
+
+            <h2>📌 Exemples de règles</h2>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Mettre en évidence les valeurs supérieures à 100</strong> : Appliquez une couleur de fond.</li>
+                    <li><strong>Barres de données</strong> : Affichez des barres proportionnelles aux valeurs.</li>
+                    <li><strong>Échelles de couleurs</strong> : Utilisez un dégradé pour représenter les valeurs.</li>
+                </ul>
             </div>
 
-            <button class="next-btn" onclick="changeChapter('chapitre1')">Terminer le cours →</button>
+            <h2>📌 Exercice pratique</h2>
+            <div class="exercise">
+                <p>Vous avez un tableau de notes d'étudiants :</p>
+                <ul>
+                    <li>Alice : 85</li>
+                    <li>Bob : 72</li>
+                    <li>Charlie : 90</li>
+                    <li>Diana : 68</li>
+                </ul>
+                <p><strong>Objectif :</strong> Appliquez une mise en forme conditionnelle pour :</p>
+                <ol>
+                    <li>Mettre en évidence les notes supérieures à 80.</li>
+                    <li>Ajouter des barres de données pour visualiser les notes.</li>
+                </ol>
+                <button class="show-btn" onclick="showSolution('solution3')">Afficher la solution</button>
+                <div class="solution" id="solution3">
+                    <h3>✅ Solution</h3>
+                    <ol>
+                        <li>Sélectionnez les notes &gt; <strong>Mise en forme conditionnelle</strong> &gt; <strong>Cellules contenant...</strong> &gt; Définissez "Supérieur à 80".</li>
+                        <li>Sélectionnez les notes &gt; <strong>Mise en forme conditionnelle</strong> &gt; <strong>Barres de données</strong>.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="next-btn" onclick="showSection('section4')">Chapitre suivant : Graphiques →</button>
         </section>
-    </div>
-    <script src="../scripts/excel.js"></script>
+
+        <!-- Section 4 : Graphiques -->
+        <section id="section4" class="section">
+            <h1>Créer et personnaliser des graphiques dans Excel</h1>
+            <p>Les graphiques permettent de transformer vos données en une représentation visuelle claire et impactante.</p>
+
+            <div class="info-box">
+                <h3>📌 Pourquoi utiliser des graphiques ?</h3>
+                <ul>
+                    <li>Mettre en évidence les tendances</li>
+                    <li>Faciliter la compréhension des données</li>
+                    <li>Rendre vos présentations plus percutantes</li>
+                </ul>
+            </div>
+
+            <h2>🛠️ Comment insérer un graphique ?</h2>
+            <ol>
+                <li>Sélectionnez vos données.</li>
+                <li>Allez dans l'onglet <strong>Insertion</strong>.</li>
+                <li>Choisissez un type de graphique (par exemple, histogramme, courbe, camembert).</li>
+                <li>Personnalisez votre graphique.</li>
+            </ol>
+
+            <h2>📌 Types de graphiques courants</h2>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Graphique en courbes</strong> : Idéal pour observer l'évolution des données.</li>
+                    <li><strong>Graphique en colonnes</strong> : Comparaison de plusieurs valeurs.</li>
+                    <li><strong>Diagramme circulaire</strong> : Affichage des proportions.</li>
+                </ul>
+            </div>
+
+            <h2>🎨 Personnalisation des graphiques</h2>
+            <div class="tip-box">
+                <p>💡 Ajoutez des titres, étiquettes et couleurs pour améliorer la lisibilité !</p>
+            </div>
+
+            <h2>📌 Exercice pratique</h2>
+            <div class="exercise">
+                <p>Créez un graphique en colonnes pour visualiser les ventes mensuelles suivantes :</p>
+                <ul>
+                    <li>Janvier : 2000€</li>
+                    <li>Février : 2500€</li>
+                    <li>Mars : 1800€</li>
+                    <li>Avril : 3000€</li>
+                </ul>
+                <button class="show-btn" onclick="showSolution('solution4')">Afficher la solution</button>
+                <div class="solution" id="solution4">
+                    <h3>✅ Solution</h3>
+                    <ol>
+                        <li>Sélectionnez les données.</li>
+                        <li>Allez dans <strong>Insertion</strong> &gt; <strong>Histogramme</strong>.</li>
+                        <li>Choisissez un style et ajoutez une légende.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <button class="next-btn" onclick="showSection('section1')">Retour au début →</button>
+        </section>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`.nav-item[onclick="showSection('${sectionId}')"]`).classList.add('active');
+        }
+
+        function showSolution(solutionId) {
+            const solution = document.getElementById(solutionId);
+            if (solution) {
+                solution.style.display = "block";
+            }
+        }
+
+        showSection('section4');
+    </script>
 </body>
+</html>
