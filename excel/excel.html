@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cours Excel - CodeCamp</title>
     <link rel="stylesheet" href="../styles/excel.css">
+    <script src="https://kit.fontawesome.com/f2f740f43e.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="sidebar">
-        <div class="logo">Cours Excel</div>
+        <div class="logo" style="cursor: pointer;" onclick="window.location.href='../index.html'">KAT & Code</div>
         <div class="nav-item" onclick="showSection('section1')">1. Introduction à Excel</div>
         <div class="nav-item" onclick="showSection('section2')">2. Formules de base</div>
         <div class="nav-item" onclick="showSection('section3')">3. Mise en forme conditionnelle</div>
@@ -16,6 +17,7 @@
     </nav>
 
     <main class="main-content">
+        <i class="fa-solid fa-xmark" onclick="window.location.href='../index.html'"></i>
         <!-- Section 1 : Introduction à Excel -->
         <section id="section1" class="section" style="display: none;">
             <h1>Introduction à Excel</h1>

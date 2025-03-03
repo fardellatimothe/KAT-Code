@@ -120,6 +120,22 @@ body {
     border-left: 5px solid var(--primary);
 }
 
+.fa-xmark {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    display: block;
+    color: var(--text);
+    font-size: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fa-xmark:hover {
+    transform: scale(1.4) rotate(180deg)
+}
+
 .formula-example {
     background: var(--highlight);
     padding: 1rem;
