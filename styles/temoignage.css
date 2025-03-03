@@ -148,6 +148,7 @@ h1 {
 }
 
 .user-age {
+    margin: 0 0 5px;
     color: var(--text);
     font-size: 14px;
 }
