@@ -11,10 +11,13 @@
     <nav class="sidebar">
         <div class="logo">KAT & Code</div>
         <div class="nav-item active" onclick="changeChapter('chapitre1')">1. Introduction avec Turtle 🐢</div>
-        <div class="nav-item" onclick="changeChapter('chapitre2')">2. Variables et Types</div>
-        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Conditions et Boucles</div>
-        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Fonctions</div>
-        <div class="nav-item" onclick="changeChapter('chapitre5')">5. Projet final</div>
+        <div class="nav-item" onclick="changeChapter('chapitre2')">2. Les bases de Python 🐍</div>
+        <div class="nav-item" onclick="changeChapter('chapitre3')">3. Conditions et prise de décision ⚖️</div>
+        <div class="nav-item" onclick="changeChapter('chapitre4')">4. Les boucles 🔁</div>
+        <div class="nav-item" onclick="changeChapter('chapitre5')">5. Les fonctions 🛠️</div>
+        <div class="nav-item" onclick="changeChapter('chapitre6')">6. Listes et tuples 📋</div>
+        <div class="nav-item" onclick="changeChapter('chapitre7')">7. Les dictionnaires et manipulation de données 📚</div>
+        <div class="nav-item" onclick="changeChapter('chapitre8')">8. Projets pratiques 🎯</div>
     </nav>
 
     <div class="main-content">
@@ -146,8 +149,617 @@ turtle.shape("turtle")  # Forme Tortue<br>
             </div>
             
             <button class="next-btn" onclick="changeChapter('chapitre2')">Leçon suivante →</button>
-            
+        </section>
 
+        <section id="chapitre2" class="section">
+            <h1>Les bases de Python 🐍</h1>
+        
+            <!-- Affichage avec print() -->
+            <h2>Affichage avec print() 🖨️</h2>
+            <p>
+                La fonction <code>print()</code> permet d'afficher du texte ou des valeurs dans la console.
+            </p>
+            <p>Exemple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        # Afficher du texte<br>
+        print("Bonjour, bienvenue dans Python !")<br>
+        <br>
+        # Afficher un nombre<br>
+        print(42)<br>
+        <br>
+        # Afficher plusieurs éléments<br>
+        print("Le résultat est :", 10 + 5)<br>
+                </code>
+            </div>
+        
+            <!-- Variables et types -->
+            <h2>Variables et types de données 🔢</h2>
+            <p>
+                Une variable est une boîte qui stocke une valeur. On lui attribue un nom et une valeur.
+            </p>
+            <p>Python propose plusieurs types de données :</p>
+            <ul>
+                <li><code>int</code> : nombres entiers (<code>10</code>, <code>-3</code>)</li>
+                <li><code>float</code> : nombres décimaux (<code>3.14</code>, <code>2.5</code>)</li>
+                <li><code>str</code> : chaînes de caractères (<code>"Hello"</code>)</li>
+                <li><code>bool</code> : valeurs booléennes (<code>True</code>, <code>False</code>)</li>
+            </ul>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        # Déclaration de variables<br>
+        nom = "Alice"  # Chaîne de caractères (str)<br>
+        age = 25  # Nombre entier (int)<br>
+        taille = 1.70  # Nombre décimal (float)<br>
+        est_etudiant = True  # Valeur booléenne (bool)<br>
+        
+        # Affichage des valeurs<br>
+        print("Nom :", nom)<br>
+        print("Âge :", age)<br>
+        print("Taille :", taille, "m")<br>
+        print("Étudiant :", est_etudiant)<br>
+                </code>
+            </div>
+        
+            <!-- Entrée utilisateur avec input() -->
+            <h2>Entrée utilisateur avec input() ⌨️</h2>
+            <p>
+                La fonction <code>input()</code> permet de demander à l'utilisateur de saisir une valeur.
+                Cette valeur est toujours sous forme de texte (<code>str</code>).
+            </p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        # Demander le prénom de l'utilisateur<br>
+        prenom = input("Quel est ton prénom ? ")<br>
+        
+        # Afficher un message personnalisé<br>
+        print("Bonjour", prenom, "!")<br>
+                </code>
+            </div>
+        
+            <p>
+                ⚠️ Si l'on veut convertir une saisie en nombre, on utilise <code>int()</code> ou <code>float()</code>.
+            </p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        # Demander un âge et le convertir en entier<br>
+        age = int(input("Quel est ton âge ? "))<br>
+        print("Dans 5 ans, tu auras", age + 5, "ans !")<br>
+                </code>
+            </div>
+        
+            <!-- Manipulation des chaînes de caractères -->
+            <h2>Manipulation des chaînes de caractères ✍️</h2>
+            <p>Python propose plusieurs opérations sur les chaînes de caractères :</p>
+        
+            <ul>
+                <li>Concaténation : <code>"Bonjour" + " " + "Alice"</code> → <code>"Bonjour Alice"</code></li>
+                <li>Longueur : <code>len("Python")</code> → <code>6</code></li>
+                <li>Majuscules/minuscules : <code>"python".upper()</code>, <code>"PYTHON".lower()</code></li>
+                <li>Remplacement : <code>"Salut Bob".replace("Bob", "Alice")</code> → <code>"Salut Alice"</code></li>
+            </ul>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        texte = "Bonjour Python"<br>
+        
+        # Longueur du texte<br>
+        print("Longueur :", len(texte))<br>
+        
+        # Mettre en majuscules<br>
+        print("Majuscules :", texte.upper())<br>
+        
+        # Remplacer un mot<br>
+        print("Modification :", texte.replace("Python", "le monde"))<br>
+                </code>
+            </div>
+        
+            <div class="exercise">
+                <h3>Exercice pratique en utilisant uniquement les notions vues précédemment</h3>
+                <p>💡 <strong>Défi :</strong> Demandez à l'utilisateur son prénom et son âge. Ensuite, affichez un message personnalisé lui disant quel âge il aura dans 10 ans.</p>
+        
+                <div class="editor-container">
+                    <div id="line-numbers" class="line-numbers"></div>
+                    <textarea id="code-editor2" class="code-editor" rows="10" placeholder="Écrivez votre code ici..."></textarea>
+                </div>
+                <button onclick="checkCode()">Vérifier</button>
+                <div id="success-message" class="hidden">
+                    🎉 Bravo ! Tu as réussi ! 🎉
+                </div>
+                <div id="error-message" class="hidden"></div>
+        
+                <button class="correction-btn" onclick="correction2(); showCorrection();">Correction</button>
+            </div>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre3')">Leçon suivante →</button>
+        </section>
+        
+        <section id="chapitre3" class="section">
+            <h1>Conditions et prise de décision ⚖️</h1>
+        
+            <!-- if, elif, else -->
+            <h2>Les conditions en Python 🧐</h2>
+            <p>
+                Une condition permet d’exécuter un bloc de code seulement si une certaine situation est remplie.  
+                En Python, on utilise <code>if</code>, <code>elif</code> et <code>else</code>.
+            </p>
+            <p>Voici un exemple simple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        age = 18<br>
+        
+        if age >= 18:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Tu es majeur.")<br>
+        else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Tu es mineur.")<br>
+                </code>
+            </div>
+        
+            <h2>Les comparateurs 🔍</h2>
+            <p>Python utilise des opérateurs de comparaison pour évaluer des conditions :</p>
+            <ul>
+                <li><code>==</code> : égal à</li>
+                <li><code>!=</code> : différent de</li>
+                <li><code>&lt;</code> : inférieur à</li>
+                <li><code>&gt;</code> : supérieur à</li>
+                <li><code>&lt;=</code> : inférieur ou égal à</li>
+                <li><code>&gt;=</code> : supérieur ou égal à</li>
+            </ul>
+        
+            <p>Exemple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        note = 15<br>
+        
+        if note == 20:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Parfait !")<br>
+        elif note >= 10:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Tu as la moyenne.")<br>
+        else:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Tu dois progresser.")<br>
+                </code>
+            </div>
+        
+            <h2>Exercice pratique : Mini-jeu interactif 🎮</h2>
+            <p>💡 <strong>Défi :</strong> Crée un programme qui demande à l’utilisateur de deviner un mot secret.</p>
+            <p>Le programme doit :</p>
+            <ul style="margin-left: 2rem;">
+                <li>Demander un mot à l'utilisateur.</li>
+                <li>Si le mot est correct, afficher <code>"Bravo, tu as trouvé le mot secret !"</code>.</li>
+                <li>Sinon, afficher <code>"Essaye encore !"</code>.</li>
+            </ul>
+        
+            <div class="editor-container">
+                <div id="line-numbers" class="line-numbers"></div>
+                <textarea id="code-editor3" class="code-editor" rows="10" placeholder="Écrivez votre code ici..."></textarea>
+            </div>
+            <button onclick="checkCode()">Vérifier</button>
+            <div id="success-message" class="hidden">
+                🎉 Bravo ! Tu as réussi ! 🎉
+            </div>
+            <div id="error-message" class="hidden"></div>
+        
+            <button class="correction-btn" onclick="correction3(); showCorrection();">Correction</button>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre4')">Leçon suivante →</button>
+        </section>
+        
+
+        <section id="chapitre4" class="section">
+            <h1>Les boucles 🔁</h1>
+        
+            <!-- La boucle while -->
+            <h2>La boucle while 🔄</h2>
+            <p>
+                Une boucle <code>while</code> permet d’exécuter un bloc de code tant qu’une condition est vraie.
+            </p>
+            <p>Exemple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        compteur = 0<br>
+        
+        while compteur &lt; 5:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Tour :", compteur)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;compteur += 1  # On ajoute 1 à chaque tour<br>
+                </code>
+            </div>
+        
+            <h2>La boucle for ➰</h2>
+            <p>
+                Une boucle <code>for</code> est utilisée pour parcourir une séquence (liste, chaîne de caractères, etc.).
+            </p>
+            <p>Exemple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        for lettre in "Python":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(lettre)<br>
+                </code>
+            </div>
+        
+            <h2>Utilisation de range() 📏</h2>
+            <p>
+                La fonction <code>range()</code> permet de générer une suite de nombres.  
+                Elle est souvent utilisée avec une boucle <code>for</code>.
+            </p>
+            <p>Exemples :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        # Compter de 0 à 4<br>
+        for i in range(5):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(i)<br>
+        
+        # Compter de 1 à 10 avec un pas de 2<br>
+        for i in range(1, 11, 2):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(i)<br>
+                </code>
+            </div>
+        
+            <h2>Exercice pratique : Faire tourner la tortue en boucle 🐢</h2>
+            <p>💡 <strong>Défi :</strong> Utilisez une boucle pour faire tourner la tortue et tracer un carré.</p>
+            <p>La tortue doit :</p>
+            <ul style="margin-left: 2rem;">
+                <li>Avancer de 100 pixels.</li>
+                <li>Tourner à droite de 90°.</li>
+                <li>Faire cela 4 fois pour dessiner un carré.</li>
+            </ul>
+        
+            <div class="editor-container">
+                <div id="line-numbers" class="line-numbers"></div>
+                <textarea id="code-editor4" class="code-editor" rows="10" placeholder="Écrivez votre code ici..."></textarea>
+            </div>
+            <button onclick="checkCode()">Vérifier</button>
+            <div id="success-message" class="hidden">
+                🎉 Bravo ! Tu as réussi ! 🎉
+            </div>
+            <div id="error-message" class="hidden"></div>
+        
+            <button class="correction-btn" onclick="correction4(); showCorrection();">Correction</button>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre5')">Leçon suivante →</button>
+        </section>
+        
+
+        <section id="chapitre5" class="section">
+            <h1>Les fonctions 🛠️</h1>
+        
+            <!-- Définir une fonction -->
+            <h2>Qu'est-ce qu'une fonction ? 🤔</h2>
+            <p>
+                Une fonction est un bloc de code réutilisable qui exécute une tâche spécifique.  
+                On définit une fonction avec le mot-clé <code>def</code>.
+            </p>
+            <p>Exemple simple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        def dire_bonjour():<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("Bonjour !")<br>
+        
+        # Appel de la fonction<br>
+        dire_bonjour()<br>
+                </code>
+            </div>
+        
+            <h2>Les paramètres et les retours de fonctions 🎯</h2>
+            <p>
+                Une fonction peut recevoir des <strong>paramètres</strong> et retourner une valeur avec <code>return</code>.
+            </p>
+            <p>Exemple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        def addition(a, b):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;return a + b<br>
+        
+        resultat = addition(5, 3)<br>
+        print("Résultat :", resultat)<br>
+                </code>
+            </div>
+        
+            <h2>Exercice pratique : Dessiner des formes avec Turtle 🐢</h2>
+            <p>💡 <strong>Défi :</strong> Crée une fonction qui dessine un polygone régulier avec la bibliothèque <code>turtle</code>.</p>
+            <p>La fonction doit :</p>
+            <ul style="margin-left: 2rem;">
+                <li>Prendre en paramètre le <strong>nombre de côtés</strong> et la <strong>longueur</strong> des côtés.</li>
+                <li>Utiliser une boucle pour tracer la forme.</li>
+                <li>Être réutilisable pour dessiner n'importe quel polygone.</li>
+            </ul>
+        
+            <div class="editor-container">
+                <div id="line-numbers" class="line-numbers"></div>
+                <textarea id="code-editor5" class="code-editor" rows="10" placeholder="Écrivez votre code ici..."></textarea>
+            </div>
+            <button onclick="checkCode()">Vérifier</button>
+            <div id="success-message" class="hidden">
+                🎉 Bravo ! Tu as réussi ! 🎉
+            </div>
+            <div id="error-message" class="hidden"></div>
+        
+            <button class="correction-btn" onclick="correction5(); showCorrection();">Correction</button>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre6')">Leçon suivante →</button>
+        </section>
+        
+
+        <section id="chapitre6" class="section">
+            <h1>Listes et tuples 📋</h1>
+        
+            <!-- Création et manipulation de listes -->
+            <h2>Les listes 📜</h2>
+            <p>
+                Une liste est une structure qui permet de stocker plusieurs valeurs dans une seule variable.  
+                Les éléments d'une liste sont modifiables et indexés.
+            </p>
+            <p>Exemple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        # Création d'une liste<br>
+        fruits = ["pomme", "banane", "cerise"]<br>
+        
+        # Accéder à un élément<br>
+        print(fruits[0])  # Affiche "pomme"<br>
+        
+        # Modifier un élément<br>
+        fruits[1] = "orange"<br>
+        
+        # Ajouter un élément<br>
+        fruits.append("kiwi")<br>
+        
+        # Supprimer un élément<br>
+        fruits.remove("cerise")<br>
+        
+        print(fruits)<br>
+                </code>
+            </div>
+        
+            <h2>Les tuples 🔗</h2>
+            <p>
+                Un tuple est similaire à une liste, mais ses éléments sont <strong>immuables</strong> (on ne peut pas les modifier après leur création).
+            </p>
+            <p>Exemple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        # Création d'un tuple<br>
+        coordonnees = (10, 20)<br>
+        
+        # Accéder aux éléments<br>
+        print(coordonnees[0])  # Affiche 10<br>
+        
+        # Les tuples ne peuvent pas être modifiés<br>
+        # coordonnees[0] = 15  # ⚠️ Erreur ! Un tuple est immuable<br>
+                </code>
+            </div>
+        
+            <h2>Exercice pratique : Générer un motif aléatoire avec Turtle 🐢</h2>
+            <p>💡 <strong>Défi :</strong> Utilisez une liste de couleurs et des boucles pour générer un motif aléatoire avec la bibliothèque <code>turtle</code>.</p>
+            <p>Le programme doit :</p>
+            <ul style="margin-left: 2rem;">
+                <li>Choisir une couleur aléatoire dans une liste.</li>
+                <li>Utiliser une boucle pour dessiner plusieurs formes.</li>
+                <li>Créer un effet de motif coloré.</li>
+            </ul>
+        
+            <div class="editor-container">
+                <div id="line-numbers" class="line-numbers"></div>
+                <textarea id="code-editor6" class="code-editor" rows="10" placeholder="Écrivez votre code ici..."></textarea>
+            </div>
+            <button onclick="checkCode()">Vérifier</button>
+            <div id="success-message" class="hidden">
+                🎉 Bravo ! Tu as réussi ! 🎉
+            </div>
+            <div id="error-message" class="hidden"></div>
+        
+            <button class="correction-btn" onclick="correction6(); showCorrection();">Correction</button>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre7')">Leçon suivante →</button>
+        </section>
+        
+
+        <section id="chapitre7" class="section">
+            <h1>Les dictionnaires et manipulation de données 📚</h1>
+        
+            <!-- Création et utilisation de dictionnaires -->
+            <h2>Les dictionnaires 📖</h2>
+            <p>
+                Un <strong>dictionnaire</strong> est une structure de données qui stocke des informations sous forme de <strong>clé → valeur</strong>.  
+                Contrairement aux listes, les dictionnaires permettent d'accéder rapidement aux données via une clé.
+            </p>
+            <p>Exemple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        # Création d'un dictionnaire<br>
+        joueur = {<br>
+            "nom": "Alex",<br>
+            "score": 150,<br>
+            "niveau": 5<br>
+        }<br>
+        
+        # Accéder à une valeur<br>
+        print(joueur["nom"])  # Affiche "Alex"<br>
+        
+        # Modifier une valeur<br>
+        joueur["score"] = 200<br>
+        
+        # Ajouter une nouvelle clé<br>
+        joueur["vie"] = 3<br>
+        
+        print(joueur)<br>
+                </code>
+            </div>
+        
+            <h2>Parcourir un dictionnaire avec une boucle 🔄</h2>
+            <p>
+                On peut parcourir un dictionnaire pour afficher toutes ses clés et valeurs avec une boucle <code>for</code>.
+            </p>
+            <p>Exemple :</p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        # Parcourir un dictionnaire<br>
+        for cle, valeur in joueur.items():<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print(cle, ":", valeur)<br>
+                </code>
+            </div>
+        
+            <h2>Exercice pratique : Stocker et afficher des scores de jeu 🎮</h2>
+            <p>💡 <strong>Défi :</strong> Crée un programme qui stocke les scores de plusieurs joueurs et les affiche.</p>
+            <p>Le programme doit :</p>
+            <ul style="margin-left: 2rem;">
+                <li>Stocker les scores des joueurs dans un dictionnaire.</li>
+                <li>Permettre d'ajouter de nouveaux joueurs.</li>
+                <li>Afficher le classement avec une boucle.</li>
+            </ul>
+        
+            <div class="editor-container">
+                <div id="line-numbers" class="line-numbers"></div>
+                <textarea id="code-editor7" class="code-editor" rows="10" placeholder="Écrivez votre code ici..."></textarea>
+            </div>
+            <button onclick="checkCode()">Vérifier</button>
+            <div id="success-message" class="hidden">
+                🎉 Bravo ! Tu as réussi ! 🎉
+            </div>
+            <div id="error-message" class="hidden"></div>
+        
+            <button class="correction-btn" onclick="correction7(); showCorrection();">Correction</button>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre8')">Leçon suivante →</button>
+        </section>
+        
+
+        <section id="chapitre8" class="section">
+            <h1>Projets pratiques 🎯</h1>
+        
+            <p>Dans ce chapitre, tu vas appliquer tout ce que tu as appris en réalisant un projet au choix !</p>
+            
+            <h2>Projet 1 : Le Juste Prix 💰</h2>
+            <p>
+                Crée un jeu où l'utilisateur doit deviner un nombre aléatoire entre 1 et 100.  
+                À chaque tentative, le programme indique si le nombre est trop grand ou trop petit.
+            </p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        import random<br>
+        
+        # Génération d'un nombre aléatoire<br>
+        nombre_secret = random.randint(1, 100)<br>
+        tentative = 0<br>
+        <br>
+        while True:<br>
+            tentative += 1<br>
+            guess = int(input("Devine le nombre : "))<br>
+        <br>
+            if guess < nombre_secret:<br>
+                print("C'est plus !")<br>
+            elif guess > nombre_secret:<br>
+                print("C'est moins !")<br>
+            else:<br>
+                print(f"Bravo ! Trouvé en {tentative} essais.")<br>
+                break<br>
+                </code>
+            </div>
+        
+            <h2>Projet 2 : Labyrinthe avec Turtle 🐢</h2>
+            <p>
+                Utilise <code>turtle</code> pour générer un labyrinthe et guide la tortue jusqu'à la sortie.
+            </p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        import turtle<br>
+        
+        # Création du labyrinthe<br>
+        t = turtle.Turtle()<br>
+        t.speed(0)<br>
+        
+        # Fonction pour tracer un mur<br>
+        def mur(longueur):<br>
+            for _ in range(2):<br>
+                t.forward(longueur)<br>
+                t.right(90)<br>
+                t.forward(20)<br>
+                t.right(90)<br>
+        
+        # Dessiner le labyrinthe<br>
+        for i in range(5, 100, 20):<br>
+            mur(i)<br>
+        
+        t.hideturtle()<br>
+        turtle.done()<br>
+                </code>
+            </div>
+        
+            <h2>Projet 3 : Création d’une horloge graphique ⏰</h2>
+            <p>
+                Utilise <code>turtle</code> pour dessiner une horloge et afficher l'heure en temps réel.
+            </p>
+        
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copier</button>
+                <code>
+        import turtle<br>
+        import time<br>
+        
+        # Création de l'horloge<br>
+        t = turtle.Turtle()<br>
+        t.speed(0)<br>
+        
+        def horloge():<br>
+            t.penup()<br>
+            t.goto(0, -100)<br>
+            t.pendown()<br>
+            t.circle(100)<br>
+        
+            for i in range(12):<br>
+                t.penup()<br>
+                t.goto(0, 0)<br>
+                t.right(30)<br>
+                t.forward(80)<br>
+                t.pendown()<br>
+                t.forward(20)<br>
+        
+        horloge()<br>
+        turtle.done()<br>
+                </code>
+            </div>
+        
+            <h2>À toi de jouer ! 🚀</h2>
+            <p>Choisis un projet, code-le et teste tes compétences ! 😊</p>
+        
+            <button class="next-btn" onclick="changeChapter('chapitre9')">Leçon suivante →</button>
+        </section>
+        
+    </div>
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
