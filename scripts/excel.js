@@ -24,3 +24,12 @@ document.addEventListener("DOMContentLoaded", function() {
         changeChapter(savedChapter);
     }
 });
+
+function showSolution(solutionId) {
+    const solution = document.getElementById(solutionId);
+    if (solution) {
+        solution.style.display = "block";
+    }
+}
+
+showSection('section4');

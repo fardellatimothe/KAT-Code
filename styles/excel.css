@@ -77,6 +77,30 @@ body {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 0.5s ease forwards;
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+.section h1 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.section h2 {
+    color: var(--text);
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+}
+
+ul, ol {
+    margin-left: 2rem;
+}
+
+.section p {
+    margin-bottom: 1rem;
 }
 
 .tip-box {
