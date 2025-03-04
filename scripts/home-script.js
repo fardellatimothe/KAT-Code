@@ -6,6 +6,8 @@ function startCourse(button) {
     button.disabled = true;
     button.style.opacity = "0.7";
 
+    console.log("c'est bon");
+
     const interval = setInterval(() => {
         currentProgress += 1;
         progress.style.width = `${currentProgress}%`;
@@ -16,4 +18,6 @@ function startCourse(button) {
             button.style.opacity = "1";
         }
     }, 50);
+
+    console.log("c'est bon 2");
 }
