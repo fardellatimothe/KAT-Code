@@ -1,14 +1,20 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import ast
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='python', template_folder='python')  # Définit le dossier contenant les fichiers HTML
 CORS(app, resources={r"/check-code": {"origins": "*"}})
 
 @app.route('/')
 def home():
     return "🚀 Serveur Flask en ligne sur Render ! Utilise /check-code pour tester."
+
+# 📌 Route pour afficher `python.html`
+@app.route('/python')
+def show_python_page():
+    return render_template("python.html")  # Charge `python.html` depuis le dossier `python/`
+
 
 
 # Liste des bibliothèques interdites
