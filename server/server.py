@@ -172,16 +172,7 @@ def is_valid_turtle_code(user_code):
     except Exception as e:
         return False, "❌ Il y a une erreur générale dans ton code. Vérifie bien ce que tu as écrit."
 
-@app.route('/check-code', methods=['POST'])
-def check_code():
-    data = request.get_json()
-    user_code = data.get("code", "")
 
-    print("🔍 Code reçu :", user_code)  
-    valid, message = is_valid_turtle_code(user_code)
-
-    print("🔎 Résultat analyse :", valid, message)  
-    return jsonify({"valid": valid, "error": message if not valid else None})
 
 
 if __name__ == '__main__':
