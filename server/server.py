@@ -9,6 +9,19 @@ CORS(app, resources={r"/check-code": {"origins": "*"}})
 @app.route('/')
 def home():
     return "🚀 Serveur Flask en ligne sur Render ! Utilise /check-code pour tester."
+@app.route('/check-code', methods=['POST'])
+def check_code():
+    data = request.get_json()
+    if not data or "code" not in data:
+        return jsonify({"valid": False, "error": "Aucun code envoyé."}), 400
+
+    user_code = data["code"]
+    print(f"🔍 Code reçu : {user_code}")  # Debug dans les logs Render
+
+    valid, message = is_valid_turtle_code(user_code)
+    
+    return jsonify({"valid": valid, "error": message if not valid else None})
+
 
 # 📌 Route pour afficher `python.html`
 @app.route('/python')
