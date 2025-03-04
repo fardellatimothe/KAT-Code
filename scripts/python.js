@@ -42,13 +42,11 @@ let attempts = []; // Tableau pour stocker les tentatives uniques
 function checkCode() {
   const userCode = pythonEditor.getValue().trim(); // Récupérer le code entré par l'utilisateur
 
-  fetch("http://127.0.0.1:5000/check-code", {
-    // Envoie au serveur Flask
+  fetch("https://katandcode.onrender.com/check-code", {
+    // Met l'URL de ton serveur
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ code: userCode }), // Envoie le code en JSON
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ code: code }),
   })
     .then((response) => response.json())
     .then((data) => {
