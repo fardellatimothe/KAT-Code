@@ -85,20 +85,6 @@ function copyCode(button) {
   });
 }
 
-// Fonction pour afficher la correction seulement après 10 tentatives uniques
-function showCorrection() {
-  if (
-    attemptCount >= 10 ||
-    document.getElementById("code-editor1").value.trim() === correctCode
-  ) {
-    document.getElementById("correction1").classList.remove("hidden"); // Afficher la correction
-  } else {
-    alert(
-      "Tu dois d'abord essayer de résoudre l'exercice au moins 10 fois avec des tentatives différentes avant de voir la correction !"
-    );
-  }
-}
-
 // Fonction pour copier le code de la correction
 function copyCode(button) {
   const codeBlock = button.closest(".code-block").querySelector("code");
