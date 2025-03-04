@@ -158,5 +158,8 @@ def check_code():
     print("🔎 Résultat analyse :", valid, message)  
     return jsonify({"valid": valid, "error": message if not valid else None})
 
+import os
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render définit le PORT automatiquement
+    app.run(host="0.0.0.0", port=port)  # 0.0.0.0 pour écouter sur toutes les interfaces
