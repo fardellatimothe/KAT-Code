@@ -3,7 +3,7 @@ from flask_cors import CORS
 import ast
 import os
 
-app = Flask(__name__, static_folder='python', template_folder='python')  # Définit le dossier contenant les fichiers HTML
+app = Flask(__name__, static_folder='python', template_folder='../python')  # Définit le dossier contenant les fichiers HTML
 CORS(app, resources={r"/check-code": {"origins": "*"}})
 
 @app.route('/')
