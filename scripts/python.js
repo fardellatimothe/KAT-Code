@@ -40,7 +40,7 @@ turtle.done()`;
 let attempts = []; // Tableau pour stocker les tentatives uniques
 
 function checkCode() {
-  const userCode = document.getElementById("code-editor1").value.trim();
+  const userCode = pythonEditor.getValue().trim(); // ✅ CodeMirror utilise getValue()
 
   fetch("https://katandcode.onrender.com/check-code", {
     method: "POST",
