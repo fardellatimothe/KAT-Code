@@ -31,5 +31,3 @@ function showSolution(solutionId) {
         solution.style.display = "block";
     }
 }
-
-showSection('section4');
