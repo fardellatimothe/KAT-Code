@@ -43,10 +43,9 @@ function checkCode() {
   const userCode = pythonEditor.getValue().trim(); // Récupérer le code entré par l'utilisateur
 
   fetch("https://katandcode.onrender.com/check-code", {
-    // Met l'URL de ton serveur
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ code: code }),
+    body: JSON.stringify({ code: userCode }), // ✅ Correction ici
   })
     .then((response) => response.json())
     .then((data) => {
