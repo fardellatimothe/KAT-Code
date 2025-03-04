@@ -1,9 +1,15 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import ast
+import os
 
 app = Flask(__name__)
 CORS(app, resources={r"/check-code": {"origins": "*"}})
+
+@app.route('/')
+def home():
+    return "🚀 Serveur Flask en ligne sur Render ! Utilise /check-code pour tester."
+
 
 # Liste des bibliothèques interdites
 FORBIDDEN_LIBRARIES = {"os", "sys", "random", "math", "subprocess", "shutil"}
@@ -158,7 +164,6 @@ def check_code():
     print("🔎 Résultat analyse :", valid, message)  
     return jsonify({"valid": valid, "error": message if not valid else None})
 
-import os
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))  # Render définit le PORT automatiquement
